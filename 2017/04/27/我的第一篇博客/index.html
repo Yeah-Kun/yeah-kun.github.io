@@ -7,15 +7,16 @@
 
     
 
-    <title>我的第一篇博客 | </title>
+    <title>泰迪杯——楼层结构识别算法 | </title>
     <meta name="author" content="Yeah Kun">
     
-    <meta name="description" content="经过了一个多月的艰苦奋战，终于把泰迪杯给解决了，虽然期间困难重重，但是也收获颇丰。">
+    <meta name="description" content="背景
+第一次参加泰迪杯，前期跟队友配合的不算太好，不过后期经过老师的教育指导，再通过大家的努力，终于把泰迪杯给解决了，这期间困难重重，收获也颇丰，其中收获最大的大概是把楼层结构识别算法做出来了，刚刚开始的时候还在怀疑人生，认为自己没办法写出这个算法，不过最后在队友的帮助之下，还是将它实现了，下面就来">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="我的第一篇博客"/>
+    <meta property="og:title" content="泰迪杯——楼层结构识别算法"/>
     <meta property="og:site_name" content="Hexo"/>
 
     
@@ -51,7 +52,7 @@
                         <a class="menu-home " href="/" >
                             <i class="fa fa-home "></i>
                             
-                            Home
+                            首页
                         </a>
                     </li>
                 
@@ -59,7 +60,7 @@
                         <a class="menu-archive " href="/archives" >
                             <i class="fa fa-archive "></i>
                             
-                            Archives
+                            归档
                         </a>
                     </li>
                 
@@ -67,7 +68,7 @@
                         <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
                             <i class="fa fa-bookmark "></i>
                             
-                            Categories
+                            分类
                         </a>
                     </li>
                 
@@ -75,7 +76,7 @@
                         <a class="menu-reading " href="/reading" >
                             <i class="fa fa-book "></i>
                             
-                            Reading
+                            读书
                         </a>
                     </li>
                 
@@ -83,7 +84,7 @@
                         <a class="menu-about " href="/about" >
                             <i class="fa fa-user "></i>
                             
-                            About
+                            关于
                         </a>
                     </li>
                 
@@ -91,7 +92,7 @@
                         <a class="menu-search modal-trigger " href="#search" >
                             <i class="fa fa-search "></i>
                             
-                            Search
+                            搜索
                         </a>
                     </li>
                 
@@ -119,7 +120,7 @@
                 <a class="waves-effect menu-home " href="/" >
                     <i class="fa fa-home "></i>
                     
-                    Home
+                    首页
                 </a>
             </li>
         
@@ -127,7 +128,7 @@
                 <a class="waves-effect menu-archive " href="/archives" >
                     <i class="fa fa-archive "></i>
                     
-                    Archives
+                    归档
                 </a>
             </li>
         
@@ -135,7 +136,7 @@
                 <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
                     <i class="fa fa-bookmark "></i>
                     
-                    Categories
+                    分类
                 </a>
             </li>
         
@@ -143,7 +144,7 @@
                 <a class="waves-effect menu-reading " href="/reading" >
                     <i class="fa fa-book "></i>
                     
-                    Reading
+                    读书
                 </a>
             </li>
         
@@ -151,7 +152,7 @@
                 <a class="waves-effect menu-about " href="/about" >
                     <i class="fa fa-user "></i>
                     
-                    About
+                    关于
                 </a>
             </li>
         
@@ -159,7 +160,7 @@
                 <a class="waves-effect menu-search modal-trigger " href="#search" >
                     <i class="fa fa-search "></i>
                     
-                    Search
+                    搜索
                 </a>
             </li>
         
@@ -181,7 +182,7 @@
     <div class="row">
         <div class="input-field col s12">
               <input id="search-input" type="text">
-              <label for="search-input">Search</label>
+              <label for="search-input">搜索</label>
         </div>
 
     </div>
@@ -195,7 +196,7 @@
         <div class="container main-container">
     <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper light-blue accent-4">
-        <span class="breadcrumb">Current page(Categories)</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
             
 
@@ -213,7 +214,7 @@
             <div class="article-title">
                 
     
-        <h1>我的第一篇博客</h1>
+        <h1>泰迪杯——楼层结构识别算法</h1>
     
 
 
@@ -230,23 +231,90 @@
         
             <a href="/tags/泰迪杯/" class="chip pink lighten-1">泰迪杯</a>
         
+            <a href="/tags/楼层结构识别/" class="chip pink lighten-1">楼层结构识别</a>
+        
     </div>
 
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#背景"><span class="section table-of-contents-text">背景</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#前期准备"><span class="section table-of-contents-text">前期准备</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#算法流程"><span class="section table-of-contents-text">算法流程</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-构建DOM树"><span class="section table-of-contents-text">1.构建DOM树</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-1-传入两个值（网页源代码，楼层数标准值）"><span class="section table-of-contents-text">1.1 传入两个值（网页源代码，楼层数标准值）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-2-初始化存储容器"><span class="section table-of-contents-text">1.2 初始化存储容器</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-层序遍历DOM树"><span class="section table-of-contents-text">2.层序遍历DOM树</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-1-构造队列"><span class="section table-of-contents-text">2.1 构造队列</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-2-遍历DOM树"><span class="section table-of-contents-text">2.2 遍历DOM树</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-楼层矩阵筛选"><span class="section table-of-contents-text">3.楼层矩阵筛选</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-1-初始化矩阵容器"><span class="section table-of-contents-text">3.1 初始化矩阵容器</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-2-构建楼层矩阵"><span class="section table-of-contents-text">3.2 构建楼层矩阵</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-3-矩阵初筛选"><span class="section table-of-contents-text">3.3 矩阵初筛选</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-4-选择标准矩阵"><span class="section table-of-contents-text">3.4 选择标准矩阵</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#具体步骤"><span class="section table-of-contents-text">具体步骤</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-楼层矩阵相似度比较"><span class="section table-of-contents-text">4.楼层矩阵相似度比较</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-1-余弦相似度比较"><span class="section table-of-contents-text">4.1 余弦相似度比较</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-2-释放矩阵容器内存"><span class="section table-of-contents-text">4.2 释放矩阵容器内存</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-获得楼层矩阵绝对路径"><span class="section table-of-contents-text">5.获得楼层矩阵绝对路径</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#源代码"><span class="section table-of-contents-text">源代码</span></a></li></ol>
 </div>
 
 
             <div class="entry pink-link-context">
-                <blockquote>
-<p>经过了一个多月的艰苦奋战，终于把泰迪杯给解决了，虽然期间困难重重，但是也收获颇丰。</p>
+                <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+<p>第一次参加泰迪杯，前期跟队友配合的不算太好，不过后期经过老师的教育指导，再通过大家的努力，终于把泰迪杯给解决了，这期间困难重重，收获也颇丰，其中收获最大的大概是把楼层结构识别算法做出来了，刚刚开始的时候还在怀疑人生，认为自己没办法写出这个算法，不过最后在队友的帮助之下，还是将它实现了，下面就来详细介绍一下这个算法。</p>
 </blockquote>
+<h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><ul>
+<li>软件和开发环境：sublime text3、python-Anaconda、Win10系统</li>
+<li>python包：lxml（你没看错，就一个包）</li>
+</ul>
+<h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><ol>
+<li>构建DOM树</li>
+<li>层序遍历DOM树</li>
+<li>楼层矩阵筛选</li>
+<li>楼层矩阵相似度比较</li>
+<li>获得楼层矩阵绝对路径</li>
+</ol>
+<h3 id="1-构建DOM树"><a href="#1-构建DOM树" class="headerlink" title="1.构建DOM树"></a>1.构建DOM树</h3><h4 id="1-1-传入两个值（网页源代码，楼层数标准值）"><a href="#1-1-传入两个值（网页源代码，楼层数标准值）" class="headerlink" title="1.1 传入两个值（网页源代码，楼层数标准值）"></a>1.1 传入两个值（网页源代码，楼层数标准值）</h4><ul>
+<li>网页源代码（bs0bj）：用于操作DOM树</li>
+<li>楼层数标准值（standard_value）：用于比较楼层矩阵数，我们通过“发表于”、“只看该作者”和时间把这个值确定下来<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 算法</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">TreeAlgotithm</span><span class="params">(bs0bj, standard_value)</span>:</span></div><div class="line">    tree = etree.HTML(bs0bj)  <span class="comment"># 用HTML方法解析文件</span></div><div class="line">    t = tree.getroottree()  <span class="comment"># 获得一个节点对应的树</span></div><div class="line">    root = t.getroot()  <span class="comment"># 用于存储当前根节点，即爸爸节点</span></div><div class="line">    save_children_tag = Queue()  <span class="comment"># 队列，用于存储子节点</span></div><div class="line">    <span class="comment"># 将body节点放到队列中</span></div><div class="line">    <span class="keyword">if</span>(root[<span class="number">0</span>].getnext()):</div><div class="line">        save_children_tag.enqueue(root[<span class="number">1</span>])</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">None</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>网页正文都在body节点之下，所以直接定位body节点就可以减少遍历时间。</p>
+</blockquote>
+<h4 id="1-2-初始化存储容器"><a href="#1-2-初始化存储容器" class="headerlink" title="1.2 初始化存储容器"></a>1.2 初始化存储容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">similar_tag = <span class="number">0</span>  <span class="comment"># 用于计算有多少个相似的儿子对象</span></div><div class="line">matrix_pack = []  <span class="comment"># 矩阵容器，用于存放未进行相似度计算的矩阵</span></div><div class="line">tag_pack = []  <span class="comment"># 标签容器，用于存放未进行相似度计算的标签</span></div><div class="line">one_path = []  <span class="comment"># 用于临时存放某节点的绝对路径</span></div><div class="line">new_matrix_pack = []  <span class="comment"># 矩阵容器，用于存放已经进行相似度计算的矩阵</span></div><div class="line">new_tag_pack = []  <span class="comment"># 标签容器，用于存放相似度高的标签</span></div><div class="line">test = []  <span class="comment"># 观察数据进度</span></div></pre></td></tr></table></figure>
+<h3 id="2-层序遍历DOM树"><a href="#2-层序遍历DOM树" class="headerlink" title="2.层序遍历DOM树"></a>2.层序遍历DOM树</h3><blockquote>
+<p>DOM树是一种普通的树结构，层序遍历是寻找楼层结构最快的方法，我们要寻找的网页正文和楼层结构基本都在body节点之下，用层序遍历，是最快找到楼层标签的方法。<br><img src="http://a1.qpic.cn/psb?/V12Ltkru1ADJ5N/bXdJ7iXARi0jJGdGxKNj12Ik9ns518SVVz9846x111Y!/b/dGsBAAAAAAAA&amp;bo=bAIhAQAAAAARB34!&amp;rf=viewer_4" alt="DOM树"></p>
+<h4 id="2-1-构造队列"><a href="#2-1-构造队列" class="headerlink" title="2.1 构造队列"></a>2.1 构造队列</h4><p>数据结构知识，使用队列保存每层节点的信息，先进先出层序遍历树的每一个节点。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 构造队列，用于树的层序遍历</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.items = []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.items == []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self, item)</span>:</span></div><div class="line">        self.items.insert(<span class="number">0</span>, item)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.items.pop()</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> len(self.items)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="2-2-遍历DOM树"><a href="#2-2-遍历DOM树" class="headerlink" title="2.2 遍历DOM树"></a>2.2 遍历DOM树</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(similar_tag &gt; standard_value + <span class="number">2</span> <span class="keyword">or</span> similar_tag &lt; standard_value - <span class="number">2</span>):</div><div class="line"></div><div class="line">    similar_tag = <span class="number">0</span>  <span class="comment"># 相似节点数初始化</span></div><div class="line">    <span class="keyword">if</span> (save_children_tag.isEmpty()):</div><div class="line">    	print(<span class="string">"栈为空"</span>)</div><div class="line">        <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        root = save_children_tag.dequeue()  <span class="comment"># 队列弹栈</span></div><div class="line"></div><div class="line">    <span class="comment"># 父节点遍历</span></div><div class="line">    <span class="keyword">for</span> child <span class="keyword">in</span> root:</div><div class="line">        save_children_tag.enqueue(child)</div></pre></td></tr></table></figure>
+<h3 id="3-楼层矩阵筛选"><a href="#3-楼层矩阵筛选" class="headerlink" title="3.楼层矩阵筛选"></a>3.楼层矩阵筛选</h3><h4 id="3-1-初始化矩阵容器"><a href="#3-1-初始化矩阵容器" class="headerlink" title="3.1 初始化矩阵容器"></a>3.1 初始化矩阵容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">matrix_pack = []  <span class="comment"># 矩阵容器，用于存放未进行相似度计算的矩阵</span></div><div class="line">tag_pack = []  <span class="comment"># 标签容器，用于存放未进行相似度计算的标签</span></div><div class="line">new_matrix_pack = []  <span class="comment"># 矩阵容器，用于存放已经进行相似度计算的矩阵</span></div><div class="line">new_tag_pack = []  <span class="comment"># 标签容器，用于存放相似度高的标签</span></div></pre></td></tr></table></figure>
+<h4 id="3-2-构建楼层矩阵"><a href="#3-2-构建楼层矩阵" class="headerlink" title="3.2 构建楼层矩阵"></a>3.2 构建楼层矩阵</h4><blockquote>
+<p>经过对楼层源代码的研究，发现这些标签出现频数较多，但是在过程中少考虑了一个问题，就某些标签会受到回帖内容的影响，比如img，回帖多一张照片就会多一个img标签。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">TagMatrix</span><span class="params">(tree, path)</span>:</span></div><div class="line">    <span class="comment"># 统计标签频数</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">List_Count_Tag</span><span class="params">(children)</span>:</span></div><div class="line">        List_tag = []</div><div class="line">        <span class="keyword">if</span> <span class="string">'a'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'a'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'div'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'div'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'p'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'p'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'span'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'span'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'img'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'img'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'td'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'td'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'dd'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'dd'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> List_tag</div><div class="line">    tag_save = []</div><div class="line">    child_Node = tree.xpath(path + <span class="string">'//*'</span>)</div><div class="line">    <span class="keyword">for</span> child <span class="keyword">in</span> child_Node:</div><div class="line">        tag_save.append(child.tag)</div><div class="line">    <span class="keyword">return</span> List_Count_Tag(tag_save)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="3-3-矩阵初筛选"><a href="#3-3-矩阵初筛选" class="headerlink" title="3.3 矩阵初筛选"></a>3.3 矩阵初筛选</h4><blockquote>
+<p>这一步至关重要，因为在初期没加这一步的时候，很多空矩阵被视为楼层，后来我们发现，加入了这个矩阵的初步筛选之后，不仅准确率提高了，连效率也大大提高了。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">one_matrix = TagMatrix(tree, one_path)  <span class="comment"># 获得儿子节点的矩阵</span></div><div class="line">    <span class="keyword">if</span>(one_matrix[<span class="number">0</span>] &lt; <span class="number">2</span> <span class="keyword">or</span> one_matrix[<span class="number">1</span>] &lt; <span class="number">2</span>):  <span class="comment"># 筛选没可能是楼层的元素</span></div><div class="line">                <span class="keyword">continue</span></div><div class="line">    <span class="comment"># 存储没有进行相似度计算的矩阵和标签</span></div><div class="line">    matrix_pack.append(one_matrix)</div><div class="line">    tag_pack.append(child)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="3-4-选择标准矩阵"><a href="#3-4-选择标准矩阵" class="headerlink" title="3.4 选择标准矩阵"></a>3.4 选择标准矩阵</h4><blockquote>
+<p>由于下一步要进行矩阵相似度的比较，我们需要找出一个最有可能是楼层的矩阵（标准矩阵），与其他的矩阵进行相似度比较。经过研究我们发现，各个楼层的a标签基本一致，因此统计a标签频数，并找到跟a标签频数相等的第一个矩阵作为标准矩阵。</p>
+</blockquote>
+<h5 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h5><ol>
+<li>提取所有楼层矩阵的第一个元素，建立新列表</li>
+<li>统计列表中，返回出现次数最多的元素</li>
+<li>在所有楼层矩阵中找到第一个跟频数一致的矩阵，并返回作为标准矩阵<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 选出标准值</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">StandardMatrix</span><span class="params">(tag_pack, matrix_pack)</span>:</span></div><div class="line">    <span class="comment"># 计算矩阵第一个元素，用于选出标准值</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">CountKey</span><span class="params">(matrix_pack)</span>:</span></div><div class="line">        temp = <span class="number">0</span></div><div class="line">        temp_list = []</div><div class="line">        <span class="comment"># 提取标签容器的第一个标签，</span></div><div class="line">        <span class="keyword">for</span> one <span class="keyword">in</span> matrix_pack:</div><div class="line">            temp_list.append(one[<span class="number">0</span>])</div><div class="line">        result_list = collections.Counter(temp_list)</div><div class="line">        dict(result_list)</div><div class="line">        <span class="comment"># 返回a标签的频数，用作选出标准矩阵</span></div><div class="line">        <span class="keyword">return</span> max(result_list.items(), key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>])[<span class="number">0</span>]</div><div class="line">    </div><div class="line">    <span class="keyword">if</span>(len(tag_pack) &gt; <span class="number">1</span>):</div><div class="line">        first_key = CountKey(matrix_pack)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> matrix_pack:</div><div class="line">            <span class="keyword">if</span>(i[<span class="number">0</span>] == first_key):</div><div class="line">                standar_matrix = i</div><div class="line">                <span class="keyword">return</span> standar_matrix</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="4-楼层矩阵相似度比较"><a href="#4-楼层矩阵相似度比较" class="headerlink" title="4.楼层矩阵相似度比较"></a>4.楼层矩阵相似度比较</h3><ul>
+<li>相似度&gt;0.9：判断为楼层矩阵<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(standar_matrix != <span class="keyword">None</span>):</div><div class="line">            i = <span class="number">0</span></div><div class="line">            <span class="keyword">for</span> new_one_matrix <span class="keyword">in</span> matrix_pack:</div><div class="line">                Cos_key = CosSimilarity(new_one_matrix, standar_matrix)</div><div class="line">                <span class="keyword">if</span>(Cos_key &gt; <span class="number">0.90</span>):</div><div class="line">                    new_tag_pack.append(tag_pack[i])</div><div class="line">                    new_matrix_pack.append(matrix_pack[i])</div><div class="line">                i = i + <span class="number">1</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-1-余弦相似度比较"><a href="#4-1-余弦相似度比较" class="headerlink" title="4.1 余弦相似度比较"></a>4.1 余弦相似度比较</h4><blockquote>
+<p>  这个其实没什么好看的，有技术含量的内容都在上面，这个在网上都能找到。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 两个矩阵余弦相似度计算</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">CosSimilarity</span><span class="params">(hinsA, hinsB)</span>:</span></div><div class="line">    up_count = <span class="number">0</span></div><div class="line">    down_left_count = <span class="number">0</span></div><div class="line">    down_right_count = <span class="number">0</span></div><div class="line">    result_count = <span class="number">0</span></div><div class="line">    i = <span class="number">0</span></div><div class="line">    <span class="comment"># 计算两个向量的点积</span></div><div class="line">    <span class="keyword">while</span> i &lt; len(hinsA):</div><div class="line">        up_count = up_count + hinsA[i] * hinsB[i]</div><div class="line">        i = i + <span class="number">1</span></div><div class="line">    i = <span class="number">0</span></div><div class="line">    <span class="comment"># 计算两个向量的模</span></div><div class="line">    <span class="keyword">while</span> i &lt; len(hinsA):</div><div class="line">        down_left_count = down_left_count + hinsA[i] ** <span class="number">2</span></div><div class="line">        i = i + <span class="number">1</span></div><div class="line">    i = <span class="number">0</span></div><div class="line">    <span class="keyword">while</span> i &lt; len(hinsB):</div><div class="line">        down_right_count = down_right_count + hinsB[i] ** <span class="number">2</span></div><div class="line">        i = i + <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> up_count / (math.sqrt(down_left_count) * math.sqrt(down_right_count))</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="4-2-释放矩阵容器内存"><a href="#4-2-释放矩阵容器内存" class="headerlink" title="4.2 释放矩阵容器内存"></a>4.2 释放矩阵容器内存</h4><blockquote>
+<p>这么做主要是为了避免下次计算的时候，把前一次的数据也算进去了，这一步也是很重要的。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(similar_tag &gt; standard_value + <span class="number">2</span> <span class="keyword">or</span> similar_tag &lt; standard_value - <span class="number">2</span>):</div><div class="line">    <span class="keyword">del</span>(matrix_pack)</div><div class="line">    <span class="keyword">del</span>(tag_pack)</div><div class="line">    <span class="keyword">del</span>(new_tag_pack)</div><div class="line">    <span class="keyword">del</span>(new_matrix_pack)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="5-获得楼层矩阵绝对路径"><a href="#5-获得楼层矩阵绝对路径" class="headerlink" title="5.获得楼层矩阵绝对路径"></a>5.获得楼层矩阵绝对路径</h3><blockquote>
+<p>做到这一步也基本差不多了，把楼层矩阵的绝对路径拿到手，就可以定位每一个楼层的位置了。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tag_path = []</div><div class="line"><span class="keyword">for</span> tag <span class="keyword">in</span> new_tag_pack:</div><div class="line">    tag_path.append(t.getpath(tag))</div><div class="line"><span class="keyword">return</span> tag_path</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>存在问题：</li>
+</ul>
+<ol>
+<li>少于3个楼层识别困难</li>
+<li>矩阵构造不严谨，部分标签会受回帖影响</li>
+<li>依赖于标准值的准确性</li>
+<li>没有树结构深度限制（一直识别到最后一个节点，但其实楼层不可能很深层的节点，一般在4到7层）</li>
+</ol>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</div><div class="line"><span class="keyword">import</span> collections</div><div class="line"><span class="keyword">import</span> math</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 构造队列，用于树的层序遍历</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.items = []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.items == []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self, item)</span>:</span></div><div class="line">        self.items.insert(<span class="number">0</span>, item)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.items.pop()</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> len(self.items)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 返回矩阵</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">TagMatrix</span><span class="params">(tree, path)</span>:</span></div><div class="line"></div><div class="line">    <span class="comment"># 统计标签频数</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">List_Count_Tag</span><span class="params">(children)</span>:</span></div><div class="line">        List_tag = []</div><div class="line">        <span class="keyword">if</span> <span class="string">'a'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'a'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'div'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'div'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'p'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'p'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'span'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'span'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'img'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'img'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'td'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'td'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> <span class="string">'dd'</span> <span class="keyword">in</span> children:</div><div class="line">            List_tag.append(children.count(<span class="string">'dd'</span>))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            List_tag.append(<span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> List_tag</div><div class="line">    tag_save = []</div><div class="line">    child_Node = tree.xpath(path + <span class="string">'//*'</span>)</div><div class="line">    <span class="keyword">for</span> child <span class="keyword">in</span> child_Node:</div><div class="line">        tag_save.append(child.tag)</div><div class="line">    <span class="keyword">return</span> List_Count_Tag(tag_save)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 两个矩阵余弦相似度计算</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">CosSimilarity</span><span class="params">(hinsA, hinsB)</span>:</span></div><div class="line">    up_count = <span class="number">0</span></div><div class="line">    down_left_count = <span class="number">0</span></div><div class="line">    down_right_count = <span class="number">0</span></div><div class="line">    result_count = <span class="number">0</span></div><div class="line">    i = <span class="number">0</span></div><div class="line">    <span class="comment"># 计算两个向量的点积</span></div><div class="line">    <span class="keyword">while</span> i &lt; len(hinsA):</div><div class="line">        up_count = up_count + hinsA[i] * hinsB[i]</div><div class="line">        i = i + <span class="number">1</span></div><div class="line">    i = <span class="number">0</span></div><div class="line"></div><div class="line">    <span class="comment"># 计算两个向量的模</span></div><div class="line">    <span class="keyword">while</span> i &lt; len(hinsA):</div><div class="line">        down_left_count = down_left_count + hinsA[i] ** <span class="number">2</span></div><div class="line">        i = i + <span class="number">1</span></div><div class="line">    i = <span class="number">0</span></div><div class="line">    <span class="keyword">while</span> i &lt; len(hinsB):</div><div class="line">        down_right_count = down_right_count + hinsB[i] ** <span class="number">2</span></div><div class="line">        i = i + <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> up_count / (math.sqrt(down_left_count) * math.sqrt(down_right_count))</div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line"># 目标文件夹路径</div><div class="line">path = "D:\\Users\\YeahKun\\Desktop\\TDcup\\data process\\"</div><div class="line"></div><div class="line"></div><div class="line"># 读取文件源代码，由于'r'遇到错误，用'rb'就可以成功读取，原因之后再找</div><div class="line">file_keep = open(path + "one_url_data.txt", 'rb')</div><div class="line">bs0bj = file_keep.read().decode('gb18030') # 解码读取，不然会出现乱码</div><div class="line">file_keep.close()</div><div class="line">'''</div><div class="line"></div><div class="line"><span class="comment"># 算法</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">TreeAlgotithm</span><span class="params">(bs0bj, standard_value)</span>:</span></div><div class="line">    tree = etree.HTML(bs0bj)  <span class="comment"># 用HTML方法解析文件</span></div><div class="line">    t = tree.getroottree()  <span class="comment"># 获得一个节点对应的树</span></div><div class="line">    root = t.getroot()  <span class="comment"># 用于存储当前根节点，即爸爸节点</span></div><div class="line">    save_children_tag = Queue()  <span class="comment"># 队列，用于存储子节点</span></div><div class="line">    <span class="keyword">if</span>(root[<span class="number">0</span>].getnext()):</div><div class="line">        save_children_tag.enqueue(root[<span class="number">1</span>])</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line"></div><div class="line">    <span class="comment"># 初始化</span></div><div class="line">    similar_tag = <span class="number">0</span>  <span class="comment"># 用于计算有多少个相似的儿子对象</span></div><div class="line">    matrix_pack = []  <span class="comment"># 矩阵容器，用于存放未进行相似度计算的矩阵</span></div><div class="line">    tag_pack = []  <span class="comment"># 标签容器，用于存放未进行相似度计算的标签</span></div><div class="line">    one_path = []  <span class="comment"># 用于临时存放某节点的绝对路径</span></div><div class="line">    new_matrix_pack = []  <span class="comment"># 矩阵容器，用于存放已经进行相似度计算的矩阵</span></div><div class="line">    new_tag_pack = []  <span class="comment"># 标签容器，用于存放相似度高的标签</span></div><div class="line">    test = []  <span class="comment"># 观察数据进度</span></div><div class="line"></div><div class="line">    <span class="keyword">while</span>(similar_tag &gt; standard_value + <span class="number">2</span> <span class="keyword">or</span> similar_tag &lt; standard_value - <span class="number">2</span>):</div><div class="line"></div><div class="line">        similar_tag = <span class="number">0</span>  <span class="comment"># 相似节点数初始化</span></div><div class="line">        <span class="keyword">if</span> (save_children_tag.isEmpty()):</div><div class="line">        	print(<span class="string">"栈为空"</span>)</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            root = save_children_tag.dequeue()  <span class="comment"># 队列弹栈</span></div><div class="line">        test.append(root.tag)</div><div class="line"><span class="comment">#       print(root.tag)</span></div><div class="line"><span class="comment">#       print(one_path)</span></div><div class="line">        matrix_pack = []  <span class="comment"># 矩阵容器，用于存放未进行相似度计算的矩阵</span></div><div class="line">        tag_pack = []  <span class="comment"># 标签容器，用于存放未进行相似度计算的标签</span></div><div class="line">        new_matrix_pack = []  <span class="comment"># 矩阵容器，用于存放已经进行相似度计算的矩阵</span></div><div class="line">        new_tag_pack = []  <span class="comment"># 标签容器，用于存放相似度高的标签</span></div><div class="line"></div><div class="line">        <span class="comment"># 父节点遍历</span></div><div class="line">        <span class="keyword">for</span> child <span class="keyword">in</span> root:</div><div class="line">            save_children_tag.enqueue(child)</div><div class="line">            one_path = t.getpath(child)</div><div class="line">            one_matrix = TagMatrix(tree, one_path)  <span class="comment"># 获得儿子节点的矩阵</span></div><div class="line"></div><div class="line">            <span class="keyword">if</span>(one_matrix[<span class="number">0</span>] &lt; <span class="number">2</span> <span class="keyword">or</span> one_matrix[<span class="number">1</span>] &lt; <span class="number">2</span>):  <span class="comment"># 筛选没可能是楼层的元素</span></div><div class="line">                <span class="keyword">continue</span></div><div class="line"></div><div class="line">            <span class="comment"># 存储没有进行相似度计算的矩阵和标签</span></div><div class="line">            matrix_pack.append(one_matrix)</div><div class="line">            tag_pack.append(child)</div><div class="line">        <span class="comment"># 选择标准值矩阵</span></div><div class="line">        standar_matrix = StandardMatrix(tag_pack, matrix_pack) </div><div class="line">        print(standar_matrix)</div><div class="line">        <span class="keyword">if</span>(standar_matrix != <span class="keyword">None</span>):</div><div class="line">            i = <span class="number">0</span></div><div class="line">            <span class="keyword">for</span> new_one_matrix <span class="keyword">in</span> matrix_pack:</div><div class="line">                Cos_key = CosSimilarity(new_one_matrix, standar_matrix)</div><div class="line">                <span class="keyword">if</span>(Cos_key &gt; <span class="number">0.90</span>):</div><div class="line">                    print(new_one_matrix)</div><div class="line">                    print(Cos_</div><div class="line">                    	key)</div><div class="line">                    print(i)</div><div class="line">                    new_tag_pack.append(tag_pack[i])</div><div class="line">                    new_matrix_pack.append(matrix_pack[i])</div><div class="line">                i = i + <span class="number">1</span></div><div class="line"></div><div class="line">        similar_tag = len(new_tag_pack)</div><div class="line">        print(similar_tag)</div><div class="line">        <span class="keyword">if</span>(similar_tag &gt; standard_value + <span class="number">2</span> <span class="keyword">or</span> similar_tag &lt; standard_value - <span class="number">2</span>):</div><div class="line">            <span class="keyword">del</span>(matrix_pack)</div><div class="line">            <span class="keyword">del</span>(tag_pack)</div><div class="line">            <span class="keyword">del</span>(new_tag_pack)</div><div class="line">            <span class="keyword">del</span>(new_matrix_pack)</div><div class="line">    tag_path = []</div><div class="line">    <span class="keyword">for</span> tag <span class="keyword">in</span> new_tag_pack:</div><div class="line">        tag_path.append(t.getpath(tag))</div><div class="line">    <span class="keyword">return</span> tag_path</div></pre></td></tr></table></figure>
 
                 
 <p class="pink-link-context">
     <a href="/2017/04/26/hello-world/" rel="next" title="Hello World">
-    Prev: Hello World
+    上一篇：Hello World
   </a>
 </p>
 
@@ -271,7 +339,7 @@
       <i class="fa fa-caret-square-o-up"></i>
     </a>
     <ul>
-      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
       <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
     </ul>
   </div>
@@ -283,7 +351,7 @@
         <div class="row">
             
             <div class="social-group col m4 s12">
-                <h5 class="white-text">Social</h5>
+                <h5 class="white-text">社交</h5>
                 
                     <a class="social-link" href="http://weibo.com/1956184117" target="_blank">
                         <i class="fa fa-2x fa-weibo"></i>
@@ -313,7 +381,7 @@
 
             
             <div class="col m8 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">友情链接</h5>
                 
                     <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism主题作者的技术博客</a>
                 
@@ -328,7 +396,7 @@
     <div class="footer-copyright pink-link-context">
         <div class="container">
             © 2017 yeah-kun.com, All rights reserved.
-            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
         </div>
     </div>
 </footer>
