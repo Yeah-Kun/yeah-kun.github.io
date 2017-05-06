@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 
     
-        <link rel="stylesheet" href="/css/lib/github.css" type="text/css">
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-eighties.css" type="text/css">
     
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -219,7 +219,7 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2017-04-27T23:30:46.000Z"><a href="/2017/04/27/my-first-blog/">2017-04-27</a></time>
+            <time class="pink-link-context" datetime="2017-04-27T08:30:46.000Z"><a href="/2017/04/27/my-first-blog/">2017-04-27</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -249,7 +249,7 @@
 <p>经过对BBS论坛源代码的研究，我们发现主题帖跟回帖都在同一个标签之下（div），并且他们都是此div的子节点，同时，我们还知道，帖与帖之间部分标签数量相差不大。由此，我们可以把主题帖和回帖看成一个个楼层，把帖子的标签作为楼层的特征，进而识别出楼层，并将其绝对路径找出来。</p>
 </blockquote>
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
-<p>将网页源代码转换为DOM树，使用层序遍历SOM树，通过余弦相似度识别相似楼层，根据统计出来的楼层数，与识别出来的楼层数进行比较进而得出正确楼层，输出楼层位置。</p>
+<p>将网页源代码转换为DOM树，使用层序遍历DOM树，通过余弦相似度识别相似楼层，根据统计出来的楼层数，与识别出来的楼层数进行比较进而得出正确楼层，输出楼层位置。</p>
 </blockquote>
 <h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><ul>
 <li>软件和开发环境：sublime text3、python-Anaconda、Win10系统</li>
@@ -272,8 +272,11 @@
 </blockquote>
 <h4 id="1-2-初始化存储容器"><a href="#1-2-初始化存储容器" class="headerlink" title="1.2 初始化存储容器"></a>1.2 初始化存储容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">similar_tag = <span class="number">0</span>  <span class="comment"># 用于计算有多少个相似的儿子对象</span></div><div class="line">matrix_pack = []  <span class="comment"># 矩阵容器，用于存放未进行相似度计算的矩阵</span></div><div class="line">tag_pack = []  <span class="comment"># 标签容器，用于存放未进行相似度计算的标签</span></div><div class="line">one_path = []  <span class="comment"># 用于临时存放某节点的绝对路径</span></div><div class="line">new_matrix_pack = []  <span class="comment"># 矩阵容器，用于存放已经进行相似度计算的矩阵</span></div><div class="line">new_tag_pack = []  <span class="comment"># 标签容器，用于存放相似度高的标签</span></div><div class="line">test = []  <span class="comment"># 观察数据进度</span></div></pre></td></tr></table></figure>
 <h3 id="2-层序遍历DOM树"><a href="#2-层序遍历DOM树" class="headerlink" title="2.层序遍历DOM树"></a>2.层序遍历DOM树</h3><blockquote>
-<p>DOM树是一种普通的树结构，层序遍历是寻找楼层结构最快的方法，我们要寻找的网页正文和楼层结构基本都在body节点之下，用层序遍历，是最快找到楼层标签的方法。<br><img src="http://a1.qpic.cn/psb?/V12Ltkru1ADJ5N/bXdJ7iXARi0jJGdGxKNj12Ik9ns518SVVz9846x111Y!/b/dGsBAAAAAAAA&amp;bo=bAIhAQAAAAARB34!&amp;rf=viewer_4" alt="DOM树"></p>
-<h4 id="2-1-构造队列"><a href="#2-1-构造队列" class="headerlink" title="2.1 构造队列"></a>2.1 构造队列</h4><p>数据结构知识，使用队列保存每层节点的信息，先进先出层序遍历树的每一个节点。</p>
+<p>DOM树是一种普通的树结构，层序遍历是寻找楼层结构最快的方法，我们要寻找的网页正文和楼层结构基本都在body节点之下，用层序遍历，是最快找到楼层标签的方法。</p>
+</blockquote>
+<p><img src="http://a1.qpic.cn/psb?/V12Ltkru1ADJ5N/bXdJ7iXARi0jJGdGxKNj12Ik9ns518SVVz9846x111Y!/b/dGsBAAAAAAAA&amp;bo=bAIhAQAAAAARB34!&amp;rf=viewer_4" alt="DOM树"></p>
+<h4 id="2-1-构造队列"><a href="#2-1-构造队列" class="headerlink" title="2.1 构造队列"></a>2.1 构造队列</h4><blockquote>
+<p>数据结构知识，使用队列保存每层节点的信息，先进先出层序遍历树的每一个节点。</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 构造队列，用于树的层序遍历</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.items = []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.items == []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self, item)</span>:</span></div><div class="line">        self.items.insert(<span class="number">0</span>, item)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.items.pop()</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> len(self.items)</div></pre></td></tr></table></figure>
 <h4 id="2-2-遍历DOM树"><a href="#2-2-遍历DOM树" class="headerlink" title="2.2 遍历DOM树"></a>2.2 遍历DOM树</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(similar_tag &gt; standard_value + <span class="number">2</span> <span class="keyword">or</span> similar_tag &lt; standard_value - <span class="number">2</span>):</div><div class="line"></div><div class="line">    similar_tag = <span class="number">0</span>  <span class="comment"># 相似节点数初始化</span></div><div class="line">    <span class="keyword">if</span> (save_children_tag.isEmpty()):</div><div class="line">    	print(<span class="string">"栈为空"</span>)</div><div class="line">        <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        root = save_children_tag.dequeue()  <span class="comment"># 队列弹栈</span></div><div class="line"></div><div class="line">    <span class="comment"># 父节点遍历</span></div><div class="line">    <span class="keyword">for</span> child <span class="keyword">in</span> root:</div><div class="line">        save_children_tag.enqueue(child)</div></pre></td></tr></table></figure>
@@ -326,7 +329,7 @@
 
 
 <p class="pink-link-context">
-    <a href="/2017/04/28/hello-world/" rel="next" title="Hello World">
+    <a href="/2017/04/29/hello-world/" rel="next" title="Hello World">
     下一篇：Hello World
   </a>
 </p>

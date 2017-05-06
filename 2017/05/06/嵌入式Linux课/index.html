@@ -1,0 +1,861 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>嵌入式Linux课 | Yeah Kun blog</title>
+    <meta name="author" content="Yeah Kun">
+    
+    <meta name="description" content="背景
+最近上了一门课：嵌入式Linux，由一家校外培训机构授课，他们追求的就是学完能立刻找到工作，因此，在课程的设置上非常紧凑，课程强度也比咱们平时上课要高不少，因此收获也很大。
+
+思考
+这门课的知识量很大，但不系统，知识碎片很多，需要用到很多不同领域的知识点，不过这门课课后不需要太多思考，不像微机">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="嵌入式Linux课"/>
+    <meta property="og:site_name" content="Yeah Kun"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="Yeah Kun" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="light-blue accent-4">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">Yeah Kun</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav light-blue accent-4" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="http://a2.qpic.cn/psb?/V12Ltkru1ADJ5N/Jlssko4NIkOZ1gPw5*HPgUx0vSPz2P*3oTkE3K3XnXU!/b/dGkBAAAAAAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=TgJOAgAAAAARFyA!&amp;tm=1493298000&amp;sce=60-3-3&amp;rf=viewer_4" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">叶坤</p>
+                        <p class="desc">python/机器学习/心智成长</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav light-blue accent-4" id="category-menu">
+    
+
+            
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper light-blue accent-4">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>嵌入式Linux课</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2017-05-06T15:12:54.000Z"><a href="/2017/05/06/嵌入式Linux课/">2017-05-06</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/嵌入式/" class="chip pink lighten-1">嵌入式</a>
+        
+            <a href="/tags/Linux/" class="chip pink lighten-1">Linux</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#背景"><span class="section table-of-contents-text">背景</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#思考"><span class="section table-of-contents-text">思考</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#内容"><span class="section table-of-contents-text">内容</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#效果图"><span class="section table-of-contents-text">效果图</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-Linux系统基本操作"><span class="section table-of-contents-text">1. Linux系统基本操作</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-1-常用指令"><span class="section table-of-contents-text">1.1 常用指令</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-2-编译运行程序"><span class="section table-of-contents-text">1.2 编译运行程序</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-2-1-编译"><span class="section table-of-contents-text">1.2.1 编译</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-2-2-运行"><span class="section table-of-contents-text">1.2.2 运行</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-3-文件下载到开发板"><span class="section table-of-contents-text">1.3 文件下载到开发板</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-3-1-安装secureCRT"><span class="section table-of-contents-text">1.3.1 安装secureCRT</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-3-2-配置secureCRT"><span class="section table-of-contents-text">1.3.2 配置secureCRT</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-3-3-使用wmware-tools共享方式"><span class="section table-of-contents-text">1.3.3 使用wmware tools共享方式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-3-4-使用串口下载命令下载"><span class="section table-of-contents-text">1.3.4 使用串口下载命令下载</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-显示bmp图片"><span class="section table-of-contents-text">2. 显示bmp图片</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-1-常见的图片格式"><span class="section table-of-contents-text">2.1 常见的图片格式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-2-了解文件操作相关的接口函数"><span class="section table-of-contents-text">2.2 了解文件操作相关的接口函数</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-2-1-文件打开函数open（）"><span class="section table-of-contents-text">2.2.1 文件打开函数open（）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-2-2文件读取read（）"><span class="section table-of-contents-text">2.2.2文件读取read（）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-2-3-文件的关闭close（）"><span class="section table-of-contents-text">2.2.3 文件的关闭close（）</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-3-图片显示处理"><span class="section table-of-contents-text">2.3 图片显示处理</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-3-1-设置文件的读写位置lseek"><span class="section table-of-contents-text">2.3.1 设置文件的读写位置lseek()</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-4-任意位置显示任意大小bmp图片"><span class="section table-of-contents-text">2.4 任意位置显示任意大小bmp图片</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-4-1-内存映射图示"><span class="section table-of-contents-text">2.4.1 内存映射图示</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-4-2-内存映射函数"><span class="section table-of-contents-text">2.4.2 内存映射函数</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-4-3-mmap函数的具体使用图示"><span class="section table-of-contents-text">2.4.3 mmap函数的具体使用图示</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-5-课外知识点"><span class="section table-of-contents-text">2.5 课外知识点</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-5-1-使用u盘挂载到开发板"><span class="section table-of-contents-text">2.5.1 使用u盘挂载到开发板</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-wifi编程"><span class="section table-of-contents-text">3. wifi编程</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-1-使用usbwifi"><span class="section table-of-contents-text">3.1 使用usbwifi</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#3-1-1-修改wifi的SSID"><span class="section table-of-contents-text">3.1.1 修改wifi的SSID</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-2-将复杂的源代码分块"><span class="section table-of-contents-text">3.2 将复杂的源代码分块</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-6"><a class="section table-of-contents-link" href="#注意："><span class="section table-of-contents-text">注意：</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-3-课外知识点"><span class="section table-of-contents-text">3.3 课外知识点</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#3-3-1-交叉工具链的安装"><span class="section table-of-contents-text">3.3.1 交叉工具链的安装</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#3-3-2-烧写操作系统"><span class="section table-of-contents-text">3.3.2 烧写操作系统</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-6"><a class="section table-of-contents-link" href="#解释"><span class="section table-of-contents-text">解释</span></a></li><li class="section table-of-contents-item section table-of-contents-level-6"><a class="section table-of-contents-link" href="#步骤"><span class="section table-of-contents-text">步骤</span></a></li></ol></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-触摸屏编程"><span class="section table-of-contents-text">4. 触摸屏编程</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-1-准备需要用到移植好的触摸屏库文件"><span class="section table-of-contents-text">4.1 准备需要用到移植好的触摸屏库文件</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-2-操作触摸屏"><span class="section table-of-contents-text">4.2 操作触摸屏</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-2-1-打开触摸屏"><span class="section table-of-contents-text">4.2.1 打开触摸屏</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-2-2-配置触摸屏"><span class="section table-of-contents-text">4.2.2 配置触摸屏</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-2-3-读取触摸屏反馈的x，y坐标"><span class="section table-of-contents-text">4.2.3 读取触摸屏反馈的x，y坐标</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-2-4-关闭触摸屏"><span class="section table-of-contents-text">4.2.4 关闭触摸屏</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-3-编译程序"><span class="section table-of-contents-text">4.3 编译程序</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-4-测试触摸屏"><span class="section table-of-contents-text">4.4 测试触摸屏</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-5-课外知识点"><span class="section table-of-contents-text">4.5 课外知识点</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-5-1-makefile（自动化编译）"><span class="section table-of-contents-text">4.5.1 makefile（自动化编译）</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-MP3音频播放"><span class="section table-of-contents-text">5. MP3音频播放</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#5-1-在终端使用命令来播放"><span class="section table-of-contents-text">5.1 在终端使用命令来播放</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-摄像头编程"><span class="section table-of-contents-text">6. 摄像头编程</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#6-1-步骤"><span class="section table-of-contents-text">6.1 步骤</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-1-初始化摄像头"><span class="section table-of-contents-text">6.1.1 初始化摄像头</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-2-启动摄像头捕捉"><span class="section table-of-contents-text">6.1.2 启动摄像头捕捉</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-3-获取画面数据"><span class="section table-of-contents-text">6.1.3 获取画面数据</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-4-将摄像头jpg画面在液晶屏上显示出来"><span class="section table-of-contents-text">6.1.4 将摄像头jpg画面在液晶屏上显示出来</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-5-编译摄像头程序"><span class="section table-of-contents-text">6.1.5 编译摄像头程序</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#6-2-新建、保存摄像头拍摄的画面"><span class="section table-of-contents-text">6.2 新建、保存摄像头拍摄的画面</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-视频播放"><span class="section table-of-contents-text">7. 视频播放</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#7-1-将开发板中的图片转换成视频"><span class="section table-of-contents-text">7.1 将开发板中的图片转换成视频</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#7-1-1-使用ffmpeg的步骤"><span class="section table-of-contents-text">7.1.1 使用ffmpeg的步骤</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#7-1-2-通过ffmpeg将图片转换为-avi文件"><span class="section table-of-contents-text">7.1.2 通过ffmpeg将图片转换为.avi文件</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#7-2-使用mplayer播放开发板中的视频"><span class="section table-of-contents-text">7.2 使用mplayer播放开发板中的视频</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#7-3-在代码中播放视频"><span class="section table-of-contents-text">7.3 在代码中播放视频</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#源代码"><span class="section table-of-contents-text">源代码</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+<p>最近上了一门课：嵌入式Linux，由一家校外培训机构授课，他们追求的就是学完能立刻找到工作，因此，在课程的设置上非常紧凑，课程强度也比咱们平时上课要高不少，因此收获也很大。</p>
+</blockquote>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><blockquote>
+<p>这门课的知识量很大，但不系统，知识碎片很多，需要用到很多不同领域的知识点，不过这门课课后不需要太多思考，不像微机、数据结构，在课后还需要花大量时间进行学习，到底为什么会出现这种情况呢？是因为老师教的太好？还是课程内容缺乏深度不需要思考？</p>
+</blockquote>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>Linux系统基本操作</li>
+<li>图片的显示与编解码</li>
+<li>wifi 编程</li>
+<li>触摸屏编</li>
+<li>音频播放</li>
+<li>摄像头编程</li>
+<li>视频播放</li>
+</ul>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/AA3R*Vn32PQra4WhF2xwADzZZFUBQA3hAKF9sGf2YH0!/b/dGoBAAAAAAAA&amp;bo=gALTAgAAAAARAGQ!&amp;rf=viewer_4" alt="效果图"></p>
+<h3 id="1-Linux系统基本操作"><a href="#1-Linux系统基本操作" class="headerlink" title="1. Linux系统基本操作"></a>1. Linux系统基本操作</h3><blockquote>
+<p>为什么要用Linux而不使用Windows或者os系统？个人认为原因有两个，其一因为Linux源码开源，我们可以直接使用Linux源码进行修改和扩展，而Windows和os系统不开源，无法针对它们进行优化和修改，其二是因为Linux系统可以做的足够小，一般的嵌入式系统由于受到成本的限制，配置都很低，没办法运行一个庞大的系统，有的嵌入式硬件甚至不带系统，只是运行单个程序，比如我们在街上看到的广告牌。</p>
+</blockquote>
+<h4 id="1-1-常用指令"><a href="#1-1-常用指令" class="headerlink" title="1.1 常用指令"></a>1.1 常用指令</h4><blockquote>
+<p>基本上用以下几条指令就能学完这个课程</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">A:打开linux的命令终端  ctrl+alt+t</div><div class="line">B:新建或者打开文件</div><div class="line">    gedit 文件的名字  跟记事本类似</div><div class="line">    vim</div><div class="line">C:打印当前路径下的内容</div><div class="line">    ls </div><div class="line">    ls <span class="_">-l</span>  以列表的形式打印当前路径下的内容</div><div class="line">        drwxr-xr-x    首字符d 表示是目录</div><div class="line">                      首字符- 表示是普通文件</div><div class="line">D:拷贝文件</div><div class="line">    cp 文件名  目标路径</div><div class="line">    cp 文件名  新的文件</div><div class="line">    cp 目录名  目标路径   -rf（r表示递归，f表示强制）</div><div class="line">E:进入目录，打开目录</div><div class="line">    <span class="built_in">cd</span>  目录名</div><div class="line">F:清屏</div><div class="line">    clear</div><div class="line">G:新建目录</div><div class="line">    mkdir  目录名</div><div class="line">H:查看ubuntu的ip地址</div><div class="line">    ifconfig</div><div class="line">I:打包和解压</div><div class="line">    bz2结尾</div><div class="line">        打包：  tar -jcf  xxx.tar.bz2   文件名1  文件名2  .......</div><div class="line">        解压：  tar -jxf  xxx.tar.bz2</div><div class="line">    gz结尾</div><div class="line">        打包：   tar -zcf  xxx.tar.gz   文件名1  文件名2  .......</div><div class="line">        解压：   tar -zxf  xxx.tar.gz</div><div class="line">J:查看linux中的帮助手册</div><div class="line">    man  man</div><div class="line">    输入q退出帮助手册</div><div class="line">    1   Executable programs or shell commands    // shell命令</div><div class="line">    2   System calls (<span class="built_in">functions</span> provided by the kernel)  //linux内核提供的函数</div><div class="line">    3   Library   calls   (<span class="built_in">functions</span>   within    program</div><div class="line">           libraries)  // c语言库函数 <span class="built_in">printf</span>  scanf  strcpy</div><div class="line">    4   Special files (usually found <span class="keyword">in</span> /dev)</div><div class="line">    5   File formats and conventions eg /etc/passwd</div><div class="line">    6   Games</div><div class="line">    7   Miscellaneous (including macro packages and con‐</div><div class="line">           ventions), e.g. man(7), groff(7)</div><div class="line">    8   System administration commands (usually only <span class="keyword">for</span></div><div class="line">           root)</div><div class="line">    9   Kernel routines [Non standard]</div></pre></td></tr></table></figure>
+<h4 id="1-2-编译运行程序"><a href="#1-2-编译运行程序" class="headerlink" title="1.2 编译运行程序"></a>1.2 编译运行程序</h4><blockquote>
+<p>之前提到过，由于嵌入式硬件的配置很低，因此在硬件上面直接编译不是一个高效的选择，所以我们需要先在高配置的电脑（自己的电脑）编译好源文件，再在嵌入式系统里面运行。</p>
+</blockquote>
+<h5 id="1-2-1-编译"><a href="#1-2-1-编译" class="headerlink" title="1.2.1 编译"></a>1.2.1 编译</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gcc hello.c  -o hello    适合在x86平台上运行</div><div class="line">    gcc 编译器的名字</div><div class="line">    -o  输出</div><div class="line">arm-linux-gcc hello.c -o hello_arm    适合在ARM架构的cpu上运行</div><div class="line">    arm-linux-gcc  交叉工具链---》交叉编译</div></pre></td></tr></table></figure>
+<h5 id="1-2-2-运行"><a href="#1-2-2-运行" class="headerlink" title="1.2.2 运行"></a>1.2.2 运行</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./程序名   </div><div class="line">./hello</div></pre></td></tr></table></figure>
+<h4 id="1-3-文件下载到开发板"><a href="#1-3-文件下载到开发板" class="headerlink" title="1.3 文件下载到开发板"></a>1.3 文件下载到开发板</h4><h5 id="1-3-1-安装secureCRT"><a href="#1-3-1-安装secureCRT" class="headerlink" title="1.3.1 安装secureCRT"></a>1.3.1 安装secureCRT</h5><blockquote>
+<p>这个软件用于将文件下载到开发板中，一般用于较小的文件，较大的文件可以通过其他wifi或者U盘下载到开发板，这个软件有一个好处，就是操作简单，不像wifi或U盘这么复杂。</p>
+</blockquote>
+<h5 id="1-3-2-配置secureCRT"><a href="#1-3-2-配置secureCRT" class="headerlink" title="1.3.2 配置secureCRT"></a>1.3.2 配置secureCRT</h5><ul>
+<li>协议：serial</li>
+<li>端口：端口一（如果你使用usb转串口，那么需要安装完驱动之后去设备管理器查看究竟是端口几）</li>
+<li>波特率：115000<br>  右边的勾全部取消(注意勾不取消，键盘无法输入)<br>  点击连接，并启动开发板</li>
+</ul>
+<h5 id="1-3-3-使用wmware-tools共享方式"><a href="#1-3-3-使用wmware-tools共享方式" class="headerlink" title="1.3.3 使用wmware tools共享方式"></a>1.3.3 使用wmware tools共享方式</h5><ol>
+<li>在windows环境下新建一个空白文件夹作为共享文件夹</li>
+<li>点击虚拟机—》设置—》选项—》选择共享文件夹—》总是启用—》点击添加去寻找你之前设置好的文件夹—》确认保存退出</li>
+<li>进入共享： cd  /mnt/hgfs/xxxx   （xxxx是你给共享文件夹取的名字）</li>
+</ol>
+<h5 id="1-3-4-使用串口下载命令下载"><a href="#1-3-4-使用串口下载命令下载" class="headerlink" title="1.3.4 使用串口下载命令下载"></a>1.3.4 使用串口下载命令下载</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rz回车 ---》自动弹出对话框---》手动去寻找你要下载的文件---》双击自动下载    （不能够覆盖同名文件）</div><div class="line">rx  文件名  回车---》点击传输---》选择发送xmodem---》会自动弹出对话框---》你手动去寻找要下载的文件---》双击自动下载 （能够覆盖同名文件）</div></pre></td></tr></table></figure>
+<h3 id="2-显示bmp图片"><a href="#2-显示bmp图片" class="headerlink" title="2. 显示bmp图片"></a>2. 显示bmp图片</h3><h4 id="2-1-常见的图片格式"><a href="#2-1-常见的图片格式" class="headerlink" title="2.1 常见的图片格式"></a>2.1 常见的图片格式</h4><table>
+<thead>
+<tr>
+<th>图片格式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bmp</td>
+<td>也被称为位图，它的每个像素点颜色值占3个字节，分别存放RGB（三原色）的数值，但是LCD上每个像素点颜色占4个字节，多出来的一个字节用于存放图片的透明度信息（A）,换句话来说，LCD上的4个字节分别是ARGB</td>
+</tr>
+<tr>
+<td>jpg</td>
+<td>经过特定的算法压缩过</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-2-了解文件操作相关的接口函数"><a href="#2-2-了解文件操作相关的接口函数" class="headerlink" title="2.2 了解文件操作相关的接口函数"></a>2.2 了解文件操作相关的接口函数</h4><h5 id="2-2-1-文件打开函数open（）"><a href="#2-2-1-文件打开函数open（）" class="headerlink" title="2.2.1 文件打开函数open（）"></a>2.2.1 文件打开函数open（）</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;  </span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *pathname, <span class="keyword">int</span> flags)</span></span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>返回值：成功返回一个文件描述符  “替身”，失败返回-1</li>
+<li>pathname：你要打开的那个文件的路径</li>
+<li>flags：O_RDONLY（只读）, O_WRONLY（只写）, or O_RDWR（可读写）.</li>
+</ul>
+<h5 id="2-2-2文件读取read（）"><a href="#2-2-2文件读取read（）" class="headerlink" title="2.2.2文件读取read（）"></a>2.2.2文件读取read（）</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ssize_t</span> read(<span class="keyword">int</span> fd, <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>ssize_t使用typedef类型重定义得到，系统在移植过程中已经写好了，具体说明：<a href="http://blog.csdn.net/gowyz/article/details/6606313" target="_blank" rel="external">size_t 与 ssize_t 类型 </a></p>
+</blockquote>
+<ul>
+<li>返回值：成功返回读取的字节数，失败返回-1</li>
+<li>fd：你要读取的那个文件的文件描述符</li>
+<li>你读取的数据就存放在这个buf指针中</li>
+<li>你打算读取多少字节的数据</li>
+</ul>
+<h5 id="2-2-3-文件的关闭close（）"><a href="#2-2-3-文件的关闭close（）" class="headerlink" title="2.2.3 文件的关闭close（）"></a>2.2.3 文件的关闭close（）</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">close</span><span class="params">(<span class="keyword">int</span> fd)</span></span>;</div></pre></td></tr></table></figure>
+<h4 id="2-3-图片显示处理"><a href="#2-3-图片显示处理" class="headerlink" title="2.3 图片显示处理"></a>2.3 图片显示处理</h4><blockquote>
+<p>图片显示有偏移，需要再进行一步处理：理论上24位的bmp，大小应该是800<em>480</em>3=1152000字节，但是实际1152054，多出来的54字节称为图片的头信息（存放的关于图片的属性信息，比如图片的宽，高），解决方法：跳过前面54字节，从55字节开始读取。</p>
+</blockquote>
+<h5 id="2-3-1-设置文件的读写位置lseek"><a href="#2-3-1-设置文件的读写位置lseek" class="headerlink" title="2.3.1 设置文件的读写位置lseek()"></a>2.3.1 设置文件的读写位置lseek()</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="keyword">off_t</span> lseek(<span class="keyword">int</span> fildes, <span class="keyword">off_t</span> offset, <span class="keyword">int</span> whence);</div></pre></td></tr></table></figure>
+<ul>
+<li>返回值：文件当前读写位置距离文件开头的字节数</li>
+<li>fildes：你要设置文件偏移的那个文件的文件描述符</li>
+<li>offset 你打算偏移多少字节</li>
+<li>whence 你打算从哪里开始偏移(SEEK_SET起始位置，SEEK_CUR    当前位置，SEEK_END结尾)</li>
+</ul>
+<h4 id="2-4-任意位置显示任意大小bmp图片"><a href="#2-4-任意位置显示任意大小bmp图片" class="headerlink" title="2.4 任意位置显示任意大小bmp图片"></a>2.4 任意位置显示任意大小bmp图片</h4><h5 id="2-4-1-内存映射图示"><a href="#2-4-1-内存映射图示" class="headerlink" title="2.4.1 内存映射图示"></a>2.4.1 内存映射图示</h5><blockquote>
+<p>先贴一张我老师画的图，超丑，不过讲的倒是还可以，内存映射的意思就是：将硬件的地址映射到用户程序中，方便用户程序直接通过该地址去读写硬件中数据。</p>
+</blockquote>
+<p><img src="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/fWr5Vj3QosXPcINqEAv*EvLtyijwJlXN.s53TB*axcI!/b/dGoBAAAAAAAA&amp;bo=YAMcAgAAAAARAEo!&amp;rf=viewer_4" alt="内存映射"></p>
+<h5 id="2-4-2-内存映射函数"><a href="#2-4-2-内存映射函数" class="headerlink" title="2.4.2 内存映射函数"></a>2.4.2 内存映射函数</h5><ul>
+<li>mmap()</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/mman.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span>  *<span class="title">mmap</span><span class="params">(<span class="keyword">void</span>  *addr,  <span class="keyword">size_t</span>  len, <span class="keyword">int</span> prot, <span class="keyword">int</span> flags,<span class="keyword">int</span> fildes, <span class="keyword">off_t</span> off)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>返回值：成功返回映射的内存地址首地址，失败返回NULL</li>
+<li>addr：一般设置NULL，表示由操作系统自动分配一块内存</li>
+<li>len：你打算映射多大字节的内存空间</li>
+<li><p>prot：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">PROT_READ       Data can be read.</div><div class="line">PROT_WRITE      Data can be written.</div><div class="line">PROT_EXEC       Data can be executed.</div></pre></td></tr></table></figure>
+</li>
+<li><p>flags：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">MAP_SHARED      Changes are shared.映射的那块区域可以被共享</div><div class="line">MAP_PRIVATE     Changes are <span class="keyword">private</span>. 不可以被共享</div></pre></td></tr></table></figure>
+</li>
+<li><p>fildes：你要映射的那个硬件设备的文件描述符</p>
+</li>
+<li>off：一般填0</li>
+</ul>
+<h5 id="2-4-3-mmap函数的具体使用图示"><a href="#2-4-3-mmap函数的具体使用图示" class="headerlink" title="2.4.3 mmap函数的具体使用图示"></a>2.4.3 mmap函数的具体使用图示</h5><p><img src="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/eaum27KAXTOEkLgL.QFc94SMixngvc0cyelzFRV5GdA!/b/dGoBAAAAAAAA&amp;bo=YAMcAgAAAAARAEo!&amp;rf=viewer_4" alt="mmap函数的具体使用图示"></p>
+<h4 id="2-5-课外知识点"><a href="#2-5-课外知识点" class="headerlink" title="2.5 课外知识点"></a>2.5 课外知识点</h4><h5 id="2-5-1-使用u盘挂载到开发板"><a href="#2-5-1-使用u盘挂载到开发板" class="headerlink" title="2.5.1 使用u盘挂载到开发板"></a>2.5.1 使用u盘挂载到开发板</h5><blockquote>
+<p>之前提到过，使用串口通信的方式可以把文件传输到开发板，但是那种方式太慢了，虽然经过加压可以加快速度，但速度依然有限，于是乎就出现了U盘挂载的方法，这种方法可以快速的传输数据，唯一的问题就是比串口传输的方法麻烦一点，下面，我就来介绍介绍这种方法。</p>
+</blockquote>
+<p>步骤：</p>
+<ol>
+<li>将u盘插到开发板的usb口，开发板会自动识别并分配一个名字给你的u盘（一般为sda1）</li>
+<li><p>使用mount命令挂载u盘</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mount  /dev/xxx   /yyyy</div><div class="line"><span class="comment">#xxx ---》你刚才眼睛看到u盘的名字</span></div><div class="line"><span class="comment">#yyy ---》提前在根目录下面新建的一个空白文件夹的名字，我想将u盘挂载到我精心准备的那个空白文件夹下面</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>删除u盘</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">umount  /yyyy</div></pre></td></tr></table></figure>
+<h3 id="3-wifi编程"><a href="#3-wifi编程" class="headerlink" title="3. wifi编程"></a>3. wifi编程</h3><h4 id="3-1-使用usbwifi"><a href="#3-1-使用usbwifi" class="headerlink" title="3.1 使用usbwifi"></a>3.1 使用usbwifi</h4><h5 id="3-1-1-修改wifi的SSID"><a href="#3-1-1-修改wifi的SSID" class="headerlink" title="3.1.1 修改wifi的SSID"></a>3.1.1 修改wifi的SSID</h5><ol>
+<li>修改wifi的SSID</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /etc/Wireless/RT2870AP/RT2870AP.dat</div><div class="line"><span class="comment">#修改SSID=你取的新名字</span></div></pre></td></tr></table></figure>
+<ol>
+<li><p>修改密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /etc/Wireless/RT2870AP/RT2870AP.dat</div><div class="line"><span class="comment">#修改WPAPSK=你的新密码</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>绑定MAC地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /usr/Bind_addr</div><div class="line"><span class="comment">#将你认为合法的手机MAC地址填入到该文件中（目前支持绑定一个）</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="3-2-将复杂的源代码分块"><a href="#3-2-将复杂的源代码分块" class="headerlink" title="3.2 将复杂的源代码分块"></a>3.2 将复杂的源代码分块</h4><blockquote>
+<p>由于代码量的增加，在一个.c文件里写完所有几乎是不可能的事情，而且不利于多个成员编程，分块对于编程效率的提高有很大帮助，尤其方便优化调试。不同代码的分块方式有所不同，下面就来说一说如何将C语言代码分块。</p>
+</blockquote>
+<p>步骤：</p>
+<ol>
+<li>创建一个头文件，里面写好收集好的定义，这个名字我建议用defines.h</li>
+<li>把原来文件按功能或一定类别分开，写入各个.c文件中，记得用名字区分</li>
+<li>各个.c文件的开始都加上： #include “你给头文件起的名字如aaa.h”</li>
+<li>编译，可能会有函数未声明的警告或变量未声明的错误，在头文件里加上就可以了</li>
+</ol>
+<h6 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h6><p>为了避免头文件被重复引用，需要对除了main函数所在.c文件的头文件引用做一些特殊处理，具体内容：<a href="http://blog.csdn.net/abc5382334/article/details/18052757" target="_blank" rel="external">#ifndef/#define/#endif使用详解</a></p>
+<blockquote>
+<p>有个不规范，但更简单的方法，就是把分块好的.c文件放在同一个目录（文件夹）之下，它在编译的时候，会首先找本目录下的文件，如果找不到，再找C语言库里面的.h文件。（这也是python的编译顺序，估计其他语言也差不多）</p>
+</blockquote>
+<h4 id="3-3-课外知识点"><a href="#3-3-课外知识点" class="headerlink" title="3.3 课外知识点"></a>3.3 课外知识点</h4><h5 id="3-3-1-交叉工具链的安装"><a href="#3-3-1-交叉工具链的安装" class="headerlink" title="3.3.1 交叉工具链的安装"></a>3.3.1 交叉工具链的安装</h5><ol>
+<li>将工具链的源码包拷贝到纯粹的linux环境中，比如家目录</li>
+<li>解压源码包</li>
+<li>配置环境变量<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=/home/gec/arm-2009q3/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="3-3-2-烧写操作系统"><a href="#3-3-2-烧写操作系统" class="headerlink" title="3.3.2 烧写操作系统"></a>3.3.2 烧写操作系统</h5><h6 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h6><blockquote>
+<p>开发板上操作系统分为三个部分：uboot   kernel   rootfs  系统移植</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uboot</td>
+<td>BIOS  硬件的初始化  cpu的初始化  内存的初始化  源码用C语言+汇编</td>
+</tr>
+<tr>
+<td>kernel</td>
+<td>进程管理，内存管理</td>
+</tr>
+<tr>
+<td>rootfs</td>
+<td>文件的管理</td>
+</tr>
+</tbody>
+</table>
+<h6 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h6><ol>
+<li><p>用网线将电脑跟开发板直接连接（最好将笔记本的防火墙关闭），配置好电脑的IP跟开发板的ip</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">开发板ip配置：</div><div class="line">ifconfig eth0  正确的ip</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开tftpboot这个软件，点击browse，选择uboot，kernel，rootfs所在的文件夹</p>
+</li>
+<li>重启开发板，倒数三秒之前按下任意键，选择e进入uboot的命令行，参考烧写步骤：<br><img src="http://a1.qpic.cn/psb?/V12Ltkru1ADJ5N/xLRsbdE0buxO0DtQoCRS2ZKKMVeRPlgVIc6jXgfBCCE!/b/dGsBAAAAAAAA&amp;bo=ggPKAQAAAAADB2g!&amp;rf=viewer_4" alt="烧写步骤"></li>
+</ol>
+<h3 id="4-触摸屏编程"><a href="#4-触摸屏编程" class="headerlink" title="4. 触摸屏编程"></a>4. 触摸屏编程</h3><h4 id="4-1-准备需要用到移植好的触摸屏库文件"><a href="#4-1-准备需要用到移植好的触摸屏库文件" class="headerlink" title="4.1 准备需要用到移植好的触摸屏库文件"></a>4.1 准备需要用到移植好的触摸屏库文件</h4><ul>
+<li>移植：通过配置文件，然后使用特定的编译工具将别人在网上发布的源码编译生成目标平台的库文件，头文件，可执行程序</li>
+<li>库文件：函数的源码用编译工具编译成二进制文件(正常情况下无法查看函数的源码)<ul>
+<li>静态库文件：.a结尾的文件</li>
+<li>动态库文件：.so结尾的文件 </li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2-操作触摸屏"><a href="#4-2-操作触摸屏" class="headerlink" title="4.2 操作触摸屏"></a>4.2 操作触摸屏</h4><h5 id="4-2-1-打开触摸屏"><a href="#4-2-1-打开触摸屏" class="headerlink" title="4.2.1 打开触摸屏"></a>4.2.1 打开触摸屏</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function">struct tsdev *<span class="title">ts_open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *dev_name, <span class="keyword">int</span> nonblock)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>返回值(struct tsdev*)：指向你打开的那个触摸屏设备的指针，它里面存放了触摸屏的参数信息(例如：触摸屏的文件描述符)</li>
+<li>dev_name：触摸屏的驱动路径 /dev/event0</li>
+<li>nonblock：设置0  阻塞(卡住)，设置  1  非阻塞<blockquote>
+<p>什么是阻塞？这是个好问题，这不仅仅在这个函数里面出现，也不仅仅在C语言的函数里面出现，所以大家可以详细去看看<a href="http://www.cnblogs.com/orez88/articles/2513460.html" target="_blank" rel="external">阻塞和非阻塞的区别</a>，然后再百度看看其他的blog，感觉这个blog说的也还不够全面。</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="4-2-2-配置触摸屏"><a href="#4-2-2-配置触摸屏" class="headerlink" title="4.2.2 配置触摸屏"></a>4.2.2 配置触摸屏</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ts_config</span><span class="params">(struct tsdev *)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>struct tsdev：<strong>ts_open</strong>的返回值作为实参传递进来</li>
+</ul>
+<h5 id="4-2-3-读取触摸屏反馈的x，y坐标"><a href="#4-2-3-读取触摸屏反馈的x，y坐标" class="headerlink" title="4.2.3 读取触摸屏反馈的x，y坐标"></a>4.2.3 读取触摸屏反馈的x，y坐标</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ts_read</span><span class="params">(struct tsdev *, struct ts_sample *, <span class="keyword">int</span>=<span class="number">1</span>)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>struct ts_sample *  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//保存你点击的区域的坐标和压力值</span></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ts_sample</span> </span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span>		x;  <span class="comment">//x坐标</span></div><div class="line"><span class="keyword">int</span>		y;</div><div class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span>	pressure; <span class="comment">//压力值  手松开  压力 0  按下去压力 &gt;0	</span></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">timeval</span>	<span class="title">tv</span>;</span> <span class="comment">// 时间</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="4-2-4-关闭触摸屏"><a href="#4-2-4-关闭触摸屏" class="headerlink" title="4.2.4 关闭触摸屏"></a>4.2.4 关闭触摸屏</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ts_close</span><span class="params">(struct tsdev *)</span></span>;</div></pre></td></tr></table></figure>
+<h4 id="4-3-编译程序"><a href="#4-3-编译程序" class="headerlink" title="4.3 编译程序"></a>4.3 编译程序</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arm-linux-gcc ts.c libts.so -o ts</div></pre></td></tr></table></figure>
+<h4 id="4-4-测试触摸屏"><a href="#4-4-测试触摸屏" class="headerlink" title="4.4 测试触摸屏"></a>4.4 测试触摸屏</h4><blockquote>
+<p>如果发现坐标很离谱（打印了负数，坐标超过范围800*480），可以去校准触摸屏</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span>  /tslib/bin  <span class="comment">#进入 cd  /tslib/bin 目录</span></div><div class="line">./ts_calibrate  <span class="comment">#屏幕左上角会出现十字叉，用手点击一下，十字叉会跳到另外的位置，继续点</span></div></pre></td></tr></table></figure>
+<h4 id="4-5-课外知识点"><a href="#4-5-课外知识点" class="headerlink" title="4.5 课外知识点"></a>4.5 课外知识点</h4><h5 id="4-5-1-makefile（自动化编译）"><a href="#4-5-1-makefile（自动化编译）" class="headerlink" title="4.5.1 makefile（自动化编译）"></a>4.5.1 makefile（自动化编译）</h5><blockquote>
+<p>每次编译都要写一大串的命令，简直是太反人类了，像我这么懒的才不想去实现呢！于是写一些脚本让它自动做这些boring的事情，岂不是很爽？</p>
+</blockquote>
+<ul>
+<li><a href="http://baike.baidu.com/link?url=DxGvhtgLOswPKyBXgeTEYF4KsFHZlLe_JVulKtKHCOvWcD2TlJV6MKUWZNBfIappQHsa8CCqfhGq1Nt12Cj4Xati6BWKV42B05YnVG8MtSG" target="_blank" rel="external">Makefile百度百科</a></li>
+<li><a href="http://blog.csdn.net/u011913612/article/details/52102241" target="_blank" rel="external">Makefile简易教程</a></li>
+<li><a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="external">Makefile全面教程</a></li>
+</ul>
+<h3 id="5-MP3音频播放"><a href="#5-MP3音频播放" class="headerlink" title="5. MP3音频播放"></a>5. MP3音频播放</h3><h4 id="5-1-在终端使用命令来播放"><a href="#5-1-在终端使用命令来播放" class="headerlink" title="5.1 在终端使用命令来播放"></a>5.1 在终端使用命令来播放</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#madplay  音乐的完整路径</span></div><div class="line">madplay  /music/1.mp3</div></pre></td></tr></table></figure>
+<h3 id="6-摄像头编程"><a href="#6-摄像头编程" class="headerlink" title="6. 摄像头编程"></a>6. 摄像头编程</h3><h4 id="6-1-步骤"><a href="#6-1-步骤" class="headerlink" title="6.1 步骤"></a>6.1 步骤</h4><h5 id="6-1-1-初始化摄像头"><a href="#6-1-1-初始化摄像头" class="headerlink" title="6.1.1 初始化摄像头"></a>6.1.1 初始化摄像头</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">linux_v4l2_device_init(<span class="keyword">const</span> <span class="keyword">char</span> *dev)</div></pre></td></tr></table></figure>
+<ul>
+<li>dev：摄像头驱动的路径（/dev/video3）</li>
+</ul>
+<h5 id="6-1-2-启动摄像头捕捉"><a href="#6-1-2-启动摄像头捕捉" class="headerlink" title="6.1.2 启动摄像头捕捉"></a>6.1.2 启动摄像头捕捉</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">linux_v4l2_start_capturing()</div></pre></td></tr></table></figure>
+<h5 id="6-1-3-获取画面数据"><a href="#6-1-3-获取画面数据" class="headerlink" title="6.1.3 获取画面数据"></a>6.1.3 获取画面数据</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">linux_v4l2_get_fream(FrameBuffer *freambuf)</div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Frame_Buffer</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">char</span> buf[<span class="number">1843200</span>];  <span class="comment">// 用来存放图片的颜色值的</span></div><div class="line">	<span class="keyword">int</span> length;   <span class="comment">//颜色值的大小</span></div><div class="line">&#125;FrameBuffer</div></pre></td></tr></table></figure>
+<h5 id="6-1-4-将摄像头jpg画面在液晶屏上显示出来"><a href="#6-1-4-将摄像头jpg画面在液晶屏上显示出来" class="headerlink" title="6.1.4 将摄像头jpg画面在液晶屏上显示出来"></a>6.1.4 将摄像头jpg画面在液晶屏上显示出来</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lcd_draw_jpg(<span class="keyword">unsigned</span> <span class="keyword">int</span> x,<span class="keyword">unsigned</span> <span class="keyword">int</span> y,<span class="keyword">const</span> <span class="keyword">char</span> *pjpg_path,<span class="keyword">char</span> *pjpg_buf,<span class="keyword">unsigned</span> <span class="keyword">int</span> jpg_buf_size,<span class="keyword">unsigned</span> <span class="keyword">int</span> jpg_half)</div></pre></td></tr></table></figure>
+<ul>
+<li>x：x坐标</li>
+<li>y：y坐标</li>
+<li>pjpg_path：你要显示jpg图片的路径</li>
+<li>pjpg_buf：你要显示的jpg图片的颜色值就存放在这个buf中</li>
+<li>jpg_buf_size：颜色值的大小</li>
+<li>jpg_half：<ul>
+<li>0：摄像头拍摄的画面640*480</li>
+<li>1：摄像头拍摄的画面320*240</li>
+</ul>
+</li>
+</ul>
+<h5 id="6-1-5-编译摄像头程序"><a href="#6-1-5-编译摄像头程序" class="headerlink" title="6.1.5 编译摄像头程序"></a>6.1.5 编译摄像头程序</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arm-linux-gcc *.c -o camera  -I./libjpeg  -L./libjpeg  -lapi_v4l2_arm  -ljpeg</div></pre></td></tr></table></figure>
+<h4 id="6-2-新建、保存摄像头拍摄的画面"><a href="#6-2-新建、保存摄像头拍摄的画面" class="headerlink" title="6.2 新建、保存摄像头拍摄的画面"></a>6.2 新建、保存摄像头拍摄的画面</h4><blockquote>
+<p>使用open函数，新建一个空白的jpg文件，然后往里面写入摄像头的颜色值</p>
+</blockquote>
+<h3 id="7-视频播放"><a href="#7-视频播放" class="headerlink" title="7. 视频播放"></a>7. 视频播放</h3><h4 id="7-1-将开发板中的图片转换成视频"><a href="#7-1-将开发板中的图片转换成视频" class="headerlink" title="7.1 将开发板中的图片转换成视频"></a>7.1 将开发板中的图片转换成视频</h4><h5 id="7-1-1-使用ffmpeg的步骤"><a href="#7-1-1-使用ffmpeg的步骤" class="headerlink" title="7.1.1 使用ffmpeg的步骤"></a>7.1.1 使用ffmpeg的步骤</h5><ol>
+<li>将ffmpeg文件夹中lib里面存放的压缩包下载到开发板中/lib</li>
+<li>将下载完毕的压缩包解压tar -zxf  libffmpeg.tar.gz</li>
+<li>将解压完毕得到的文件夹libffmpeg里面所有的文件剪切(拷贝)到/lib里面</li>
+<li>将ffmpeg文件夹中app里面存放的两个程序下载到开发板/bin </li>
+<li>下载完毕之后修改这两个程序的权限</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod  777 ffmpeg         </div><div class="line">chmod  777 ffplay</div></pre></td></tr></table></figure>
+<h5 id="7-1-2-通过ffmpeg将图片转换为-avi文件"><a href="#7-1-2-通过ffmpeg将图片转换为-avi文件" class="headerlink" title="7.1.2 通过ffmpeg将图片转换为.avi文件"></a>7.1.2 通过ffmpeg将图片转换为.avi文件</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">system(<span class="string">"ffmpeg -f image2 -i /wuyi/jpg/%d.jpg -r 25 /wuyi/jpg/video.avi\n"</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>-f：指明文件的格式</li>
+<li>-i：指明开发板上摄像头保存的图片的路径（/wuyi/jpg/%d.jpg）</li>
+<li>-r：每秒转换多少帧图片</li>
+<li>/gec/web/video/video.avi：指明转换后的视频存储在哪个位置（以上路径都应该提前创建好）</li>
+</ul>
+<h4 id="7-2-使用mplayer播放开发板中的视频"><a href="#7-2-使用mplayer播放开发板中的视频" class="headerlink" title="7.2 使用mplayer播放开发板中的视频"></a>7.2 使用mplayer播放开发板中的视频</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mplayer   视频的路径    (mp4,avi格式可以)</div></pre></td></tr></table></figure>
+<h4 id="7-3-在代码中播放视频"><a href="#7-3-在代码中播放视频" class="headerlink" title="7.3 在代码中播放视频"></a>7.3 在代码中播放视频</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">system(<span class="string">"mplayer  视频的路径"</span>);</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>总的来说，在这次课程上干货满满，其中涉及到不少没有学过的知识，比如内存映射，Makefile的书写等，做项目的意义大概也在这里吧~通过一个项目可以快速成长起来，知道自己哪一方面的知识薄弱，然后可以系统地去学习某些知识点。</p>
+</blockquote>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><blockquote>
+<p>最后肯定要po上源代码，虽然源代码存在非常多的bug，不过拿过来参考参考学习学习还是可以的。</p>
+</blockquote>
+<p><a href="https://github.com/Yeah-Kun/learngit/tree/master/C/embedded%20linux" target="_blank" rel="external">项目完整源代码</a></p>
+
+                
+<p class="pink-link-context">
+    <a href="/2017/04/29/hello-world/" rel="next" title="Hello World">
+    上一篇：Hello World
+  </a>
+</p>
+
+
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer light-blue accent-4 darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/2660835460/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/Yeah-Kun" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism主题作者的技术博客</a>
+                
+                    <a class="social-link" href="https://github.com/raytaylorlin" target="_blank">Github地址（测试友情链接）</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2017 yeah-kun.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-98292524-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>
