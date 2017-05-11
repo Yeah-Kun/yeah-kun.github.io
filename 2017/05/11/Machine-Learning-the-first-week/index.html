@@ -256,7 +256,7 @@
 <p>代价函数就是为了就是找到目的函数的最优解。</p>
 </blockquote>
 <p>因为在一个训练集中，有无数个模型（一元一次函数），我们需要找到最拟合这个训练集的一个函数，所以就引入了代价函数，用来找到那个最好的模型。</p>
-<h4 id="2-1公式表示"><a href="#2-1公式表示" class="headerlink" title="2.1公式表示"></a>2.1公式表示</h4><p>$$J(\theta_0,\theta<em>1)=\frac{1}{2m}\sum</em>{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$</p>
+<h4 id="2-1公式表示"><a href="#2-1公式表示" class="headerlink" title="2.1公式表示"></a>2.1公式表示</h4><p>$$ J(\theta_0,\theta<em>1)=\frac{1}{2m}\sum</em>{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2 $$</p>
 <p>上述是平方误差代价函数，这也是常用到的代价函数，它通过目的函数跟各个实际值的误差平方建立新的函数。为了使这个值不受个别极端数据影响而产生巨大波动，采用类似方差再取二分之一的方式来减小个别数据的影响。<br><img src="http://opptp2jx7.bkt.clouddn.com/%E5%B9%B3%E6%96%B9%E8%AF%AF%E5%B7%AE%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%E5%9B%BE%E7%A4%BA.png" alt="平方误差代价函数图示"></p>
 <h4 id="2-2-代价函数的直观理解①"><a href="#2-2-代价函数的直观理解①" class="headerlink" title="2.2 代价函数的直观理解①"></a>2.2 代价函数的直观理解①</h4><p>最优解即为代价函数的最小值，根据以上公式多次计算可得到代价函数的图像：<br><img src="http://opptp2jx7.bkt.clouddn.com/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%E5%9B%BE%E7%A4%BA1.1.png" alt="代价函数图示"><br>可以看到该代价函数的确有最小值，这里恰好是横坐标为1的时候。</p>
 <h4 id="2-3-代价函数的直观理解②"><a href="#2-3-代价函数的直观理解②" class="headerlink" title="2.3 代价函数的直观理解②"></a>2.3 代价函数的直观理解②</h4><p>如果有更多参数，就会更为复杂，两个参数的时候就已经是三维图像了：<br><img src="http://opptp2jx7.bkt.clouddn.com/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%E5%9B%BE%E7%A4%BA2.png" alt="代价函数图示2"></p>
@@ -271,9 +271,7 @@
 </ul>
 <p>我们要找到一条最快下山的路径，我们走的每一步大小就是α<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E5%9B%BE%E7%A4%BA1.png" alt="梯度下降图示1"></p>
 <p>如果在不同的起点，<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E5%9B%BE%E7%A4%BA2.png" alt="梯度下降图示2"></p>
-<h4 id="3-1批量梯度下降-batch-gradient-descent"><a href="#3-1批量梯度下降-batch-gradient-descent" class="headerlink" title="3.1批量梯度下降(batch gradient descent)"></a>3.1批量梯度下降(batch gradient descent)</h4><p>$$repeat\  until\ convergence{</p>
-<p>\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) (for\ j=0\ and\ j=1)</p>
-<p>}$$</p>
+<h4 id="3-1批量梯度下降-batch-gradient-descent"><a href="#3-1批量梯度下降-batch-gradient-descent" class="headerlink" title="3.1批量梯度下降(batch gradient descent)"></a>3.1批量梯度下降(batch gradient descent)</h4><p>$$ repeat\  until\ convergence{\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) (for\ j=0\ and\ j=1)} $$</p>
 <ul>
 <li>α：学习速率，决定我们让代价函数下降程度最大的方向迈出的步子有多大<h5 id="3-1-1-同步更新-Simultaneous-update"><a href="#3-1-1-同步更新-Simultaneous-update" class="headerlink" title="3.1.1 同步更新(Simultaneous update)"></a>3.1.1 同步更新(Simultaneous update)</h5>在梯度下降算法中，我们需要更新θ0,θ1，实现梯度下降算法的微妙之处是，在这个表达式中，如果你要更新这个等式，你需要<strong>同时</strong>更新。</li>
 </ul>
@@ -286,7 +284,7 @@
 <p><img src="http://opptp2jx7.bkt.clouddn.com/%E6%B1%82%E5%81%8F%E5%AF%BC%E6%95%B0%E8%BF%87%E7%A8%8B.png" alt="偏导数求解推导过程"></p>
 <h5 id="批量梯度下降方程"><a href="#批量梯度下降方程" class="headerlink" title="批量梯度下降方程"></a>批量梯度下降方程</h5><p>通过上面几条公式的整合，最终得出以下公式<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%9A%84%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.png" alt="线性回归方程"></p>
 <h4 id="4-线性代数基础"><a href="#4-线性代数基础" class="headerlink" title="4. 线性代数基础"></a>4. 线性代数基础</h4><p>个人现在认为，线性代数的作用主要是为了方便操作训练集。</p>
-<h5 id="4-1-矩阵的定义"><a href="#4-1-矩阵的定义" class="headerlink" title="4.1 矩阵的定义"></a>4.1 矩阵的定义</h5><p>横为行，竖为列，表示方法一般是R^(m*n)<br><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AE%9A%E4%B9%89.png" alt="矩阵的定义"></p>
+<h5 id="4-1-矩阵的定义"><a href="#4-1-矩阵的定义" class="headerlink" title="4.1 矩阵的定义"></a>4.1 矩阵的定义</h5><p>横为行，竖为列，表示方法一般是$ R^(m*n) $<br><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AE%9A%E4%B9%89.png" alt="矩阵的定义"></p>
 <p>寻找某个矩阵元素<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%9F%90%E4%B8%AA%E7%9F%A9%E9%98%B5%E5%85%83%E7%B4%A0.png" alt="某个矩阵元素"></p>
 <h5 id="4-2-矩阵加法-Matrix-Addition"><a href="#4-2-矩阵加法-Matrix-Addition" class="headerlink" title="4.2 矩阵加法(Matrix Addition)"></a>4.2 矩阵加法(Matrix Addition)</h5><p>同一个位置的矩阵元素相加，得到新的矩阵<br><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9F%A9%E9%98%B5%E5%8A%A0%E6%B3%95.png" alt="矩阵加法"></p>
 <h5 id="4-3-矩阵乘法-Scalar-Multiplication"><a href="#4-3-矩阵乘法-Scalar-Multiplication" class="headerlink" title="4.3 矩阵乘法(Scalar Multiplication)"></a>4.3 矩阵乘法(Scalar Multiplication)</h5><p>将值与矩阵每个元素相乘，得到新的矩阵<br><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9F%A9%E9%98%B5%E4%B9%98%E9%99%A4%E6%B3%95.png" alt="矩阵乘法"></p>
