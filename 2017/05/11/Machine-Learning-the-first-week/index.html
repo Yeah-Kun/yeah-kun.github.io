@@ -10,12 +10,12 @@
     <title>吴恩达机器学习课程——第一周笔记 | Yeah Kun blog</title>
     <meta name="author" content="Yeah Kun">
     
-    <meta name="description" content="1. 单变量线性回归(Linear Regression with One Variable)1.1 模型表示1h_\theta(x)=\theta_0+\theta_1x
+    <meta name="description" content="1. 单变量线性回归(Linear Regression with One Variable)1.1 模型表示$$h_\theta(x)=\theta_0+\theta_1x$$
 
 像上述公式，因为只含有一个特征/输入变量，因此这样的问题叫作单变量线性回归问题。
 
 例子如下：
-单变量线性方程，就是我们初中">
+单变量线性方程，就是我">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -244,7 +244,7 @@
 
 
             <div class="entry pink-link-context">
-                <h3 id="1-单变量线性回归-Linear-Regression-with-One-Variable"><a href="#1-单变量线性回归-Linear-Regression-with-One-Variable" class="headerlink" title="1. 单变量线性回归(Linear Regression with One Variable)"></a>1. 单变量线性回归(Linear Regression with One Variable)</h3><h4 id="1-1-模型表示"><a href="#1-1-模型表示" class="headerlink" title="1.1 模型表示"></a>1.1 模型表示</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h_\theta(x)=\theta_0+\theta_1x</div></pre></td></tr></table></figure>
+                <h3 id="1-单变量线性回归-Linear-Regression-with-One-Variable"><a href="#1-单变量线性回归-Linear-Regression-with-One-Variable" class="headerlink" title="1. 单变量线性回归(Linear Regression with One Variable)"></a>1. 单变量线性回归(Linear Regression with One Variable)</h3><h4 id="1-1-模型表示"><a href="#1-1-模型表示" class="headerlink" title="1.1 模型表示"></a>1.1 模型表示</h4><p>$$h_\theta(x)=\theta_0+\theta_1x$$</p>
 <blockquote>
 <p>像上述公式，因为只含有一个特征/输入变量，因此这样的问题叫作单变量线性回归问题。</p>
 </blockquote>
@@ -256,7 +256,7 @@
 <p>代价函数就是为了就是找到目的函数的最优解。</p>
 </blockquote>
 <p>因为在一个训练集中，有无数个模型（一元一次函数），我们需要找到最拟合这个训练集的一个函数，所以就引入了代价函数，用来找到那个最好的模型。</p>
-<h4 id="2-1公式表示"><a href="#2-1公式表示" class="headerlink" title="2.1公式表示"></a>2.1公式表示</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">J(\theta_0,\theta_1)=\frac&#123;1&#125;&#123;2m&#125;\sum_&#123;i=1&#125;^&#123;m&#125;(h_\theta(x^&#123;(i)&#125;)-y^&#123;(i)&#125;)^2</div></pre></td></tr></table></figure>
+<h4 id="2-1公式表示"><a href="#2-1公式表示" class="headerlink" title="2.1公式表示"></a>2.1公式表示</h4><p>$$<br>J(\theta_0,\theta<em>1)=\frac{1}{2m}\sum</em>{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2<br>$$</p>
 <p>上述是平方误差代价函数，这也是常用到的代价函数，它通过目的函数跟各个实际值的误差平方建立新的函数。为了使这个值不受个别极端数据影响而产生巨大波动，采用类似方差再取二分之一的方式来减小个别数据的影响。<br><img src="http://opptp2jx7.bkt.clouddn.com/%E5%B9%B3%E6%96%B9%E8%AF%AF%E5%B7%AE%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%E5%9B%BE%E7%A4%BA.png" alt="平方误差代价函数图示"></p>
 <h4 id="2-2-代价函数的直观理解①"><a href="#2-2-代价函数的直观理解①" class="headerlink" title="2.2 代价函数的直观理解①"></a>2.2 代价函数的直观理解①</h4><p>最优解即为代价函数的最小值，根据以上公式多次计算可得到代价函数的图像：<br><img src="http://opptp2jx7.bkt.clouddn.com/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%E5%9B%BE%E7%A4%BA1.1.png" alt="代价函数图示"><br>可以看到该代价函数的确有最小值，这里恰好是横坐标为1的时候。</p>
 <h4 id="2-3-代价函数的直观理解②"><a href="#2-3-代价函数的直观理解②" class="headerlink" title="2.3 代价函数的直观理解②"></a>2.3 代价函数的直观理解②</h4><p>如果有更多参数，就会更为复杂，两个参数的时候就已经是三维图像了：<br><img src="http://opptp2jx7.bkt.clouddn.com/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%E5%9B%BE%E7%A4%BA2.png" alt="代价函数图示2"></p>
@@ -271,7 +271,9 @@
 </ul>
 <p>我们要找到一条最快下山的路径，我们走的每一步大小就是α<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E5%9B%BE%E7%A4%BA1.png" alt="梯度下降图示1"></p>
 <p>如果在不同的起点，<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E5%9B%BE%E7%A4%BA2.png" alt="梯度下降图示2"></p>
-<h4 id="3-1批量梯度下降-batch-gradient-descent"><a href="#3-1批量梯度下降-batch-gradient-descent" class="headerlink" title="3.1批量梯度下降(batch gradient descent)"></a>3.1批量梯度下降(batch gradient descent)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">repeat\  until\ convergence\&#123;</div><div class="line"></div><div class="line">\theta_j:=\theta_j-\alpha\frac&#123;\partial&#125;&#123;\partial\theta_j&#125;J(\theta_0,\theta_1) (for\ j=0\ and\ j=1)</div><div class="line"></div><div class="line">\&#125;</div></pre></td></tr></table></figure>
+<h4 id="3-1批量梯度下降-batch-gradient-descent"><a href="#3-1批量梯度下降-batch-gradient-descent" class="headerlink" title="3.1批量梯度下降(batch gradient descent)"></a>3.1批量梯度下降(batch gradient descent)</h4><p>$$<br>repeat\  until\ convergence{</p>
+<p>\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) (for\ j=0\ and\ j=1)</p>
+<p>}<br>$$</p>
 <ul>
 <li>α：学习速率，决定我们让代价函数下降程度最大的方向迈出的步子有多大<h5 id="3-1-1-同步更新-Simultaneous-update"><a href="#3-1-1-同步更新-Simultaneous-update" class="headerlink" title="3.1.1 同步更新(Simultaneous update)"></a>3.1.1 同步更新(Simultaneous update)</h5>在梯度下降算法中，我们需要更新θ0,θ1，实现梯度下降算法的微妙之处是，在这个表达式中，如果你要更新这个等式，你需要<strong>同时</strong>更新。</li>
 </ul>
