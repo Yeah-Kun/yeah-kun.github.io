@@ -1,0 +1,656 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>第五届泰迪杯C题——楼层结构识别算法 | Yeah Kun blog</title>
+    <meta name="author" content="Yeah Kun">
+    
+    <meta name="description" content="前言第一次参加泰迪杯，前期跟队友配合的不算太好，不过后期经过老师的教育指导，再通过大家的努力，终于把泰迪杯给解决了，这期间困难重重，收获也颇丰，其中收获最大的大概是把楼层结构识别算法做出来了，刚刚开始的时候还认为自己没办法写出这个算法，不过最后在队友的帮助之下，还是将它实现了，下面就来详细介绍一下这">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="第五届泰迪杯C题——楼层结构识别算法"/>
+    <meta property="og:site_name" content="Yeah Kun"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="Yeah Kun" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="light-blue accent-4">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">Yeah Kun</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav light-blue accent-4" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="http://a2.qpic.cn/psb?/V12Ltkru1ADJ5N/Jlssko4NIkOZ1gPw5*HPgUx0vSPz2P*3oTkE3K3XnXU!/b/dGkBAAAAAAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=TgJOAgAAAAARFyA!&amp;tm=1493298000&amp;sce=60-3-3&amp;rf=viewer_4" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">叶坤</p>
+                        <p class="desc">python/机器学习/心智成长</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav light-blue accent-4" id="category-menu">
+    
+
+            
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper light-blue accent-4">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>第五届泰迪杯C题——楼层结构识别算法</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2017-04-28T08:30:46.000Z"><a href="/2017/04/28/my-first-blog/">2017-04-28</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/泰迪杯/" class="chip pink lighten-1">泰迪杯</a>
+        
+            <a href="/tags/楼层结构识别/" class="chip pink lighten-1">楼层结构识别</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#前言"><span class="section table-of-contents-text">前言</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#发现"><span class="section table-of-contents-text">发现</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#原理"><span class="section table-of-contents-text">原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#前期准备"><span class="section table-of-contents-text">前期准备</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#算法流程"><span class="section table-of-contents-text">算法流程</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-构建DOM树"><span class="section table-of-contents-text">1.构建DOM树</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-1-传入两个值（网页源代码，楼层数标准值）"><span class="section table-of-contents-text">1.1 传入两个值（网页源代码，楼层数标准值）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-2-初始化存储容器"><span class="section table-of-contents-text">1.2 初始化存储容器</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-层序遍历DOM树"><span class="section table-of-contents-text">2.层序遍历DOM树</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-1-构造队列"><span class="section table-of-contents-text">2.1 构造队列</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-2-遍历DOM树"><span class="section table-of-contents-text">2.2 遍历DOM树</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-楼层矩阵筛选"><span class="section table-of-contents-text">3.楼层矩阵筛选</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-1-初始化矩阵容器"><span class="section table-of-contents-text">3.1 初始化矩阵容器</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-2-构建楼层矩阵"><span class="section table-of-contents-text">3.2 构建楼层矩阵</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-3-矩阵初筛选"><span class="section table-of-contents-text">3.3 矩阵初筛选</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-4-选择标准矩阵"><span class="section table-of-contents-text">3.4 选择标准矩阵</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#具体步骤"><span class="section table-of-contents-text">具体步骤</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-楼层矩阵相似度比较"><span class="section table-of-contents-text">4.楼层矩阵相似度比较</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-1-余弦相似度比较"><span class="section table-of-contents-text">4.1 余弦相似度比较</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-2-释放矩阵容器内存"><span class="section table-of-contents-text">4.2 释放矩阵容器内存</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-获得楼层矩阵绝对路径"><span class="section table-of-contents-text">5.获得楼层矩阵绝对路径</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#源代码"><span class="section table-of-contents-text">源代码</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>第一次参加泰迪杯，前期跟队友配合的不算太好，不过后期经过老师的教育指导，再通过大家的努力，终于把泰迪杯给解决了，这期间困难重重，收获也颇丰，其中收获最大的大概是把楼层结构识别算法做出来了，刚刚开始的时候还认为自己没办法写出这个算法，不过最后在队友的帮助之下，还是将它实现了，下面就来详细介绍一下这个算法。</p>
+<h3 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h3><p>经过对BBS论坛源代码的研究，我们发现主题帖跟回帖都在同一个标签之下（div），并且他们都是此div的子节点，同时，我们还知道，帖与帖之间部分标签数量相差不大。由此，我们可以把主题帖和回帖看成一个个楼层，把帖子的标签作为楼层的特征，进而识别出楼层，并将其绝对路径找出来。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>将网页源代码转换为DOM树，使用层序遍历DOM树，通过余弦相似度识别相似楼层，根据统计出来的楼层数，与识别出来的楼层数进行比较进而得出正确楼层，输出楼层位置。</p>
+<h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><ul>
+<li>软件和开发环境：sublime text3、python-Anaconda、Win10系统</li>
+<li>python包：lxml（你没看错，就一个包）</li>
+</ul>
+<h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><ol>
+<li><p>构建DOM树</p>
+</li>
+<li><p>层序遍历DOM树</p>
+</li>
+<li><p>楼层矩阵筛选</p>
+</li>
+<li><p>楼层矩阵相似度比较</p>
+</li>
+<li><p>获得楼层矩阵绝对路径</p>
+</li>
+</ol>
+<h3 id="1-构建DOM树"><a href="#1-构建DOM树" class="headerlink" title="1.构建DOM树"></a>1.构建DOM树</h3><h4 id="1-1-传入两个值（网页源代码，楼层数标准值）"><a href="#1-1-传入两个值（网页源代码，楼层数标准值）" class="headerlink" title="1.1 传入两个值（网页源代码，楼层数标准值）"></a>1.1 传入两个值（网页源代码，楼层数标准值）</h4><ul>
+<li><p>网页源代码（bs0bj）：用于操作DOM树</p>
+</li>
+<li><p>楼层数标准值（standard_value）：用于比较楼层矩阵数，我们是通过“发表于”、“只看该作者”和时间把这个值确定下来</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 算法</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">TreeAlgotithm</span><span class="params">(bs0bj, standard_value)</span>:</span></div><div class="line"></div><div class="line">tree = etree.HTML(bs0bj)  <span class="comment"># 用HTML方法解析文件</span></div><div class="line"></div><div class="line">t = tree.getroottree()  <span class="comment"># 获得一个节点对应的树</span></div><div class="line"></div><div class="line">root = t.getroot()  <span class="comment"># 用于存储当前根节点，即爸爸节点</span></div><div class="line"></div><div class="line">save_children_tag = Queue()  <span class="comment"># 队列，用于存储子节点</span></div><div class="line"></div><div class="line"><span class="comment"># 将body节点放到队列中</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(root[<span class="number">0</span>].getnext()):</div><div class="line"></div><div class="line">save_children_tag.enqueue(root[<span class="number">1</span>])</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line"><span class="keyword">return</span> <span class="keyword">None</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>网页正文都在body节点之下，所以直接定位body节点就可以减少遍历时间。</p>
+</blockquote>
+<h4 id="1-2-初始化存储容器"><a href="#1-2-初始化存储容器" class="headerlink" title="1.2 初始化存储容器"></a>1.2 初始化存储容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">similar_tag = <span class="number">0</span>  <span class="comment"># 用于计算有多少个相似的儿子对象</span></div><div class="line"></div><div class="line">matrix_pack = []  <span class="comment"># 矩阵容器，用于存放未进行相似度计算的矩阵</span></div><div class="line"></div><div class="line">tag_pack = []  <span class="comment"># 标签容器，用于存放未进行相似度计算的标签</span></div><div class="line"></div><div class="line">one_path = []  <span class="comment"># 用于临时存放某节点的绝对路径</span></div><div class="line"></div><div class="line">new_matrix_pack = []  <span class="comment"># 矩阵容器，用于存放已经进行相似度计算的矩阵</span></div><div class="line"></div><div class="line">new_tag_pack = []  <span class="comment"># 标签容器，用于存放相似度高的标签</span></div><div class="line"></div><div class="line">test = []  <span class="comment"># 观察数据进度</span></div></pre></td></tr></table></figure>
+<h3 id="2-层序遍历DOM树"><a href="#2-层序遍历DOM树" class="headerlink" title="2.层序遍历DOM树"></a>2.层序遍历DOM树</h3><p>DOM树是一种普通的树结构，层序遍历是寻找楼层结构最快的方法，我们要寻找的网页正文和楼层结构基本都在body节点之下，用层序遍历，是最快找到楼层标签的方法。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3012260-71b394fb6f4cc31e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DOM树"></p>
+<h4 id="2-1-构造队列"><a href="#2-1-构造队列" class="headerlink" title="2.1 构造队列"></a>2.1 构造队列</h4><p>数据结构知识，使用队列保存每层节点的信息，先进先出层序遍历树的每一个节点。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 构造队列，用于树的层序遍历</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span><span class="params">(object)</span>:</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line"></div><div class="line">self.items = []</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(self)</span>:</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> self.items == []</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self, item)</span>:</span></div><div class="line"></div><div class="line">self.items.insert(<span class="number">0</span>, item)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> self.items.pop()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> len(self.items)</div></pre></td></tr></table></figure>
+<h4 id="2-2-遍历DOM树"><a href="#2-2-遍历DOM树" class="headerlink" title="2.2 遍历DOM树"></a>2.2 遍历DOM树</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">while</span>(similar_tag &gt; standard_value + <span class="number">2</span> <span class="keyword">or</span> similar_tag &lt; standard_value - <span class="number">2</span>):</div><div class="line"></div><div class="line">similar_tag = <span class="number">0</span>  <span class="comment"># 相似节点数初始化</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (save_children_tag.isEmpty()):</div><div class="line"></div><div class="line">print(<span class="string">"栈为空"</span>)</div><div class="line"></div><div class="line"><span class="keyword">return</span> <span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">root = save_children_tag.dequeue()  <span class="comment"># 队列弹栈</span></div><div class="line"></div><div class="line"><span class="comment"># 父节点遍历</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> child <span class="keyword">in</span> root:</div><div class="line"></div><div class="line">save_children_tag.enqueue(child)</div></pre></td></tr></table></figure>
+<h3 id="3-楼层矩阵筛选"><a href="#3-楼层矩阵筛选" class="headerlink" title="3.楼层矩阵筛选"></a>3.楼层矩阵筛选</h3><h4 id="3-1-初始化矩阵容器"><a href="#3-1-初始化矩阵容器" class="headerlink" title="3.1 初始化矩阵容器"></a>3.1 初始化矩阵容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">matrix_pack = []  <span class="comment"># 矩阵容器，用于存放未进行相似度计算的矩阵</span></div><div class="line"></div><div class="line">tag_pack = []  <span class="comment"># 标签容器，用于存放未进行相似度计算的标签</span></div><div class="line"></div><div class="line">new_matrix_pack = []  <span class="comment"># 矩阵容器，用于存放已经进行相似度计算的矩阵</span></div><div class="line"></div><div class="line">new_tag_pack = []  <span class="comment"># 标签容器，用于存放相似度高的标签</span></div></pre></td></tr></table></figure>
+<h4 id="3-2-构建楼层矩阵"><a href="#3-2-构建楼层矩阵" class="headerlink" title="3.2 构建楼层矩阵"></a>3.2 构建楼层矩阵</h4><p>经过对楼层源代码的研究，发现这些标签出现频数较多，但是在过程中少考虑了一个问题，就某些标签会受到回帖内容的影响，比如img，回帖多一张照片就会多一个img标签。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">TagMatrix</span><span class="params">(tree, path)</span>:</span></div><div class="line"></div><div class="line"><span class="comment"># 统计标签频数</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">List_Count_Tag</span><span class="params">(children)</span>:</span></div><div class="line"></div><div class="line">List_tag = []</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'a'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'a'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'div'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'div'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'p'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'p'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'span'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'span'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'img'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'img'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'td'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'td'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'dd'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'dd'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">return</span> List_tag</div><div class="line"></div><div class="line">tag_save = []</div><div class="line"></div><div class="line">child_Node = tree.xpath(path + <span class="string">'//*'</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> child <span class="keyword">in</span> child_Node:</div><div class="line"></div><div class="line">tag_save.append(child.tag)</div><div class="line"></div><div class="line"><span class="keyword">return</span> List_Count_Tag(tag_save)</div></pre></td></tr></table></figure>
+<h4 id="3-3-矩阵初筛选"><a href="#3-3-矩阵初筛选" class="headerlink" title="3.3 矩阵初筛选"></a>3.3 矩阵初筛选</h4><p>这一步至关重要，因为在初期没加这一步的时候，很多空矩阵被视为楼层，后来我们发现，加入了这个矩阵的初步筛选之后，不仅准确率提高了，连效率也大大提高了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">one_matrix = TagMatrix(tree, one_path)  <span class="comment"># 获得儿子节点的矩阵</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(one_matrix[<span class="number">0</span>] &lt; <span class="number">2</span> <span class="keyword">or</span> one_matrix[<span class="number">1</span>] &lt; <span class="number">2</span>):  <span class="comment"># 筛选没可能是楼层的元素</span></div><div class="line"></div><div class="line"><span class="keyword">continue</span></div><div class="line"></div><div class="line"><span class="comment"># 存储没有进行相似度计算的矩阵和标签</span></div><div class="line"></div><div class="line">matrix_pack.append(one_matrix)</div><div class="line"></div><div class="line">tag_pack.append(child)</div></pre></td></tr></table></figure>
+<h4 id="3-4-选择标准矩阵"><a href="#3-4-选择标准矩阵" class="headerlink" title="3.4 选择标准矩阵"></a>3.4 选择标准矩阵</h4><p>由于下一步要进行矩阵相似度的比较，我们需要找出一个最有可能是楼层的矩阵（标准矩阵），与其他的矩阵进行相似度比较。经过研究我们发现，各个楼层的a标签基本一致，因此统计a标签频数，并找到跟a标签频数相等的第一个矩阵作为标准矩阵。</p>
+<h5 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h5><ol>
+<li><p>提取所有楼层矩阵的第一个元素，建立新列表</p>
+</li>
+<li><p>统计列表中，返回出现次数最多的元素</p>
+</li>
+<li><p>在所有楼层矩阵中找到第一个跟频数一致的矩阵，并返回作为标准矩阵</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 选出标准值</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">StandardMatrix</span><span class="params">(tag_pack, matrix_pack)</span>:</span></div><div class="line"></div><div class="line"><span class="comment"># 计算矩阵第一个元素，用于选出标准值</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">CountKey</span><span class="params">(matrix_pack)</span>:</span></div><div class="line"></div><div class="line">temp = <span class="number">0</span></div><div class="line"></div><div class="line">temp_list = []</div><div class="line"></div><div class="line"><span class="comment"># 提取标签容器的第一个标签，</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> one <span class="keyword">in</span> matrix_pack:</div><div class="line"></div><div class="line">temp_list.append(one[<span class="number">0</span>])</div><div class="line"></div><div class="line">result_list = collections.Counter(temp_list)</div><div class="line"></div><div class="line">dict(result_list)</div><div class="line"></div><div class="line"><span class="comment"># 返回a标签的频数，用作选出标准矩阵</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> max(result_list.items(), key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>])[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="keyword">if</span>(len(tag_pack) &gt; <span class="number">1</span>):</div><div class="line"></div><div class="line">first_key = CountKey(matrix_pack)</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> matrix_pack:</div><div class="line"></div><div class="line"><span class="keyword">if</span>(i[<span class="number">0</span>] == first_key):</div><div class="line"></div><div class="line">standar_matrix = i</div><div class="line"></div><div class="line"><span class="keyword">return</span> standar_matrix</div></pre></td></tr></table></figure>
+<h3 id="4-楼层矩阵相似度比较"><a href="#4-楼层矩阵相似度比较" class="headerlink" title="4.楼层矩阵相似度比较"></a>4.楼层矩阵相似度比较</h3><ul>
+<li>相似度&gt;0.9：判断为楼层矩阵</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">if</span>(standar_matrix != <span class="keyword">None</span>):</div><div class="line"></div><div class="line">i = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> new_one_matrix <span class="keyword">in</span> matrix_pack:</div><div class="line"></div><div class="line">Cos_key = CosSimilarity(new_one_matrix, standar_matrix)</div><div class="line"></div><div class="line"><span class="keyword">if</span>(Cos_key &gt; <span class="number">0.90</span>):</div><div class="line"></div><div class="line">new_tag_pack.append(tag_pack[i])</div><div class="line"></div><div class="line">new_matrix_pack.append(matrix_pack[i])</div><div class="line"></div><div class="line">i = i + <span class="number">1</span></div></pre></td></tr></table></figure>
+<h4 id="4-1-余弦相似度比较"><a href="#4-1-余弦相似度比较" class="headerlink" title="4.1 余弦相似度比较"></a>4.1 余弦相似度比较</h4><p>这个其实没什么好看的，有技术含量的内容都在上面，这个在网上都能找到。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 两个矩阵余弦相似度计算</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">CosSimilarity</span><span class="params">(hinsA, hinsB)</span>:</span></div><div class="line"></div><div class="line">up_count = <span class="number">0</span></div><div class="line"></div><div class="line">down_left_count = <span class="number">0</span></div><div class="line"></div><div class="line">down_right_count = <span class="number">0</span></div><div class="line"></div><div class="line">result_count = <span class="number">0</span></div><div class="line"></div><div class="line">i = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="comment"># 计算两个向量的点积</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> i &lt; len(hinsA):</div><div class="line"></div><div class="line">up_count = up_count + hinsA[i] * hinsB[i]</div><div class="line"></div><div class="line">i = i + <span class="number">1</span></div><div class="line"></div><div class="line">i = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="comment"># 计算两个向量的模</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> i &lt; len(hinsA):</div><div class="line"></div><div class="line">down_left_count = down_left_count + hinsA[i] ** <span class="number">2</span></div><div class="line"></div><div class="line">i = i + <span class="number">1</span></div><div class="line"></div><div class="line">i = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> i &lt; len(hinsB):</div><div class="line"></div><div class="line">down_right_count = down_right_count + hinsB[i] ** <span class="number">2</span></div><div class="line"></div><div class="line">i = i + <span class="number">1</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> up_count / (math.sqrt(down_left_count) * math.sqrt(down_right_count))</div></pre></td></tr></table></figure>
+<h4 id="4-2-释放矩阵容器内存"><a href="#4-2-释放矩阵容器内存" class="headerlink" title="4.2 释放矩阵容器内存"></a>4.2 释放矩阵容器内存</h4><p>这么做主要是为了避免下次计算的时候，把前一次的数据也算进去了，这一步也是很重要的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">if</span>(similar_tag &gt; standard_value + <span class="number">2</span> <span class="keyword">or</span> similar_tag &lt; standard_value - <span class="number">2</span>):</div><div class="line"></div><div class="line"><span class="keyword">del</span>(matrix_pack)</div><div class="line"></div><div class="line"><span class="keyword">del</span>(tag_pack)</div><div class="line"></div><div class="line"><span class="keyword">del</span>(new_tag_pack)</div><div class="line"></div><div class="line"><span class="keyword">del</span>(new_matrix_pack)</div></pre></td></tr></table></figure>
+<h3 id="5-获得楼层矩阵绝对路径"><a href="#5-获得楼层矩阵绝对路径" class="headerlink" title="5.获得楼层矩阵绝对路径"></a>5.获得楼层矩阵绝对路径</h3><p>做到这一步也基本差不多了，把楼层矩阵的绝对路径拿到手，就可以定位每一个楼层的位置了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">tag_path = []</div><div class="line"></div><div class="line"><span class="keyword">for</span> tag <span class="keyword">in</span> new_tag_pack:</div><div class="line"></div><div class="line">tag_path.append(t.getpath(tag))</div><div class="line"></div><div class="line"><span class="keyword">return</span> tag_path</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>存在问题：</li>
+</ul>
+<ol>
+<li><p>少于3个楼层识别困难</p>
+</li>
+<li><p>矩阵构造不严谨，部分标签会受回帖影响</p>
+</li>
+<li><p>依赖于标准值的准确性</p>
+</li>
+<li><p>没有树结构深度限制（一直识别到最后一个节点，但其实楼层不可能很深层的节点，一般在4到7层）</p>
+</li>
+</ol>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><p><a href="https://github.com/Yeah-Kun/python/blob/master/Tipdm%20Cup/code/%E6%8F%90%E4%BA%A4%E7%BB%99%E5%AE%98%E6%96%B9%E7%9A%84%E6%96%87%E4%BB%B6/TDcup/tree_algorithm.py" target="_blank" rel="external">算法源代码</a></p>
+<p>个人博客，最新更新的文章都发在这，欢迎关注：<a href="https://yeah-kun.github.io/" target="_blank" rel="external">https://yeah-kun.github.io/</a></p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/04/29/hello-world/" rel="next" title="Hello World">
+    下一篇：Hello World
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer light-blue accent-4 darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/2660835460/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/Yeah-Kun" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism主题作者的技术博客</a>
+                
+                    <a class="social-link" href="https://github.com/raytaylorlin" target="_blank">Github地址（测试友情链接）</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2017 yeah-kun.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-98292524-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>
