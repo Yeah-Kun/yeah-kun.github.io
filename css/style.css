@@ -174,6 +174,9 @@ nav .brand-logo {
 .fa {
   margin-right: 5px;
 }
+footer.page-footer {
+  padding-top: inherit;
+}
 html,
 body {
   font-family: "Roboto", "sans-serif", "微软雅黑", "Helvetica Neue";
@@ -519,6 +522,9 @@ a.social-link {
 }
 a.social-link:hover {
   color: #e0e0e0;
+}
+.footer-container {
+  padding-top: 20px;
 }
 .slider-image {
   border: none;
