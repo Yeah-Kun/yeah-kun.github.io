@@ -1,687 +1,1529 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    
 
-    <title>Yeah Kun blog</title>
-    <meta name="author" content="Yeah Kun">
-    
-    
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
-    <meta property="og:site_name" content="Yeah Kun"/>
 
-    
-    <meta property="og:image" content="undefined"/>
-    
 
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="alternate" href="/atom.xml" title="Yeah Kun" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/lib/materialize.min.css">
-    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-        <link rel="stylesheet" href="/css/lib/tomorrow-night-eighties.css" type="text/css">
     
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yeah Kun">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Yeah Kun">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Yeah Kun">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Yeah Kun</title>
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-<body>
-    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+  
 
-    <nav class="light-blue accent-4">
-    <div class="nav-wrapper">
-        <a href="#" data-activates="main-menu" class="button-collapse">
-            <i class="fa fa-navicon"></i>
-        </a>
-        <div class="">
-            <a href="/" class="brand-logo hide-on-med-and-down">Yeah Kun</a>
-            <ul class="right hide-on-med-and-down">
-                
-                    <li>
-                        <a class="menu-home " href="/" >
-                            <i class="fa fa-home "></i>
-                            
-                            首页
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-archive " href="/archives" >
-                            <i class="fa fa-archive "></i>
-                            
-                            归档
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
-                            <i class="fa fa-bookmark "></i>
-                            
-                            分类
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-reading " href="/reading" >
-                            <i class="fa fa-book "></i>
-                            
-                            读书
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-about " href="/about" >
-                            <i class="fa fa-user "></i>
-                            
-                            关于
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-search modal-trigger " href="#search" >
-                            <i class="fa fa-search "></i>
-                            
-                            搜索
-                        </a>
-                    </li>
-                
-            </ul>
-            <div>
-    <ul class="side-nav light-blue accent-4" id="main-menu">
-        
-        <li class="side-user">
-            <div class="row">
-                <div class="col s4 no-padding">
-                    <img class="avatar-image circle responsive-img" src="http://a2.qpic.cn/psb?/V12Ltkru1ADJ5N/Jlssko4NIkOZ1gPw5*HPgUx0vSPz2P*3oTkE3K3XnXU!/b/dGkBAAAAAAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=TgJOAgAAAAARFyA!&amp;tm=1493298000&amp;sce=60-3-3&amp;rf=viewer_4" alt="User Avatar">
-                </div>
-                <div class="info col s8 valign-wrapper no-padding">
-                    <div class="valign">
-                        <p class="name">叶坤</p>
-                        <p class="desc">python/机器学习/心智成长</p>
-                    </div>
-                </div>
-            </div>
-        </li>
-        
 
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-home " href="/" >
-                    <i class="fa fa-home "></i>
-                    
-                    首页
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-archive " href="/archives" >
-                    <i class="fa fa-archive "></i>
-                    
-                    归档
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
-                    <i class="fa fa-bookmark "></i>
-                    
-                    分类
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-reading " href="/reading" >
-                    <i class="fa fa-book "></i>
-                    
-                    读书
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-about " href="/about" >
-                    <i class="fa fa-user "></i>
-                    
-                    关于
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-search modal-trigger " href="#search" >
-                    <i class="fa fa-search "></i>
-                    
-                    搜索
-                </a>
-            </li>
-        
-    </ul>
 
-    <ul class="side-nav light-blue accent-4" id="category-menu">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
 
-            
-
-    </ul>
-</div>
-
-        </div>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yeah Kun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-</nav>
-
-<div id="search" class="modal search-modal">
-    <div class="row">
-        <div class="input-field col s12">
-              <input id="search-input" type="text">
-              <label for="search-input">搜索</label>
-        </div>
-
-    </div>
-    <div id="search-result" class="search-result col s12">
-
-    </div>
-</div>
-
-
-    <main>
-        
-
-<div class="slider">
-    <ul class="slides">
-    
-       <li>
-           <a href="/">
-               <img class="slider-image" src="http://a1.qpic.cn/psb?/V12Ltkru1ADJ5N/8zu.kbU9skpJQl4QjG5.nBWqA6m3P69DNJblyUA219Q!/b/dGsBAAAAAAAA&amp;bo=AASAAgAAAAARB7Y!&amp;rf=viewer_4">
-               <div class="caption left-align">
-                 <h4>读万卷书</h3>
-                 <h5 class="light grey-text text-lighten-3">要多读书，但不要读太多的书</h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="javascript:;">
-               <img class="slider-image" src="http://a2.qpic.cn/psb?/V12Ltkru1ADJ5N/Qxw4v9ZPMjd3CJw6yeyx5sn3wmikXyvYYu6zQ6BOq94!/b/dGkBAAAAAAAA&amp;bo=eAWQAQAAAAARB9w!&amp;rf=viewer_4">
-               <div class="caption center-align">
-                 <h4>行万里路</h3>
-                 <h5 class="light grey-text text-lighten-3">当你全心全意梦想着什么的时候，整个宇宙都会协同起来，助你实现自己的心愿</h5>
-               </div>
-           </a>
-       </li>
-    
-       <li>
-           <a href="http://article.yeeyan.org/view/58498/154430">
-               <img class="slider-image" src="http://a1.qpic.cn/psb?/V12Ltkru1ADJ5N/aXm.z5MP*QiwJ*Kd75uCpykiKxPS9GsPGAAs5MDFzqs!/b/dGsBAAAAAAAA&amp;bo=wwWAAgAAAAARB3Q!&amp;rf=viewer_4">
-               <div class="caption right-align">
-                 <h4>人生苦短，我用python</h3>
-                 <h5 class="light grey-text text-lighten-3">美丽优于丑陋，清楚优于含糊，简单优于复杂，复杂优于繁琐</h5>
-               </div>
-           </a>
-       </li>
-    
-   </ul>
- </div>
-
-
-
-<div id="article-list" class="container main-container">
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2017/05/11/Machine-Learning-the-first-week/">吴恩达机器学习课程笔记——第一周</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2017-05-11T04:10:20.000Z"><a href="/2017/05/11/Machine-Learning-the-first-week/">2017-05-11</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/机器学习/" class="chip pink lighten-1">机器学习</a>
-        
-    </div>
-
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2017/05/06/嵌入式Linux课/">嵌入式Linux课</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2017-05-06T15:12:54.000Z"><a href="/2017/05/06/嵌入式Linux课/">2017-05-06</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/嵌入式/" class="chip pink lighten-1">嵌入式</a>
-        
-            <a href="/tags/Linux/" class="chip pink lighten-1">Linux</a>
-        
-    </div>
-
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2017/04/29/hello-world/">Hello World</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2017-04-29T02:35:54.648Z"><a href="/2017/04/29/hello-world/">2017-04-29</a></time>
-
-            
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2017/04/28/my-first-blog/">第五届泰迪杯C题——楼层结构识别算法</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2017-04-28T08:30:46.000Z"><a href="/2017/04/28/my-first-blog/">2017-04-28</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/泰迪杯/" class="chip pink lighten-1">泰迪杯</a>
-        
-            <a href="/tags/楼层结构识别/" class="chip pink lighten-1">楼层结构识别</a>
-        
-    </div>
-
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-
-    <ul class="pagination center-align">
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-left"></i></a>
-    </li>
-    
-    
-        <li class="active pink"><a href="/">1</a></li>
-    
-    
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-right"></i></a>
-    </li>
- </ul>
-
-</div>
-
-        <div class="fixed-action-btn float-sitemap">
-    <a class="btn-floating btn-large pink">
-      <i class="fa fa-caret-square-o-up"></i>
-    </a>
-    <ul>
-      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
-      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
-    </ul>
+      
+        <p class="site-subtitle">Yeah Kun blog</p>
+      
   </div>
 
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/简单Python刷票脚本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yeah Kun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah Kun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/03/简单Python刷票脚本/" itemprop="url">简单Python刷票脚本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-03T11:32:17+08:00">
+                2017-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>现在部分比赛为了推广赞助商或者比赛本身，需要参赛队伍进行网上拉票，甚至票数还会占一定比例的成绩。因此，刷票也就应运而生了。此次我们团队参加一个比赛，就需要网上投票决出前几名，作为一位技术人员，当然是得“解决”技术能解决的问题嘛，所以就写了个刷票插件来刷一刷。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>刷票的原理很简单，就是相当于模拟人登录网站去投票，只是把这个过程程序化，让程序代替人到网站去投票。具体一点说把，首先是客户端（我们）发出请求（Request）给服务端（投票网站），跟他们说，我们需要看他们网站的信息，然后服务端就会回复（Respose）我们，我们再把填好的表单发（Request）给他们，他们收到后就会回复（Respose）我们。</p>
+<h3 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h3><ul>
+<li>分析网站</li>
+<li>表单提交</li>
+<li>构造代理IP池</li>
+</ul>
+<h3 id="1-分析网站"><a href="#1-分析网站" class="headerlink" title="1. 分析网站"></a>1. 分析网站</h3><p>由于每个网站需要提交的信息都不一样，那么首先我们需要对目标网站进行相对应的分析，找出他们的表单接口（也就是URL或者叫网址）以及我们需要提交的信息。</p>
+<h3 id="1-1-收集信息"><a href="#1-1-收集信息" class="headerlink" title="1.1 收集信息"></a>1.1 收集信息</h3><p>首先我们登录目标网站</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9B%AE%E6%A0%87%E7%BD%91%E7%AB%99.png" alt="目标网站"></p>
+<p>使用F12，打开审核元素，点击Network，真实地进行一次表单提交</p>
+<p>框住的两个内容就是我们需要知道的一部分表单信息</p>
+<ul>
+<li>Request URL：请求网址，我们提交的信息就是传到这个url里面去</li>
+<li>Request method：请求方法，我们提交的方法</li>
+</ul>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E8%A1%A8%E5%8D%95%E4%BF%A1%E6%81%AF1.png" alt="表单信息1"></p>
+<p>下面有两个框分别框住两个不同的信息区域，具体有什么用呢？下面就来详细解释一下这个</p>
+<ul>
+<li>Request Headers：请求头，当我们访问网站的时候，我们都需要提交一个请求头过去，以证明我们不是爬虫，而是真实的访问，所以我们要把这个拿到，以便假装我们不是爬虫。</li>
+<li>From Data：这就是我们要提交的数据了，现在提交的数据都是以json格式提交，按照这些信息写好我们需要提交的json数据就好</li>
+</ul>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E8%A1%A8%E5%8D%95%E4%BF%A1%E6%81%AF2.png" alt="表单信息2"></p>
+<p>以上就是需要获得的基本信息，根据这些信息我们就可以编写刷票插件了，但作为一个对自身有高标准严要求的程序员来说，仅仅这样就足够吗？当然不会啦，我们得找一找这个提交过程有没有什么漏洞。</p>
+<p>怎么找？分析源代码，找了找，果真还让我找到了！<br><img src="http://opptp2jx7.bkt.clouddn.com/%E8%A1%A8%E5%8D%95%E6%BC%8F%E6%B4%9E.png" alt="表单漏洞"></p>
+<p>看出什么没有，它这里有两个致命的漏洞：</p>
+<ol>
+<li>它允许提交3支或3支以上的队伍，并且没有限制最大数量，只限制了最少数量。</li>
+<li>它没有进行相同数据的筛选。</li>
+</ol>
+<p>意思就是说，我们可以一次提交几百上千个，甚至上万个==相同的==数据。但我会这么做吗？考虑到后果的话肯定不会，因为没有人可以在很短时间内投很多票，要是他们追查起来，那发现还不简单？毕竟我们是在模拟真实投票嘛，所以就投3票给自己好了，隐藏功与名。</p>
+<h3 id="2-表单提交"><a href="#2-表单提交" class="headerlink" title="2. 表单提交"></a>2. 表单提交</h3><p>好了，既然把收集到的数据都整理好了，那么就开始写代码进行表单提交了。</p>
+<h4 id="2-1-运用到的库"><a href="#2-1-运用到的库" class="headerlink" title="2.1 运用到的库"></a>2.1 运用到的库</h4><ul>
+<li>requests：非常好用的第三方库，用于表单提交</li>
+</ul>
+<p><a href="hhttp://docs.python-requests.org/en/master/user/quickstart/#make-a-request" target="_blank" rel="external">Requests库官方技术文档</a></p>
+<p>把它看一遍，所有操作就没问题了，下面就来写代码吧！</p>
+<h4 id="2-2-构造表单信息"><a href="#2-2-构造表单信息" class="headerlink" title="2.2 构造表单信息"></a>2.2 构造表单信息</h4><p>拿着这个代码就能去投票啦，开不开心？<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请求头信息</span></div><div class="line">headers = &#123;</div><div class="line">    <span class="string">'Accept'</span>: <span class="string">'*/*'</span>,</div><div class="line">    <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip'</span>,</div><div class="line">    <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN'</span>,</div><div class="line">    <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</div><div class="line">    <span class="string">'Content-Length'</span>: <span class="string">'16'</span>,</div><div class="line">    <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</div><div class="line">    <span class="string">'Host'</span>: <span class="string">'www.dingnf.com'</span>,</div><div class="line">    <span class="string">'Origin'</span>: <span class="string">'http://www.dingnf.com'</span>,</div><div class="line">    <span class="string">'Referer'</span>: <span class="string">'http://www.dingnf.com/active/wxws_s'</span>,</div><div class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/4.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.3029.110 Safari/537.36'</span>,</div><div class="line">    <span class="string">'X-Requested-With'</span>: <span class="string">'XMLHttpRequest'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment"># post表单网址</span></div><div class="line">url = <span class="string">"http://www.dingnf.com/active/wxws_t"</span></div><div class="line">params = &#123;<span class="string">'ids'</span>: [<span class="string">'22'</span>, <span class="string">'22'</span>, <span class="string">'22'</span>]&#125;</div><div class="line">r = requests.post(url=url, data=params, headers=headers, proxies=proxies)</div></pre></td></tr></table></figure></p>
+<p>突然发现问题来了，只能提交一次！这是为什么？</p>
+<h3 id="3-构造代理IP池"><a href="#3-构造代理IP池" class="headerlink" title="3. 构造代理IP池"></a>3. 构造代理IP池</h3><p>大部分投票网站都会记录投票的IP地址，避免同一个IP多次投票，那怎么办？我们能模仿真实投票，还换不了IP地址？换IP地址是可以的，不过比较麻烦，我们有一种更加简便的方法：使用代理服务器去爬去某个网站的内容，那对方网站上显示的就不是我们真实的IP地址了，而是代理服务器的IP地址，在python中，使用代理服务器设置很简单。</p>
+<h4 id="3-1-找到代理IP"><a href="#3-1-找到代理IP" class="headerlink" title="3.1 找到代理IP"></a>3.1 找到代理IP</h4><p>这里推荐<a href="http://www.xicidaili.com/" target="_blank" rel="external">西刺免费代理IP</a>，西刺，值得你拥有</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E5%85%8D%E8%B4%B9%E4%BB%A3%E7%90%86IP.png" alt="代理IP"></p>
+<p>使用API可以快速获得我们需要的IP地址，当然，我们也可以做个爬虫，去爬它网站上的URL，这里就不展开说了。<br><img src="http://opptp2jx7.bkt.clouddn.com/%E4%BB%A3%E7%90%86IPAPI.png" alt="网站API"></p>
+<h4 id="3-2-构造IP代理容器"><a href="#3-2-构造IP代理容器" class="headerlink" title="3.2 构造IP代理容器"></a>3.2 构造IP代理容器</h4><p>由于从API上获得的数据多出一些换行符和回车符，不利于直接提取IP地址，所以就先用正则表达式直接提取需要的信息，再写进列表里面，方便之后读取。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">WriteIPadress</span><span class="params">()</span>:</span></div><div class="line">    all_url = [] <span class="comment"># 存储IP地址的容器</span></div><div class="line">    <span class="comment"># 代理IP的网址</span></div><div class="line">    url = <span class="string">"http://api.xicidaili.com/free2016.txt"</span></div><div class="line">    r = requests.get(url=url)</div><div class="line">    all_url = re.findall(<span class="string">"\d+\.\d+\.\d+\.\d+\:\d+"</span>,r.text)</div><div class="line">    <span class="keyword">with</span> open(<span class="string">"D:\\code\\python\\new\\Brush ticket\\IP.txt"</span>,<span class="string">'w'</span>) <span class="keyword">as</span> f:</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> all_url:</div><div class="line">            f.write(i)</div><div class="line">            f.write(<span class="string">'\n'</span>)</div><div class="line">    <span class="keyword">return</span> all_url</div></pre></td></tr></table></figure>
+<h3 id="4-主函数"><a href="#4-主函数" class="headerlink" title="4. 主函数"></a>4. 主函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">count = <span class="number">0</span> <span class="comment"># 计数器</span></div><div class="line"><span class="keyword">while</span> count &lt; <span class="number">4000</span>:</div><div class="line">    all_url = WriteIPadress()</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> all_url:</div><div class="line">        proxies = &#123;<span class="string">"http"</span>: i&#125;</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            r = requests.post(url=url, data=params, headers=headers, proxies=proxies)</div><div class="line">            <span class="keyword">if</span>(r.json()[<span class="string">'flag'</span>] == <span class="keyword">True</span>):</div><div class="line">                count += <span class="number">1</span></div><div class="line">                print(<span class="string">"成功投票%d次！"</span> % (count))</div><div class="line">            print(r.json())</div><div class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> reason:</div><div class="line">            print(<span class="string">"错误原因是："</span>,reason)</div></pre></td></tr></table></figure>
+<p>由于某些IP地址是存在问题的，所以需要设置异常处理，以便让程序能够正常运行，而API的数据每15分钟更新一次，我们每跑完一遍列表的时间也差不多，因此也就不做其他处理了。</p>
+<p>运行日志<br><img src="http://opptp2jx7.bkt.clouddn.com/%E5%88%B7%E7%A5%A8%E6%8F%92%E4%BB%B6%E6%97%A5%E5%BF%97.png" alt="日志"></p>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a><a href="https://github.com/Yeah-Kun/python/blob/master/new/Brush%20ticket/Brush%20counting%20software.py" target="_blank" rel="external">源代码</a></h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/11/Machine-Learning-the-first-week/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yeah Kun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah Kun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/11/Machine-Learning-the-first-week/" itemprop="url">吴恩达机器学习课程笔记——第一周</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-11T12:10:20+08:00">
+                2017-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-单变量线性回归-Linear-Regression-with-One-Variable"><a href="#1-单变量线性回归-Linear-Regression-with-One-Variable" class="headerlink" title="1. 单变量线性回归(Linear Regression with One Variable)"></a>1. 单变量线性回归(Linear Regression with One Variable)</h3><h4 id="1-1-模型表示"><a href="#1-1-模型表示" class="headerlink" title="1.1 模型表示"></a>1.1 模型表示</h4><p>$$h_\theta(x)=\theta_0+\theta_1x$$</p>
+<blockquote>
+<p>像上述公式，因为只含有一个特征/输入变量，因此这样的问题叫作单变量线性回归问题。</p>
+</blockquote>
+<p>例子如下：<br><img src="http://opptp2jx7.bkt.clouddn.com/%E5%9B%9E%E5%BD%92%E5%87%BD%E6%95%B0%E5%9B%BE%E5%83%8F.png" alt="回归函数图示"></p>
+<p>单变量线性方程，就是我们初中就学的一元一次函数。<br>当然啦，除了这个模型之外，我们还有很多其他的线性模型，比如指数模型、对数模型等等，除了线性模型之外，还有非线性模型，有这么多的模型，其目的就是在于更好的拟合训练集的数据，以使得预测率更高。</p>
+<p>以下是对模型的具体定义：</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E5%9B%9E%E5%BD%92%E5%9B%BE%E7%A4%BA.png" alt="回归图示"></p>
+<h3 id="2-代价函数-Cost-Function"><a href="#2-代价函数-Cost-Function" class="headerlink" title="2. 代价函数(Cost Function)"></a>2. 代价函数(Cost Function)</h3><blockquote>
+<p>代价函数就是为了就是找到目的函数的最优解。</p>
+</blockquote>
+<p>因为在一个训练集中，有无数个模型（一元一次函数），我们需要找到最拟合这个训练集的一个函数，所以就引入了代价函数，用来找到那个最好的模型。</p>
+<h4 id="2-1公式表示"><a href="#2-1公式表示" class="headerlink" title="2.1公式表示"></a>2.1公式表示</h4><p><img src="http://opptp2jx7.bkt.clouddn.com/%E5%B9%B3%E6%96%B9%E8%AF%AF%E5%B7%AE%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0.png" alt="平方误差代价函数"></p>
+<p>上述是平方误差代价函数，这也是常用到的代价函数，它通过目的函数跟各个实际值的误差平方建立新的函数。为了使这个值不受个别极端数据影响而产生巨大波动，采用类似方差再取二分之一的方式来减小个别数据的影响。<br><img src="http://opptp2jx7.bkt.clouddn.com/%E5%B9%B3%E6%96%B9%E8%AF%AF%E5%B7%AE%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%E5%9B%BE%E7%A4%BA.png" alt="平方误差代价函数图示"></p>
+<h4 id="2-2-代价函数的直观理解①"><a href="#2-2-代价函数的直观理解①" class="headerlink" title="2.2 代价函数的直观理解①"></a>2.2 代价函数的直观理解①</h4><p>最优解即为代价函数的最小值，根据以上公式多次计算可得到代价函数的图像：<br><img src="http://opptp2jx7.bkt.clouddn.com/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%E5%9B%BE%E7%A4%BA1.1.png" alt="代价函数图示"><br>可以看到该代价函数的确有最小值，这里恰好是横坐标为1的时候。</p>
+<h4 id="2-3-代价函数的直观理解②"><a href="#2-3-代价函数的直观理解②" class="headerlink" title="2.3 代价函数的直观理解②"></a>2.3 代价函数的直观理解②</h4><p>如果有更多参数，就会更为复杂，两个参数的时候就已经是三维图像了：<br><img src="http://opptp2jx7.bkt.clouddn.com/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%E5%9B%BE%E7%A4%BA2.png" alt="代价函数图示2"></p>
+<h3 id="3-梯度下降算法-Gradient-Descent"><a href="#3-梯度下降算法-Gradient-Descent" class="headerlink" title="3. 梯度下降算法(Gradient Descent)"></a>3. 梯度下降算法(Gradient Descent)</h3><blockquote>
+<p>梯度下降是一个用来求函数最小值的算法，我们将使用梯度下降算法来求出代价函数J(θ0,θ1) 的最小值。</p>
+</blockquote>
+<p>个人理解，代价函数是分析模型与实际训练集之间的误差，而梯度下降算法的作用，就是找出那个误差最小的代价函数。</p>
+<h4 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h4><p><img src="http://opptp2jx7.bkt.clouddn.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3.png" alt="算法思想"></p>
+<ul>
+<li>从参数的某一个（组）值开始，比如从θ0=0和θ1=0开始</li>
+<li>保持该（组）值持续减小，如果是一组值就要保证他们<strong>同步更新</strong>，直到找到我们希望找到的最小值</li>
+</ul>
+<p>我们要找到一条最快下山的路径，我们走的每一步大小就是α 。<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E5%9B%BE%E7%A4%BA1.png" alt="梯度下降图示1"></p>
+<p>如果在不同的起点，最后到达的最低点也会不一样。<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E5%9B%BE%E7%A4%BA2.png" alt="梯度下降图示2"></p>
+<h4 id="3-1批量梯度下降-batch-gradient-descent"><a href="#3-1批量梯度下降-batch-gradient-descent" class="headerlink" title="3.1批量梯度下降(batch gradient descent)"></a>3.1批量梯度下降(batch gradient descent)</h4><p>$$ repeat\  until\ convergence { \theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) (for\ j=0\ and\ j=1) } $$</p>
+<ul>
+<li>α：学习速率，决定我们让代价函数下降程度最大的方向迈出的步子有多大</li>
+</ul>
+<h5 id="3-1-1-同步更新-Simultaneous-update"><a href="#3-1-1-同步更新-Simultaneous-update" class="headerlink" title="3.1.1 同步更新(Simultaneous update)"></a>3.1.1 同步更新(Simultaneous update)</h5><p>在梯度下降算法中，我们需要更新θ0,θ1，实现梯度下降算法的微妙之处是，在这个表达式中，如果你要更新这个等式，你需要<strong>同时</strong>更新。</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0%E5%85%AC%E5%BC%8F1.png" alt="同步更新公式"></p>
+<h5 id="3-1-2-梯度下降算法理解"><a href="#3-1-2-梯度下降算法理解" class="headerlink" title="3.1.2 梯度下降算法理解"></a>3.1.2 梯度下降算法理解</h5><p>如果 α 太大，那么梯度下降法可能会越过最低点，甚至可能无法收敛，下一次迭代又移动了一大步，越过一次，又越过一次，一次次越过最低点，直到你发现实际上离最低点越来越远，所以，如果 α 太大，它会导致无法收敛，甚至发散。</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%CE%B1%E7%90%86%E8%A7%A3.png" alt="对α的理解"></p>
+<h5 id="解决方法——乘偏导数"><a href="#解决方法——乘偏导数" class="headerlink" title="解决方法——乘偏导数"></a>解决方法——乘偏导数</h5><p><img src="http://opptp2jx7.bkt.clouddn.com/%E6%89%B9%E9%87%8F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%9B%B4%E8%A7%82%E5%9B%BE.png" alt="批量梯度下降直观图"></p>
+<p>首先初始化我的梯度下降算法，在那个品红色的点初始化，如果<br>我更新一步梯度下降，随着我接近最低点，我的导数越来越接近零，所以，梯度下降一步后，新的导数会变小一点点。然后我想再梯度下降一步，在这个绿点，我自然会用一个稍微跟刚才在那个品红点时比，再小一点的一步，到了新的红色点，更接近全局最低点了，因此这点的导数会比在绿点时更小。所 以，我再进行一步梯度下降时，我的导数项是更小的，θ1更新的幅度就会更小。所以随着梯度下降法的运行，你移动的幅度会自动变得越来越小，直到最终移动幅度非常小，你会发现，已经收敛到局部极小值。</p>
+<h5 id="3-1-3-线性回归的批量梯度下降"><a href="#3-1-3-线性回归的批量梯度下降" class="headerlink" title="3.1.3 线性回归的批量梯度下降"></a>3.1.3 线性回归的批量梯度下降</h5><p>偏导数求解推导过程</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E6%B1%82%E5%81%8F%E5%AF%BC%E6%95%B0%E8%BF%87%E7%A8%8B.png" alt="偏导数求解推导过程"></p>
+<h5 id="批量梯度下降方程"><a href="#批量梯度下降方程" class="headerlink" title="批量梯度下降方程"></a>批量梯度下降方程</h5><p>通过上面几条公式的整合，最终得出以下公式<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%9A%84%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.png" alt="线性回归方程"></p>
+<h4 id="4-线性代数基础"><a href="#4-线性代数基础" class="headerlink" title="4. 线性代数基础"></a>4. 线性代数基础</h4><p>个人现在认为，线性代数的作用主要是为了方便操作训练集。</p>
+<h5 id="4-1-矩阵的定义"><a href="#4-1-矩阵的定义" class="headerlink" title="4.1 矩阵的定义"></a>4.1 矩阵的定义</h5><p>横为行，竖为列，表示方法一般是$ R^{m*n} $<br><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AE%9A%E4%B9%89.png" alt="矩阵的定义"></p>
+<p>寻找某个矩阵元素<br><img src="http://opptp2jx7.bkt.clouddn.com/%E6%9F%90%E4%B8%AA%E7%9F%A9%E9%98%B5%E5%85%83%E7%B4%A0.png" alt="某个矩阵元素"></p>
+<h5 id="4-2-矩阵加法-Matrix-Addition"><a href="#4-2-矩阵加法-Matrix-Addition" class="headerlink" title="4.2 矩阵加法(Matrix Addition)"></a>4.2 矩阵加法(Matrix Addition)</h5><p>同一个位置的矩阵元素相加，得到新的矩阵<br><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9F%A9%E9%98%B5%E5%8A%A0%E6%B3%95.png" alt="矩阵加法"></p>
+<h5 id="4-3-矩阵乘法-Scalar-Multiplication"><a href="#4-3-矩阵乘法-Scalar-Multiplication" class="headerlink" title="4.3 矩阵乘法(Scalar Multiplication)"></a>4.3 矩阵乘法(Scalar Multiplication)</h5><p>将值与矩阵每个元素相乘，得到新的矩阵<br><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9F%A9%E9%98%B5%E4%B9%98%E9%99%A4%E6%B3%95.png" alt="矩阵乘法"></p>
+<h5 id="4-4-矩阵的组合运算-Combination-of-Operands"><a href="#4-4-矩阵的组合运算-Combination-of-Operands" class="headerlink" title="4.4 矩阵的组合运算(Combination of Operands)"></a>4.4 矩阵的组合运算(Combination of Operands)</h5><p>将矩阵加减法和乘除法结合起来，道理都一样<br><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9F%A9%E9%98%B5%E7%BB%84%E5%90%88%E8%BF%90%E7%AE%97.png" alt="矩阵的组合运算"></p>
+<h5 id="4-5-两个矩阵相乘"><a href="#4-5-两个矩阵相乘" class="headerlink" title="4.5 两个矩阵相乘"></a>4.5 两个矩阵相乘</h5><p>A矩阵的行 乘 B矩阵的列 得到新矩阵 y 。<br><img src="http://opptp2jx7.bkt.clouddn.com/%E4%B8%A4%E4%B8%AA%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98.png" alt="两个矩阵相乘1"></p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E4%B8%A4%E4%B8%AA%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%982.png" alt="两个矩阵相乘2"></p>
+<h5 id="4-6-矩阵应用到梯度下降算法实例"><a href="#4-6-矩阵应用到梯度下降算法实例" class="headerlink" title="4.6 矩阵应用到梯度下降算法实例"></a>4.6 矩阵应用到梯度下降算法实例</h5><p>把训练集做成一个矩阵，把线性回归方程做成另外一个矩阵，将两个矩阵相乘，最后就能得出一个新的矩阵。<br><img src="http://opptp2jx7.bkt.clouddn.com/%E5%BA%94%E7%94%A8%E5%88%B0%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E4%BE%8B.png" alt="矩阵应用到梯度下降算法实例图示"></p>
+<h5 id="4-7-单位矩阵"><a href="#4-7-单位矩阵" class="headerlink" title="4.7 单位矩阵"></a>4.7 单位矩阵</h5><blockquote>
+<p>在矩阵的乘法中，有一种矩阵起着特殊的作用，如同数的乘法中的1,这种矩阵被称为单位矩阵．它是个方阵，从左上角到右下角的对角线（称为主对角线）上的元素均为1。除此以外全都为0。</p>
+</blockquote>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5.png" alt="单位矩阵"></p>
+<p>除0矩阵外，任何矩阵乘单位矩阵都等于它本身。</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97.png" alt="单位矩阵运算"></p>
+<h5 id="4-8-逆矩阵"><a href="#4-8-逆矩阵" class="headerlink" title="4.8 逆矩阵"></a>4.8 逆矩阵</h5><p><img src="http://opptp2jx7.bkt.clouddn.com/%E9%80%86%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AE%9A%E4%B9%89.png" alt="定义"></p>
+<p>用octave求得逆矩阵：pinv()函数</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/octave%E6%B1%82%E9%80%86%E7%9F%A9%E9%98%B5.png" alt="octave求得逆矩阵"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/嵌入式Linux课/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yeah Kun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah Kun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/06/嵌入式Linux课/" itemprop="url">嵌入式Linux课</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-06T23:12:54+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+<p>最近上了一门课：嵌入式Linux，由一家校外培训机构授课，他们追求的就是学完能立刻找到工作，因此，在课程的设置上非常紧凑，课程强度也比咱们平时上课要高不少，因此收获也很大。</p>
+</blockquote>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><blockquote>
+<p>这门课的知识量很大，但不系统，知识碎片很多，需要用到很多不同领域的知识点，不过这门课课后不需要太多思考，不像微机、数据结构，在课后还需要花大量时间进行学习，到底为什么会出现这种情况呢？是因为老师教的太好？还是课程内容缺乏深度不需要思考？</p>
+</blockquote>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>Linux系统基本操作</li>
+<li>图片的显示与编解码</li>
+<li>wifi 编程</li>
+<li>触摸屏编</li>
+<li>音频播放</li>
+<li>摄像头编程</li>
+<li>视频播放</li>
+</ul>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/AA3R*Vn32PQra4WhF2xwADzZZFUBQA3hAKF9sGf2YH0!/b/dGoBAAAAAAAA&amp;bo=gALTAgAAAAARAGQ!&amp;rf=viewer_4" alt="效果图"></p>
+<h3 id="1-Linux系统基本操作"><a href="#1-Linux系统基本操作" class="headerlink" title="1. Linux系统基本操作"></a>1. Linux系统基本操作</h3><blockquote>
+<p>为什么要用Linux而不使用Windows或者os系统？个人认为原因有两个，其一因为Linux源码开源，我们可以直接使用Linux源码进行修改和扩展，而Windows和os系统不开源，无法针对它们进行优化和修改，其二是因为Linux系统可以做的足够小，一般的嵌入式系统由于受到成本的限制，配置都很低，没办法运行一个庞大的系统，有的嵌入式硬件甚至不带系统，只是运行单个程序，比如我们在街上看到的广告牌。</p>
+</blockquote>
+<h4 id="1-1-常用指令"><a href="#1-1-常用指令" class="headerlink" title="1.1 常用指令"></a>1.1 常用指令</h4><blockquote>
+<p>基本上用以下几条指令就能学完这个课程</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">A:打开linux的命令终端  ctrl+alt+t</div><div class="line">B:新建或者打开文件</div><div class="line">    gedit 文件的名字  跟记事本类似</div><div class="line">    vim</div><div class="line">C:打印当前路径下的内容</div><div class="line">    ls </div><div class="line">    ls <span class="_">-l</span>  以列表的形式打印当前路径下的内容</div><div class="line">        drwxr-xr-x    首字符d 表示是目录</div><div class="line">                      首字符- 表示是普通文件</div><div class="line">D:拷贝文件</div><div class="line">    cp 文件名  目标路径</div><div class="line">    cp 文件名  新的文件</div><div class="line">    cp 目录名  目标路径   -rf（r表示递归，f表示强制）</div><div class="line">E:进入目录，打开目录</div><div class="line">    <span class="built_in">cd</span>  目录名</div><div class="line">F:清屏</div><div class="line">    clear</div><div class="line">G:新建目录</div><div class="line">    mkdir  目录名</div><div class="line">H:查看ubuntu的ip地址</div><div class="line">    ifconfig</div><div class="line">I:打包和解压</div><div class="line">    bz2结尾</div><div class="line">        打包：  tar -jcf  xxx.tar.bz2   文件名1  文件名2  .......</div><div class="line">        解压：  tar -jxf  xxx.tar.bz2</div><div class="line">    gz结尾</div><div class="line">        打包：   tar -zcf  xxx.tar.gz   文件名1  文件名2  .......</div><div class="line">        解压：   tar -zxf  xxx.tar.gz</div><div class="line">J:查看linux中的帮助手册</div><div class="line">    man  man</div><div class="line">    输入q退出帮助手册</div><div class="line">    1   Executable programs or shell commands    // shell命令</div><div class="line">    2   System calls (<span class="built_in">functions</span> provided by the kernel)  //linux内核提供的函数</div><div class="line">    3   Library   calls   (<span class="built_in">functions</span>   within    program</div><div class="line">           libraries)  // c语言库函数 <span class="built_in">printf</span>  scanf  strcpy</div><div class="line">    4   Special files (usually found <span class="keyword">in</span> /dev)</div><div class="line">    5   File formats and conventions eg /etc/passwd</div><div class="line">    6   Games</div><div class="line">    7   Miscellaneous (including macro packages and con‐</div><div class="line">           ventions), e.g. man(7), groff(7)</div><div class="line">    8   System administration commands (usually only <span class="keyword">for</span></div><div class="line">           root)</div><div class="line">    9   Kernel routines [Non standard]</div></pre></td></tr></table></figure>
+<h4 id="1-2-编译运行程序"><a href="#1-2-编译运行程序" class="headerlink" title="1.2 编译运行程序"></a>1.2 编译运行程序</h4><blockquote>
+<p>之前提到过，由于嵌入式硬件的配置很低，因此在硬件上面直接编译不是一个高效的选择，所以我们需要先在高配置的电脑（自己的电脑）编译好源文件，再在嵌入式系统里面运行。</p>
+</blockquote>
+<h5 id="1-2-1-编译"><a href="#1-2-1-编译" class="headerlink" title="1.2.1 编译"></a>1.2.1 编译</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gcc hello.c  -o hello    适合在x86平台上运行</div><div class="line">    gcc 编译器的名字</div><div class="line">    -o  输出</div><div class="line">arm-linux-gcc hello.c -o hello_arm    适合在ARM架构的cpu上运行</div><div class="line">    arm-linux-gcc  交叉工具链---》交叉编译</div></pre></td></tr></table></figure>
+<h5 id="1-2-2-运行"><a href="#1-2-2-运行" class="headerlink" title="1.2.2 运行"></a>1.2.2 运行</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./程序名   </div><div class="line">./hello</div></pre></td></tr></table></figure>
+<h4 id="1-3-文件下载到开发板"><a href="#1-3-文件下载到开发板" class="headerlink" title="1.3 文件下载到开发板"></a>1.3 文件下载到开发板</h4><h5 id="1-3-1-安装secureCRT"><a href="#1-3-1-安装secureCRT" class="headerlink" title="1.3.1 安装secureCRT"></a>1.3.1 安装secureCRT</h5><blockquote>
+<p>这个软件用于将文件下载到开发板中，一般用于较小的文件，较大的文件可以通过其他wifi或者U盘下载到开发板，这个软件有一个好处，就是操作简单，不像wifi或U盘这么复杂。</p>
+</blockquote>
+<h5 id="1-3-2-配置secureCRT"><a href="#1-3-2-配置secureCRT" class="headerlink" title="1.3.2 配置secureCRT"></a>1.3.2 配置secureCRT</h5><ul>
+<li>协议：serial</li>
+<li>端口：端口一（如果你使用usb转串口，那么需要安装完驱动之后去设备管理器查看究竟是端口几）</li>
+<li>波特率：115000<br>  右边的勾全部取消(注意勾不取消，键盘无法输入)<br>  点击连接，并启动开发板</li>
+</ul>
+<h5 id="1-3-3-使用wmware-tools共享方式"><a href="#1-3-3-使用wmware-tools共享方式" class="headerlink" title="1.3.3 使用wmware tools共享方式"></a>1.3.3 使用wmware tools共享方式</h5><ol>
+<li>在windows环境下新建一个空白文件夹作为共享文件夹</li>
+<li>点击虚拟机—》设置—》选项—》选择共享文件夹—》总是启用—》点击添加去寻找你之前设置好的文件夹—》确认保存退出</li>
+<li>进入共享： cd  /mnt/hgfs/xxxx   （xxxx是你给共享文件夹取的名字）</li>
+</ol>
+<h5 id="1-3-4-使用串口下载命令下载"><a href="#1-3-4-使用串口下载命令下载" class="headerlink" title="1.3.4 使用串口下载命令下载"></a>1.3.4 使用串口下载命令下载</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rz回车 ---》自动弹出对话框---》手动去寻找你要下载的文件---》双击自动下载    （不能够覆盖同名文件）</div><div class="line">rx  文件名  回车---》点击传输---》选择发送xmodem---》会自动弹出对话框---》你手动去寻找要下载的文件---》双击自动下载 （能够覆盖同名文件）</div></pre></td></tr></table></figure>
+<h3 id="2-显示bmp图片"><a href="#2-显示bmp图片" class="headerlink" title="2. 显示bmp图片"></a>2. 显示bmp图片</h3><h4 id="2-1-常见的图片格式"><a href="#2-1-常见的图片格式" class="headerlink" title="2.1 常见的图片格式"></a>2.1 常见的图片格式</h4><table>
+<thead>
+<tr>
+<th>图片格式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bmp</td>
+<td>也被称为位图，它的每个像素点颜色值占3个字节，分别存放RGB（三原色）的数值，但是LCD上每个像素点颜色占4个字节，多出来的一个字节用于存放图片的透明度信息（A）,换句话来说，LCD上的4个字节分别是ARGB</td>
+</tr>
+<tr>
+<td>jpg</td>
+<td>经过特定的算法压缩过</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-2-了解文件操作相关的接口函数"><a href="#2-2-了解文件操作相关的接口函数" class="headerlink" title="2.2 了解文件操作相关的接口函数"></a>2.2 了解文件操作相关的接口函数</h4><h5 id="2-2-1-文件打开函数open（）"><a href="#2-2-1-文件打开函数open（）" class="headerlink" title="2.2.1 文件打开函数open（）"></a>2.2.1 文件打开函数open（）</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;  </span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *pathname, <span class="keyword">int</span> flags)</span></span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>返回值：成功返回一个文件描述符  “替身”，失败返回-1</li>
+<li>pathname：你要打开的那个文件的路径</li>
+<li>flags：O_RDONLY（只读）, O_WRONLY（只写）, or O_RDWR（可读写）.</li>
+</ul>
+<h5 id="2-2-2文件读取read（）"><a href="#2-2-2文件读取read（）" class="headerlink" title="2.2.2文件读取read（）"></a>2.2.2文件读取read（）</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ssize_t</span> read(<span class="keyword">int</span> fd, <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>ssize_t使用typedef类型重定义得到，系统在移植过程中已经写好了，具体说明：<a href="http://blog.csdn.net/gowyz/article/details/6606313" target="_blank" rel="external">size_t 与 ssize_t 类型 </a></p>
+</blockquote>
+<ul>
+<li>返回值：成功返回读取的字节数，失败返回-1</li>
+<li>fd：你要读取的那个文件的文件描述符</li>
+<li>你读取的数据就存放在这个buf指针中</li>
+<li>你打算读取多少字节的数据</li>
+</ul>
+<h5 id="2-2-3-文件的关闭close（）"><a href="#2-2-3-文件的关闭close（）" class="headerlink" title="2.2.3 文件的关闭close（）"></a>2.2.3 文件的关闭close（）</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">close</span><span class="params">(<span class="keyword">int</span> fd)</span></span>;</div></pre></td></tr></table></figure>
+<h4 id="2-3-图片显示处理"><a href="#2-3-图片显示处理" class="headerlink" title="2.3 图片显示处理"></a>2.3 图片显示处理</h4><blockquote>
+<p>图片显示有偏移，需要再进行一步处理：理论上24位的bmp，大小应该是800<em>480</em>3=1152000字节，但是实际1152054，多出来的54字节称为图片的头信息（存放的关于图片的属性信息，比如图片的宽，高），解决方法：跳过前面54字节，从55字节开始读取。</p>
+</blockquote>
+<h5 id="2-3-1-设置文件的读写位置lseek"><a href="#2-3-1-设置文件的读写位置lseek" class="headerlink" title="2.3.1 设置文件的读写位置lseek()"></a>2.3.1 设置文件的读写位置lseek()</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="keyword">off_t</span> lseek(<span class="keyword">int</span> fildes, <span class="keyword">off_t</span> offset, <span class="keyword">int</span> whence);</div></pre></td></tr></table></figure>
+<ul>
+<li>返回值：文件当前读写位置距离文件开头的字节数</li>
+<li>fildes：你要设置文件偏移的那个文件的文件描述符</li>
+<li>offset 你打算偏移多少字节</li>
+<li>whence 你打算从哪里开始偏移(SEEK_SET起始位置，SEEK_CUR    当前位置，SEEK_END结尾)</li>
+</ul>
+<h4 id="2-4-任意位置显示任意大小bmp图片"><a href="#2-4-任意位置显示任意大小bmp图片" class="headerlink" title="2.4 任意位置显示任意大小bmp图片"></a>2.4 任意位置显示任意大小bmp图片</h4><h5 id="2-4-1-内存映射图示"><a href="#2-4-1-内存映射图示" class="headerlink" title="2.4.1 内存映射图示"></a>2.4.1 内存映射图示</h5><blockquote>
+<p>先贴一张我老师画的图，超丑，不过讲的倒是还可以，内存映射的意思就是：将硬件的地址映射到用户程序中，方便用户程序直接通过该地址去读写硬件中数据。</p>
+</blockquote>
+<p><img src="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/fWr5Vj3QosXPcINqEAv*EvLtyijwJlXN.s53TB*axcI!/b/dGoBAAAAAAAA&amp;bo=YAMcAgAAAAARAEo!&amp;rf=viewer_4" alt="内存映射"></p>
+<h5 id="2-4-2-内存映射函数"><a href="#2-4-2-内存映射函数" class="headerlink" title="2.4.2 内存映射函数"></a>2.4.2 内存映射函数</h5><ul>
+<li>mmap()</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/mman.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span>  *<span class="title">mmap</span><span class="params">(<span class="keyword">void</span>  *addr,  <span class="keyword">size_t</span>  len, <span class="keyword">int</span> prot, <span class="keyword">int</span> flags,<span class="keyword">int</span> fildes, <span class="keyword">off_t</span> off)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>返回值：成功返回映射的内存地址首地址，失败返回NULL</li>
+<li>addr：一般设置NULL，表示由操作系统自动分配一块内存</li>
+<li>len：你打算映射多大字节的内存空间</li>
+<li><p>prot：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">PROT_READ       Data can be read.</div><div class="line">PROT_WRITE      Data can be written.</div><div class="line">PROT_EXEC       Data can be executed.</div></pre></td></tr></table></figure>
+</li>
+<li><p>flags：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">MAP_SHARED      Changes are shared.映射的那块区域可以被共享</div><div class="line">MAP_PRIVATE     Changes are <span class="keyword">private</span>. 不可以被共享</div></pre></td></tr></table></figure>
+</li>
+<li><p>fildes：你要映射的那个硬件设备的文件描述符</p>
+</li>
+<li>off：一般填0</li>
+</ul>
+<h5 id="2-4-3-mmap函数的具体使用图示"><a href="#2-4-3-mmap函数的具体使用图示" class="headerlink" title="2.4.3 mmap函数的具体使用图示"></a>2.4.3 mmap函数的具体使用图示</h5><p><img src="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/eaum27KAXTOEkLgL.QFc94SMixngvc0cyelzFRV5GdA!/b/dGoBAAAAAAAA&amp;bo=YAMcAgAAAAARAEo!&amp;rf=viewer_4" alt="mmap函数的具体使用图示"></p>
+<h4 id="2-5-课外知识点"><a href="#2-5-课外知识点" class="headerlink" title="2.5 课外知识点"></a>2.5 课外知识点</h4><h5 id="2-5-1-使用u盘挂载到开发板"><a href="#2-5-1-使用u盘挂载到开发板" class="headerlink" title="2.5.1 使用u盘挂载到开发板"></a>2.5.1 使用u盘挂载到开发板</h5><blockquote>
+<p>之前提到过，使用串口通信的方式可以把文件传输到开发板，但是那种方式太慢了，虽然经过加压可以加快速度，但速度依然有限，于是乎就出现了U盘挂载的方法，这种方法可以快速的传输数据，唯一的问题就是比串口传输的方法麻烦一点，下面，我就来介绍介绍这种方法。</p>
+</blockquote>
+<p>步骤：</p>
+<ol>
+<li>将u盘插到开发板的usb口，开发板会自动识别并分配一个名字给你的u盘（一般为sda1）</li>
+<li><p>使用mount命令挂载u盘</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mount  /dev/xxx   /yyyy</div><div class="line"><span class="comment">#xxx ---》你刚才眼睛看到u盘的名字</span></div><div class="line"><span class="comment">#yyy ---》提前在根目录下面新建的一个空白文件夹的名字，我想将u盘挂载到我精心准备的那个空白文件夹下面</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>删除u盘</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">umount  /yyyy</div></pre></td></tr></table></figure>
+<h3 id="3-wifi编程"><a href="#3-wifi编程" class="headerlink" title="3. wifi编程"></a>3. wifi编程</h3><h4 id="3-1-使用usbwifi"><a href="#3-1-使用usbwifi" class="headerlink" title="3.1 使用usbwifi"></a>3.1 使用usbwifi</h4><h5 id="3-1-1-修改wifi的SSID"><a href="#3-1-1-修改wifi的SSID" class="headerlink" title="3.1.1 修改wifi的SSID"></a>3.1.1 修改wifi的SSID</h5><ol>
+<li>修改wifi的SSID</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /etc/Wireless/RT2870AP/RT2870AP.dat</div><div class="line"><span class="comment">#修改SSID=你取的新名字</span></div></pre></td></tr></table></figure>
+<ol>
+<li><p>修改密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /etc/Wireless/RT2870AP/RT2870AP.dat</div><div class="line"><span class="comment">#修改WPAPSK=你的新密码</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>绑定MAC地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /usr/Bind_addr</div><div class="line"><span class="comment">#将你认为合法的手机MAC地址填入到该文件中（目前支持绑定一个）</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="3-2-将复杂的源代码分块"><a href="#3-2-将复杂的源代码分块" class="headerlink" title="3.2 将复杂的源代码分块"></a>3.2 将复杂的源代码分块</h4><blockquote>
+<p>由于代码量的增加，在一个.c文件里写完所有几乎是不可能的事情，而且不利于多个成员编程，分块对于编程效率的提高有很大帮助，尤其方便优化调试。不同代码的分块方式有所不同，下面就来说一说如何将C语言代码分块。</p>
+</blockquote>
+<p>步骤：</p>
+<ol>
+<li>创建一个头文件，里面写好收集好的定义，这个名字我建议用defines.h</li>
+<li>把原来文件按功能或一定类别分开，写入各个.c文件中，记得用名字区分</li>
+<li>各个.c文件的开始都加上： #include “你给头文件起的名字如aaa.h”</li>
+<li>编译，可能会有函数未声明的警告或变量未声明的错误，在头文件里加上就可以了</li>
+</ol>
+<h6 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h6><p>为了避免头文件被重复引用，需要对除了main函数所在.c文件的头文件引用做一些特殊处理，具体内容：<a href="http://blog.csdn.net/abc5382334/article/details/18052757" target="_blank" rel="external">#ifndef/#define/#endif使用详解</a></p>
+<blockquote>
+<p>有个不规范，但更简单的方法，就是把分块好的.c文件放在同一个目录（文件夹）之下，它在编译的时候，会首先找本目录下的文件，如果找不到，再找C语言库里面的.h文件。（这也是python的编译顺序，估计其他语言也差不多）</p>
+</blockquote>
+<h4 id="3-3-课外知识点"><a href="#3-3-课外知识点" class="headerlink" title="3.3 课外知识点"></a>3.3 课外知识点</h4><h5 id="3-3-1-交叉工具链的安装"><a href="#3-3-1-交叉工具链的安装" class="headerlink" title="3.3.1 交叉工具链的安装"></a>3.3.1 交叉工具链的安装</h5><ol>
+<li>将工具链的源码包拷贝到纯粹的linux环境中，比如家目录</li>
+<li>解压源码包</li>
+<li>配置环境变量<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=/home/gec/arm-2009q3/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="3-3-2-烧写操作系统"><a href="#3-3-2-烧写操作系统" class="headerlink" title="3.3.2 烧写操作系统"></a>3.3.2 烧写操作系统</h5><h6 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h6><blockquote>
+<p>开发板上操作系统分为三个部分：uboot   kernel   rootfs  系统移植</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uboot</td>
+<td>BIOS  硬件的初始化  cpu的初始化  内存的初始化  源码用C语言+汇编</td>
+</tr>
+<tr>
+<td>kernel</td>
+<td>进程管理，内存管理</td>
+</tr>
+<tr>
+<td>rootfs</td>
+<td>文件的管理</td>
+</tr>
+</tbody>
+</table>
+<h6 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h6><ol>
+<li><p>用网线将电脑跟开发板直接连接（最好将笔记本的防火墙关闭），配置好电脑的IP跟开发板的ip</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">开发板ip配置：</div><div class="line">ifconfig eth0  正确的ip</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开tftpboot这个软件，点击browse，选择uboot，kernel，rootfs所在的文件夹</p>
+</li>
+<li>重启开发板，倒数三秒之前按下任意键，选择e进入uboot的命令行，参考烧写步骤：<br><img src="http://a1.qpic.cn/psb?/V12Ltkru1ADJ5N/xLRsbdE0buxO0DtQoCRS2ZKKMVeRPlgVIc6jXgfBCCE!/b/dGsBAAAAAAAA&amp;bo=ggPKAQAAAAADB2g!&amp;rf=viewer_4" alt="烧写步骤"></li>
+</ol>
+<h3 id="4-触摸屏编程"><a href="#4-触摸屏编程" class="headerlink" title="4. 触摸屏编程"></a>4. 触摸屏编程</h3><h4 id="4-1-准备需要用到移植好的触摸屏库文件"><a href="#4-1-准备需要用到移植好的触摸屏库文件" class="headerlink" title="4.1 准备需要用到移植好的触摸屏库文件"></a>4.1 准备需要用到移植好的触摸屏库文件</h4><ul>
+<li>移植：通过配置文件，然后使用特定的编译工具将别人在网上发布的源码编译生成目标平台的库文件，头文件，可执行程序</li>
+<li>库文件：函数的源码用编译工具编译成二进制文件(正常情况下无法查看函数的源码)<ul>
+<li>静态库文件：.a结尾的文件</li>
+<li>动态库文件：.so结尾的文件 </li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2-操作触摸屏"><a href="#4-2-操作触摸屏" class="headerlink" title="4.2 操作触摸屏"></a>4.2 操作触摸屏</h4><h5 id="4-2-1-打开触摸屏"><a href="#4-2-1-打开触摸屏" class="headerlink" title="4.2.1 打开触摸屏"></a>4.2.1 打开触摸屏</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function">struct tsdev *<span class="title">ts_open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *dev_name, <span class="keyword">int</span> nonblock)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>返回值(struct tsdev*)：指向你打开的那个触摸屏设备的指针，它里面存放了触摸屏的参数信息(例如：触摸屏的文件描述符)</li>
+<li>dev_name：触摸屏的驱动路径 /dev/event0</li>
+<li>nonblock：设置0  阻塞(卡住)，设置  1  非阻塞<blockquote>
+<p>什么是阻塞？这是个好问题，这不仅仅在这个函数里面出现，也不仅仅在C语言的函数里面出现，所以大家可以详细去看看<a href="http://www.cnblogs.com/orez88/articles/2513460.html" target="_blank" rel="external">阻塞和非阻塞的区别</a>，然后再百度看看其他的blog，感觉这个blog说的也还不够全面。</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="4-2-2-配置触摸屏"><a href="#4-2-2-配置触摸屏" class="headerlink" title="4.2.2 配置触摸屏"></a>4.2.2 配置触摸屏</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ts_config</span><span class="params">(struct tsdev *)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>struct tsdev：<strong>ts_open</strong>的返回值作为实参传递进来</li>
+</ul>
+<h5 id="4-2-3-读取触摸屏反馈的x，y坐标"><a href="#4-2-3-读取触摸屏反馈的x，y坐标" class="headerlink" title="4.2.3 读取触摸屏反馈的x，y坐标"></a>4.2.3 读取触摸屏反馈的x，y坐标</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ts_read</span><span class="params">(struct tsdev *, struct ts_sample *, <span class="keyword">int</span>=<span class="number">1</span>)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>struct ts_sample *  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//保存你点击的区域的坐标和压力值</span></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ts_sample</span> </span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span>		x;  <span class="comment">//x坐标</span></div><div class="line"><span class="keyword">int</span>		y;</div><div class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span>	pressure; <span class="comment">//压力值  手松开  压力 0  按下去压力 &gt;0	</span></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">timeval</span>	<span class="title">tv</span>;</span> <span class="comment">// 时间</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="4-2-4-关闭触摸屏"><a href="#4-2-4-关闭触摸屏" class="headerlink" title="4.2.4 关闭触摸屏"></a>4.2.4 关闭触摸屏</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ts_close</span><span class="params">(struct tsdev *)</span></span>;</div></pre></td></tr></table></figure>
+<h4 id="4-3-编译程序"><a href="#4-3-编译程序" class="headerlink" title="4.3 编译程序"></a>4.3 编译程序</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arm-linux-gcc ts.c libts.so -o ts</div></pre></td></tr></table></figure>
+<h4 id="4-4-测试触摸屏"><a href="#4-4-测试触摸屏" class="headerlink" title="4.4 测试触摸屏"></a>4.4 测试触摸屏</h4><blockquote>
+<p>如果发现坐标很离谱（打印了负数，坐标超过范围800*480），可以去校准触摸屏</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span>  /tslib/bin  <span class="comment">#进入 cd  /tslib/bin 目录</span></div><div class="line">./ts_calibrate  <span class="comment">#屏幕左上角会出现十字叉，用手点击一下，十字叉会跳到另外的位置，继续点</span></div></pre></td></tr></table></figure>
+<h4 id="4-5-课外知识点"><a href="#4-5-课外知识点" class="headerlink" title="4.5 课外知识点"></a>4.5 课外知识点</h4><h5 id="4-5-1-makefile（自动化编译）"><a href="#4-5-1-makefile（自动化编译）" class="headerlink" title="4.5.1 makefile（自动化编译）"></a>4.5.1 makefile（自动化编译）</h5><blockquote>
+<p>每次编译都要写一大串的命令，简直是太反人类了，像我这么懒的才不想去实现呢！于是写一些脚本让它自动做这些boring的事情，岂不是很爽？</p>
+</blockquote>
+<ul>
+<li><a href="http://baike.baidu.com/link?url=DxGvhtgLOswPKyBXgeTEYF4KsFHZlLe_JVulKtKHCOvWcD2TlJV6MKUWZNBfIappQHsa8CCqfhGq1Nt12Cj4Xati6BWKV42B05YnVG8MtSG" target="_blank" rel="external">Makefile百度百科</a></li>
+<li><a href="http://blog.csdn.net/u011913612/article/details/52102241" target="_blank" rel="external">Makefile简易教程</a></li>
+<li><a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="external">Makefile全面教程</a></li>
+</ul>
+<h3 id="5-MP3音频播放"><a href="#5-MP3音频播放" class="headerlink" title="5. MP3音频播放"></a>5. MP3音频播放</h3><h4 id="5-1-在终端使用命令来播放"><a href="#5-1-在终端使用命令来播放" class="headerlink" title="5.1 在终端使用命令来播放"></a>5.1 在终端使用命令来播放</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#madplay  音乐的完整路径</span></div><div class="line">madplay  /music/1.mp3</div></pre></td></tr></table></figure>
+<h3 id="6-摄像头编程"><a href="#6-摄像头编程" class="headerlink" title="6. 摄像头编程"></a>6. 摄像头编程</h3><h4 id="6-1-步骤"><a href="#6-1-步骤" class="headerlink" title="6.1 步骤"></a>6.1 步骤</h4><h5 id="6-1-1-初始化摄像头"><a href="#6-1-1-初始化摄像头" class="headerlink" title="6.1.1 初始化摄像头"></a>6.1.1 初始化摄像头</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">linux_v4l2_device_init(<span class="keyword">const</span> <span class="keyword">char</span> *dev)</div></pre></td></tr></table></figure>
+<ul>
+<li>dev：摄像头驱动的路径（/dev/video3）</li>
+</ul>
+<h5 id="6-1-2-启动摄像头捕捉"><a href="#6-1-2-启动摄像头捕捉" class="headerlink" title="6.1.2 启动摄像头捕捉"></a>6.1.2 启动摄像头捕捉</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">linux_v4l2_start_capturing()</div></pre></td></tr></table></figure>
+<h5 id="6-1-3-获取画面数据"><a href="#6-1-3-获取画面数据" class="headerlink" title="6.1.3 获取画面数据"></a>6.1.3 获取画面数据</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">linux_v4l2_get_fream(FrameBuffer *freambuf)</div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Frame_Buffer</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">char</span> buf[<span class="number">1843200</span>];  <span class="comment">// 用来存放图片的颜色值的</span></div><div class="line">	<span class="keyword">int</span> length;   <span class="comment">//颜色值的大小</span></div><div class="line">&#125;FrameBuffer</div></pre></td></tr></table></figure>
+<h5 id="6-1-4-将摄像头jpg画面在液晶屏上显示出来"><a href="#6-1-4-将摄像头jpg画面在液晶屏上显示出来" class="headerlink" title="6.1.4 将摄像头jpg画面在液晶屏上显示出来"></a>6.1.4 将摄像头jpg画面在液晶屏上显示出来</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lcd_draw_jpg(<span class="keyword">unsigned</span> <span class="keyword">int</span> x,<span class="keyword">unsigned</span> <span class="keyword">int</span> y,<span class="keyword">const</span> <span class="keyword">char</span> *pjpg_path,<span class="keyword">char</span> *pjpg_buf,<span class="keyword">unsigned</span> <span class="keyword">int</span> jpg_buf_size,<span class="keyword">unsigned</span> <span class="keyword">int</span> jpg_half)</div></pre></td></tr></table></figure>
+<ul>
+<li>x：x坐标</li>
+<li>y：y坐标</li>
+<li>pjpg_path：你要显示jpg图片的路径</li>
+<li>pjpg_buf：你要显示的jpg图片的颜色值就存放在这个buf中</li>
+<li>jpg_buf_size：颜色值的大小</li>
+<li>jpg_half：<ul>
+<li>0：摄像头拍摄的画面640*480</li>
+<li>1：摄像头拍摄的画面320*240</li>
+</ul>
+</li>
+</ul>
+<h5 id="6-1-5-编译摄像头程序"><a href="#6-1-5-编译摄像头程序" class="headerlink" title="6.1.5 编译摄像头程序"></a>6.1.5 编译摄像头程序</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arm-linux-gcc *.c -o camera  -I./libjpeg  -L./libjpeg  -lapi_v4l2_arm  -ljpeg</div></pre></td></tr></table></figure>
+<h4 id="6-2-新建、保存摄像头拍摄的画面"><a href="#6-2-新建、保存摄像头拍摄的画面" class="headerlink" title="6.2 新建、保存摄像头拍摄的画面"></a>6.2 新建、保存摄像头拍摄的画面</h4><blockquote>
+<p>使用open函数，新建一个空白的jpg文件，然后往里面写入摄像头的颜色值</p>
+</blockquote>
+<h3 id="7-视频播放"><a href="#7-视频播放" class="headerlink" title="7. 视频播放"></a>7. 视频播放</h3><h4 id="7-1-将开发板中的图片转换成视频"><a href="#7-1-将开发板中的图片转换成视频" class="headerlink" title="7.1 将开发板中的图片转换成视频"></a>7.1 将开发板中的图片转换成视频</h4><h5 id="7-1-1-使用ffmpeg的步骤"><a href="#7-1-1-使用ffmpeg的步骤" class="headerlink" title="7.1.1 使用ffmpeg的步骤"></a>7.1.1 使用ffmpeg的步骤</h5><ol>
+<li>将ffmpeg文件夹中lib里面存放的压缩包下载到开发板中/lib</li>
+<li>将下载完毕的压缩包解压tar -zxf  libffmpeg.tar.gz</li>
+<li>将解压完毕得到的文件夹libffmpeg里面所有的文件剪切(拷贝)到/lib里面</li>
+<li>将ffmpeg文件夹中app里面存放的两个程序下载到开发板/bin </li>
+<li>下载完毕之后修改这两个程序的权限</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod  777 ffmpeg         </div><div class="line">chmod  777 ffplay</div></pre></td></tr></table></figure>
+<h5 id="7-1-2-通过ffmpeg将图片转换为-avi文件"><a href="#7-1-2-通过ffmpeg将图片转换为-avi文件" class="headerlink" title="7.1.2 通过ffmpeg将图片转换为.avi文件"></a>7.1.2 通过ffmpeg将图片转换为.avi文件</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">system(<span class="string">"ffmpeg -f image2 -i /wuyi/jpg/%d.jpg -r 25 /wuyi/jpg/video.avi\n"</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>-f：指明文件的格式</li>
+<li>-i：指明开发板上摄像头保存的图片的路径（/wuyi/jpg/%d.jpg）</li>
+<li>-r：每秒转换多少帧图片</li>
+<li>/gec/web/video/video.avi：指明转换后的视频存储在哪个位置（以上路径都应该提前创建好）</li>
+</ul>
+<h4 id="7-2-使用mplayer播放开发板中的视频"><a href="#7-2-使用mplayer播放开发板中的视频" class="headerlink" title="7.2 使用mplayer播放开发板中的视频"></a>7.2 使用mplayer播放开发板中的视频</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mplayer   视频的路径    (mp4,avi格式可以)</div></pre></td></tr></table></figure>
+<h4 id="7-3-在代码中播放视频"><a href="#7-3-在代码中播放视频" class="headerlink" title="7.3 在代码中播放视频"></a>7.3 在代码中播放视频</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">system(<span class="string">"mplayer  视频的路径"</span>);</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>总的来说，在这次课程上干货满满，其中涉及到不少没有学过的知识，比如内存映射，Makefile的书写等，做项目的意义大概也在这里吧~通过一个项目可以快速成长起来，知道自己哪一方面的知识薄弱，然后可以系统地去学习某些知识点。</p>
+</blockquote>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><blockquote>
+<p>最后肯定要po上源代码，虽然源代码存在非常多的bug，不过拿过来参考参考学习学习还是可以的。</p>
+</blockquote>
+<p><a href="https://github.com/Yeah-Kun/learngit/tree/master/C/embedded%20linux" target="_blank" rel="external">项目完整源代码</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/my-first-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yeah Kun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah Kun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/28/my-first-blog/" itemprop="url">第五届泰迪杯C题——楼层结构识别算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-28T16:30:46+08:00">
+                2017-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>第一次参加泰迪杯，前期跟队友配合的不算太好，不过后期经过老师的教育指导，再通过大家的努力，终于把泰迪杯给解决了，这期间困难重重，收获也颇丰，其中收获最大的大概是把楼层结构识别算法做出来了，刚刚开始的时候还认为自己没办法写出这个算法，不过最后在队友的帮助之下，还是将它实现了，下面就来详细介绍一下这个算法。</p>
+<h3 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h3><p>经过对BBS论坛源代码的研究，我们发现主题帖跟回帖都在同一个标签之下（div），并且他们都是此div的子节点，同时，我们还知道，帖与帖之间部分标签数量相差不大。由此，我们可以把主题帖和回帖看成一个个楼层，把帖子的标签作为楼层的特征，进而识别出楼层，并将其绝对路径找出来。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>将网页源代码转换为DOM树，使用层序遍历DOM树，通过余弦相似度识别相似楼层，根据统计出来的楼层数，与识别出来的楼层数进行比较进而得出正确楼层，输出楼层位置。</p>
+<h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><ul>
+<li>软件和开发环境：sublime text3、python-Anaconda、Win10系统</li>
+<li>python包：lxml（你没看错，就一个包）</li>
+</ul>
+<h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><ol>
+<li><p>构建DOM树</p>
+</li>
+<li><p>层序遍历DOM树</p>
+</li>
+<li><p>楼层矩阵筛选</p>
+</li>
+<li><p>楼层矩阵相似度比较</p>
+</li>
+<li><p>获得楼层矩阵绝对路径</p>
+</li>
+</ol>
+<h3 id="1-构建DOM树"><a href="#1-构建DOM树" class="headerlink" title="1.构建DOM树"></a>1.构建DOM树</h3><h4 id="1-1-传入两个值（网页源代码，楼层数标准值）"><a href="#1-1-传入两个值（网页源代码，楼层数标准值）" class="headerlink" title="1.1 传入两个值（网页源代码，楼层数标准值）"></a>1.1 传入两个值（网页源代码，楼层数标准值）</h4><ul>
+<li><p>网页源代码（bs0bj）：用于操作DOM树</p>
+</li>
+<li><p>楼层数标准值（standard_value）：用于比较楼层矩阵数，我们是通过“发表于”、“只看该作者”和时间把这个值确定下来</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 算法</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">TreeAlgotithm</span><span class="params">(bs0bj, standard_value)</span>:</span></div><div class="line"></div><div class="line">tree = etree.HTML(bs0bj)  <span class="comment"># 用HTML方法解析文件</span></div><div class="line"></div><div class="line">t = tree.getroottree()  <span class="comment"># 获得一个节点对应的树</span></div><div class="line"></div><div class="line">root = t.getroot()  <span class="comment"># 用于存储当前根节点，即爸爸节点</span></div><div class="line"></div><div class="line">save_children_tag = Queue()  <span class="comment"># 队列，用于存储子节点</span></div><div class="line"></div><div class="line"><span class="comment"># 将body节点放到队列中</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(root[<span class="number">0</span>].getnext()):</div><div class="line"></div><div class="line">save_children_tag.enqueue(root[<span class="number">1</span>])</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line"><span class="keyword">return</span> <span class="keyword">None</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>网页正文都在body节点之下，所以直接定位body节点就可以减少遍历时间。</p>
+</blockquote>
+<h4 id="1-2-初始化存储容器"><a href="#1-2-初始化存储容器" class="headerlink" title="1.2 初始化存储容器"></a>1.2 初始化存储容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">similar_tag = <span class="number">0</span>  <span class="comment"># 用于计算有多少个相似的儿子对象</span></div><div class="line"></div><div class="line">matrix_pack = []  <span class="comment"># 矩阵容器，用于存放未进行相似度计算的矩阵</span></div><div class="line"></div><div class="line">tag_pack = []  <span class="comment"># 标签容器，用于存放未进行相似度计算的标签</span></div><div class="line"></div><div class="line">one_path = []  <span class="comment"># 用于临时存放某节点的绝对路径</span></div><div class="line"></div><div class="line">new_matrix_pack = []  <span class="comment"># 矩阵容器，用于存放已经进行相似度计算的矩阵</span></div><div class="line"></div><div class="line">new_tag_pack = []  <span class="comment"># 标签容器，用于存放相似度高的标签</span></div><div class="line"></div><div class="line">test = []  <span class="comment"># 观察数据进度</span></div></pre></td></tr></table></figure>
+<h3 id="2-层序遍历DOM树"><a href="#2-层序遍历DOM树" class="headerlink" title="2.层序遍历DOM树"></a>2.层序遍历DOM树</h3><p>DOM树是一种普通的树结构，层序遍历是寻找楼层结构最快的方法，我们要寻找的网页正文和楼层结构基本都在body节点之下，用层序遍历，是最快找到楼层标签的方法。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3012260-71b394fb6f4cc31e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DOM树"></p>
+<h4 id="2-1-构造队列"><a href="#2-1-构造队列" class="headerlink" title="2.1 构造队列"></a>2.1 构造队列</h4><p>数据结构知识，使用队列保存每层节点的信息，先进先出层序遍历树的每一个节点。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 构造队列，用于树的层序遍历</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span><span class="params">(object)</span>:</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line"></div><div class="line">self.items = []</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(self)</span>:</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> self.items == []</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self, item)</span>:</span></div><div class="line"></div><div class="line">self.items.insert(<span class="number">0</span>, item)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> self.items.pop()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> len(self.items)</div></pre></td></tr></table></figure>
+<h4 id="2-2-遍历DOM树"><a href="#2-2-遍历DOM树" class="headerlink" title="2.2 遍历DOM树"></a>2.2 遍历DOM树</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">while</span>(similar_tag &gt; standard_value + <span class="number">2</span> <span class="keyword">or</span> similar_tag &lt; standard_value - <span class="number">2</span>):</div><div class="line"></div><div class="line">similar_tag = <span class="number">0</span>  <span class="comment"># 相似节点数初始化</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (save_children_tag.isEmpty()):</div><div class="line"></div><div class="line">print(<span class="string">"栈为空"</span>)</div><div class="line"></div><div class="line"><span class="keyword">return</span> <span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">root = save_children_tag.dequeue()  <span class="comment"># 队列弹栈</span></div><div class="line"></div><div class="line"><span class="comment"># 父节点遍历</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> child <span class="keyword">in</span> root:</div><div class="line"></div><div class="line">save_children_tag.enqueue(child)</div></pre></td></tr></table></figure>
+<h3 id="3-楼层矩阵筛选"><a href="#3-楼层矩阵筛选" class="headerlink" title="3.楼层矩阵筛选"></a>3.楼层矩阵筛选</h3><h4 id="3-1-初始化矩阵容器"><a href="#3-1-初始化矩阵容器" class="headerlink" title="3.1 初始化矩阵容器"></a>3.1 初始化矩阵容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">matrix_pack = []  <span class="comment"># 矩阵容器，用于存放未进行相似度计算的矩阵</span></div><div class="line"></div><div class="line">tag_pack = []  <span class="comment"># 标签容器，用于存放未进行相似度计算的标签</span></div><div class="line"></div><div class="line">new_matrix_pack = []  <span class="comment"># 矩阵容器，用于存放已经进行相似度计算的矩阵</span></div><div class="line"></div><div class="line">new_tag_pack = []  <span class="comment"># 标签容器，用于存放相似度高的标签</span></div></pre></td></tr></table></figure>
+<h4 id="3-2-构建楼层矩阵"><a href="#3-2-构建楼层矩阵" class="headerlink" title="3.2 构建楼层矩阵"></a>3.2 构建楼层矩阵</h4><p>经过对楼层源代码的研究，发现这些标签出现频数较多，但是在过程中少考虑了一个问题，就某些标签会受到回帖内容的影响，比如img，回帖多一张照片就会多一个img标签。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">TagMatrix</span><span class="params">(tree, path)</span>:</span></div><div class="line"></div><div class="line"><span class="comment"># 统计标签频数</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">List_Count_Tag</span><span class="params">(children)</span>:</span></div><div class="line"></div><div class="line">List_tag = []</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'a'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'a'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'div'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'div'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'p'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'p'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'span'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'span'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'img'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'img'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'td'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'td'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'dd'</span> <span class="keyword">in</span> children:</div><div class="line"></div><div class="line">List_tag.append(children.count(<span class="string">'dd'</span>))</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">List_tag.append(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">return</span> List_tag</div><div class="line"></div><div class="line">tag_save = []</div><div class="line"></div><div class="line">child_Node = tree.xpath(path + <span class="string">'//*'</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> child <span class="keyword">in</span> child_Node:</div><div class="line"></div><div class="line">tag_save.append(child.tag)</div><div class="line"></div><div class="line"><span class="keyword">return</span> List_Count_Tag(tag_save)</div></pre></td></tr></table></figure>
+<h4 id="3-3-矩阵初筛选"><a href="#3-3-矩阵初筛选" class="headerlink" title="3.3 矩阵初筛选"></a>3.3 矩阵初筛选</h4><p>这一步至关重要，因为在初期没加这一步的时候，很多空矩阵被视为楼层，后来我们发现，加入了这个矩阵的初步筛选之后，不仅准确率提高了，连效率也大大提高了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">one_matrix = TagMatrix(tree, one_path)  <span class="comment"># 获得儿子节点的矩阵</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(one_matrix[<span class="number">0</span>] &lt; <span class="number">2</span> <span class="keyword">or</span> one_matrix[<span class="number">1</span>] &lt; <span class="number">2</span>):  <span class="comment"># 筛选没可能是楼层的元素</span></div><div class="line"></div><div class="line"><span class="keyword">continue</span></div><div class="line"></div><div class="line"><span class="comment"># 存储没有进行相似度计算的矩阵和标签</span></div><div class="line"></div><div class="line">matrix_pack.append(one_matrix)</div><div class="line"></div><div class="line">tag_pack.append(child)</div></pre></td></tr></table></figure>
+<h4 id="3-4-选择标准矩阵"><a href="#3-4-选择标准矩阵" class="headerlink" title="3.4 选择标准矩阵"></a>3.4 选择标准矩阵</h4><p>由于下一步要进行矩阵相似度的比较，我们需要找出一个最有可能是楼层的矩阵（标准矩阵），与其他的矩阵进行相似度比较。经过研究我们发现，各个楼层的a标签基本一致，因此统计a标签频数，并找到跟a标签频数相等的第一个矩阵作为标准矩阵。</p>
+<h5 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h5><ol>
+<li><p>提取所有楼层矩阵的第一个元素，建立新列表</p>
+</li>
+<li><p>统计列表中，返回出现次数最多的元素</p>
+</li>
+<li><p>在所有楼层矩阵中找到第一个跟频数一致的矩阵，并返回作为标准矩阵</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 选出标准值</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">StandardMatrix</span><span class="params">(tag_pack, matrix_pack)</span>:</span></div><div class="line"></div><div class="line"><span class="comment"># 计算矩阵第一个元素，用于选出标准值</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">CountKey</span><span class="params">(matrix_pack)</span>:</span></div><div class="line"></div><div class="line">temp = <span class="number">0</span></div><div class="line"></div><div class="line">temp_list = []</div><div class="line"></div><div class="line"><span class="comment"># 提取标签容器的第一个标签，</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> one <span class="keyword">in</span> matrix_pack:</div><div class="line"></div><div class="line">temp_list.append(one[<span class="number">0</span>])</div><div class="line"></div><div class="line">result_list = collections.Counter(temp_list)</div><div class="line"></div><div class="line">dict(result_list)</div><div class="line"></div><div class="line"><span class="comment"># 返回a标签的频数，用作选出标准矩阵</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> max(result_list.items(), key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>])[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="keyword">if</span>(len(tag_pack) &gt; <span class="number">1</span>):</div><div class="line"></div><div class="line">first_key = CountKey(matrix_pack)</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> matrix_pack:</div><div class="line"></div><div class="line"><span class="keyword">if</span>(i[<span class="number">0</span>] == first_key):</div><div class="line"></div><div class="line">standar_matrix = i</div><div class="line"></div><div class="line"><span class="keyword">return</span> standar_matrix</div></pre></td></tr></table></figure>
+<h3 id="4-楼层矩阵相似度比较"><a href="#4-楼层矩阵相似度比较" class="headerlink" title="4.楼层矩阵相似度比较"></a>4.楼层矩阵相似度比较</h3><ul>
+<li>相似度&gt;0.9：判断为楼层矩阵</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">if</span>(standar_matrix != <span class="keyword">None</span>):</div><div class="line"></div><div class="line">i = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> new_one_matrix <span class="keyword">in</span> matrix_pack:</div><div class="line"></div><div class="line">Cos_key = CosSimilarity(new_one_matrix, standar_matrix)</div><div class="line"></div><div class="line"><span class="keyword">if</span>(Cos_key &gt; <span class="number">0.90</span>):</div><div class="line"></div><div class="line">new_tag_pack.append(tag_pack[i])</div><div class="line"></div><div class="line">new_matrix_pack.append(matrix_pack[i])</div><div class="line"></div><div class="line">i = i + <span class="number">1</span></div></pre></td></tr></table></figure>
+<h4 id="4-1-余弦相似度比较"><a href="#4-1-余弦相似度比较" class="headerlink" title="4.1 余弦相似度比较"></a>4.1 余弦相似度比较</h4><p>这个其实没什么好看的，有技术含量的内容都在上面，这个在网上都能找到。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 两个矩阵余弦相似度计算</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">CosSimilarity</span><span class="params">(hinsA, hinsB)</span>:</span></div><div class="line"></div><div class="line">up_count = <span class="number">0</span></div><div class="line"></div><div class="line">down_left_count = <span class="number">0</span></div><div class="line"></div><div class="line">down_right_count = <span class="number">0</span></div><div class="line"></div><div class="line">result_count = <span class="number">0</span></div><div class="line"></div><div class="line">i = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="comment"># 计算两个向量的点积</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> i &lt; len(hinsA):</div><div class="line"></div><div class="line">up_count = up_count + hinsA[i] * hinsB[i]</div><div class="line"></div><div class="line">i = i + <span class="number">1</span></div><div class="line"></div><div class="line">i = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="comment"># 计算两个向量的模</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> i &lt; len(hinsA):</div><div class="line"></div><div class="line">down_left_count = down_left_count + hinsA[i] ** <span class="number">2</span></div><div class="line"></div><div class="line">i = i + <span class="number">1</span></div><div class="line"></div><div class="line">i = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> i &lt; len(hinsB):</div><div class="line"></div><div class="line">down_right_count = down_right_count + hinsB[i] ** <span class="number">2</span></div><div class="line"></div><div class="line">i = i + <span class="number">1</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> up_count / (math.sqrt(down_left_count) * math.sqrt(down_right_count))</div></pre></td></tr></table></figure>
+<h4 id="4-2-释放矩阵容器内存"><a href="#4-2-释放矩阵容器内存" class="headerlink" title="4.2 释放矩阵容器内存"></a>4.2 释放矩阵容器内存</h4><p>这么做主要是为了避免下次计算的时候，把前一次的数据也算进去了，这一步也是很重要的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">if</span>(similar_tag &gt; standard_value + <span class="number">2</span> <span class="keyword">or</span> similar_tag &lt; standard_value - <span class="number">2</span>):</div><div class="line"></div><div class="line"><span class="keyword">del</span>(matrix_pack)</div><div class="line"></div><div class="line"><span class="keyword">del</span>(tag_pack)</div><div class="line"></div><div class="line"><span class="keyword">del</span>(new_tag_pack)</div><div class="line"></div><div class="line"><span class="keyword">del</span>(new_matrix_pack)</div></pre></td></tr></table></figure>
+<h3 id="5-获得楼层矩阵绝对路径"><a href="#5-获得楼层矩阵绝对路径" class="headerlink" title="5.获得楼层矩阵绝对路径"></a>5.获得楼层矩阵绝对路径</h3><p>做到这一步也基本差不多了，把楼层矩阵的绝对路径拿到手，就可以定位每一个楼层的位置了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">tag_path = []</div><div class="line"></div><div class="line"><span class="keyword">for</span> tag <span class="keyword">in</span> new_tag_pack:</div><div class="line"></div><div class="line">tag_path.append(t.getpath(tag))</div><div class="line"></div><div class="line"><span class="keyword">return</span> tag_path</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>存在问题：</li>
+</ul>
+<ol>
+<li><p>少于3个楼层识别困难</p>
+</li>
+<li><p>矩阵构造不严谨，部分标签会受回帖影响</p>
+</li>
+<li><p>依赖于标准值的准确性</p>
+</li>
+<li><p>没有树结构深度限制（一直识别到最后一个节点，但其实楼层不可能很深层的节点，一般在4到7层）</p>
+</li>
+</ol>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><p><a href="https://github.com/Yeah-Kun/python/blob/master/Tipdm%20Cup/code/%E6%8F%90%E4%BA%A4%E7%BB%99%E5%AE%98%E6%96%B9%E7%9A%84%E6%96%87%E4%BB%B6/TDcup/tree_algorithm.py" target="_blank" rel="external">算法源代码</a></p>
+<p>个人博客，最新更新的文章都发在这，欢迎关注：<a href="https://yeah-kun.github.io/" target="_blank" rel="external">https://yeah-kun.github.io/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/26/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yeah Kun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah Kun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/26/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-26T16:30:46+08:00">
+                2017-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Yeah Kun" />
+          <p class="site-author-name" itemprop="name">Yeah Kun</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
     </main>
-    <footer class="page-footer light-blue accent-4 darken-1">
-    
-    <div class="container">
-        <div class="row">
-            
-            <div class="social-group col m4 s12">
-                <h5 class="white-text">社交</h5>
-                
-                    <a class="social-link" href="http://weibo.com/2660835460/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
-                        <i class="fa fa-2x fa-weibo"></i>
-                    </a>
-                
-                    <a class="social-link" href="https://github.com/Yeah-Kun" target="_blank">
-                        <i class="fa fa-2x fa-github"></i>
-                    </a>
-                
-                    <a class="social-link" href="/atom.xml" target="_blank">
-                        <i class="fa fa-2x fa-rss"></i>
-                    </a>
-                
-                <div class="site-visitors-container white-text">
-                    <span>
-                        <i class="fa fa-user"></i>
-                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-                    </span>
-                    <span>&nbsp;|&nbsp;</span>
-                    <span>
-                        <i class="fa fa-eye"></i>
-                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-                    </span>
-                </div>
-            </div>
-            
 
-            
-            <div class="col m8 s12">
-                <h5 class="white-text">友情链接</h5>
-                
-                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism主题作者的技术博客</a>
-                
-                    <a class="social-link" href="https://github.com/raytaylorlin" target="_blank">Github地址（测试友情链接）</a>
-                
-            </div>
-            
-        </div>
-    </div>
-    
-
-    <div class="footer-copyright pink-link-context">
-        <div class="container">
-            © 2017 yeah-kun.com, All rights reserved.
-            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
-        </div>
-    </div>
-</footer>
-
-
-    <noscript>
-    <div class="noscript">
-        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
-    </div>
-</noscript>
-<div class="noscript">
-    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yeah Kun</span>
 </div>
 
 
-<script src="/js/jquery.min.js"></script>
-<script src="/js/materialize.min.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
 
-<script>
-    (function($) {
-        $(document).ready(function() {
-            // 隐藏禁用javascript（针对微信内置浏览器）的提示
-            $('.noscript').hide();
-
-            // 图片缩放效果
-            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
-
-            // 给图片加上点击放大效果（materialbox插件）
-            $imgs.addClass('materialboxed').each(function(i, el) {
-                $(this).attr('data-caption', $(this).attr('alt') || ' ');
-            }).materialbox();
-
-            // 优化表格的显示
-            $('table').each(function() {
-                var $table = $(this);
-                // 除去多行代码的情况
-                if ($table.find('pre').length == 0) {
-                    $table.addClass('responsive-table striped bordered');
-                }
-            });
-
-            // 首页幻灯片
-            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
-
-            $(".button-collapse").sideNav();
-            $(".category-menu").sideNav();
-
-            // 针对gallery post
-            $('.carousel').carousel({full_width: true});
-            $('.carousel-control.prev').click(function() {
-                $('.carousel').carousel('prev');
-            });
-            $('.carousel-control.next').click(function() {
-                $('.carousel').carousel('next');
-            });
-
-            // 文章目录
-            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
-
-            // 目录随屏幕滚动（防止目录过长越过footer）
-            var $toc = $('.toc');
-            var scrollTargetTop = 0;
-            $(window).scroll(function() {
-                var $activeLink = $toc.find('a.active.section');
-                if ($(window).scrollTop() < 100) {
-                    scrollTargetTop = 0;
-                } else {
-                    if ($activeLink[0]) {
-                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
-                    }
-                }
-                $toc.css('top', '-' + scrollTargetTop + 'px');
-            });
-
-            // 修正文章目录的left-border颜色
-            var color = $('.table-of-contents-text').css('color');
-            $('.table-of-contents-link').css('border-left-color', color);
-
-            // 针对移动端做的优化：FAB按钮点击一下收回
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $('.fixed-action-btn').addClass('click-to-toggle');
-            }
-            // 回到顶部
-            $('.btn-return-top').click(function() {
-                $('body, html').animate({
-                    scrollTop: 0
-                }, 500);
-            });
-
-            // 重置读书页面的Tab标签页的颜色
-            $('li.tab a').hover(function() {
-                $(this).toggleClass('text-lighten-4');
-            });
-            $('.indicator').addClass('pink lighten-2');
-
-            
-            // 添加new标签
-            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
-            
-
-            // 搜索功能
-            $('.modal-trigger').leanModal({
-                // 打开搜索框时自动聚焦
-                ready: function() {
-                    if ($('#search').is(":visible")) {
-                        $('#search-input').focus();
-                    }
-                }
-            });
-            var searchXml = "";
-            if (searchXml.length == 0) {
-             	searchXml = "search.xml";
-            }
-            var searchPath = "/" + searchXml;
-            initSearch(searchPath, 'search-input', 'search-result');
-        });
-
-        // 初始化搜索与匹配函数
-        var initSearch = function(path, search_id, content_id) {
-            'use strict';
-            $.ajax({
-                url: path,
-                dataType: "xml",
-                success: function(xmlResponse) {
-                    // get the contents from search data
-                    var datas = $("entry", xmlResponse).map(function() {
-                        return {
-                            title: $("title", this).text(),
-                            content: $("content", this).text(),
-                            url: $("url", this).text()
-                        };
-                    }).get();
-                    var $input = document.getElementById(search_id);
-                    var $resultContent = document.getElementById(content_id);
-                    $input.addEventListener('input', function() {
-                        var str = '<ul class=\"search-result-list\">';
-                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                        $resultContent.innerHTML = "";
-                        if (this.value.trim().length <= 0) {
-                            return;
-                        }
-                        // perform local searching
-                        datas.forEach(function(data) {
-                            var isMatch = true;
-                            var content_index = [];
-                            var data_title = data.title.trim().toLowerCase();
-                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                            var data_url = data.url;
-                            var index_title = -1;
-                            var index_content = -1;
-                            var first_occur = -1;
-                            // only match artiles with not empty titles and contents
-                            if (data_title != '' && data_content != '') {
-                                keywords.forEach(function(keyword, i) {
-                                    index_title = data_title.indexOf(keyword);
-                                    index_content = data_content.indexOf(keyword);
-                                    if (index_title < 0 && index_content < 0) {
-                                        isMatch = false;
-                                    } else {
-                                        if (index_content < 0) {
-                                            index_content = 0;
-                                        }
-                                        if (i == 0) {
-                                            first_occur = index_content;
-                                        }
-                                    }
-                                });
-                            }
-                            // show search results
-                            if (isMatch) {
-                                keywords.forEach(function(keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
-                                });
-
-                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                                var content = data.content.trim().replace(/<[^>]+>/g, "");
-                                if (first_occur >= 0) {
-                                    // cut out 100 characters
-                                    var start = first_occur - 20;
-                                    var end = first_occur + 80;
-                                    if (start < 0) {
-                                        start = 0;
-                                    }
-                                    if (start == 0) {
-                                        end = 100;
-                                    }
-                                    if (end > content.length) {
-                                        end = content.length;
-                                    }
-                                    var match_content = content.substring(start, end);
-                                    // highlight all keywords
-                                    keywords.forEach(function(keyword) {
-                                        var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
-                                    });
-
-                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
-                                }
-                                str += "</li>";
-                            }
-                        });
-                        str += "</ul>";
-                        $resultContent.innerHTML = str;
-                    });
-                }
-            });
-        }
-    })(jQuery);
-</script>
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
 
 
-<script src="/js/prettify.js"></script>
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("pre").addClass("prettyprint");
-        prettyPrint();
-    });
-</script>
-
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-98292524-1', 'auto');
-    ga('send', 'pageview');
-
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
 
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" async
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
 
 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>

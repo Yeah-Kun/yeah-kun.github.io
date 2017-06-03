@@ -1,0 +1,735 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python,脚本," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言现在部分比赛为了推广赞助商或者比赛本身，需要参赛队伍进行网上拉票，甚至票数还会占一定比例的成绩。因此，刷票也就应运而生了。此次我们团队参加一个比赛，就需要网上投票决出前几名，作为一位技术人员，当然是得“解决”技术能解决的问题嘛，所以就写了个刷票插件来刷一刷。 原理刷票的原理很简单，就是相当于模拟人登录网站去投票，只是把这个过程程序化，让程序代替人到网站去投票。具体一点说把，首先是客户端（我们）">
+<meta name="keywords" content="python,脚本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单Python刷票脚本">
+<meta property="og:url" content="http://yoursite.com/2017/06/03/简单Python刷票脚本/index.html">
+<meta property="og:site_name" content="Yeah Kun">
+<meta property="og:description" content="前言现在部分比赛为了推广赞助商或者比赛本身，需要参赛队伍进行网上拉票，甚至票数还会占一定比例的成绩。因此，刷票也就应运而生了。此次我们团队参加一个比赛，就需要网上投票决出前几名，作为一位技术人员，当然是得“解决”技术能解决的问题嘛，所以就写了个刷票插件来刷一刷。 原理刷票的原理很简单，就是相当于模拟人登录网站去投票，只是把这个过程程序化，让程序代替人到网站去投票。具体一点说把，首先是客户端（我们）">
+<meta property="og:image" content="http://opptp2jx7.bkt.clouddn.com/%E7%9B%AE%E6%A0%87%E7%BD%91%E7%AB%99.png">
+<meta property="og:image" content="http://opptp2jx7.bkt.clouddn.com/%E8%A1%A8%E5%8D%95%E4%BF%A1%E6%81%AF1.png">
+<meta property="og:image" content="http://opptp2jx7.bkt.clouddn.com/%E8%A1%A8%E5%8D%95%E4%BF%A1%E6%81%AF2.png">
+<meta property="og:image" content="http://opptp2jx7.bkt.clouddn.com/%E8%A1%A8%E5%8D%95%E6%BC%8F%E6%B4%9E.png">
+<meta property="og:image" content="http://opptp2jx7.bkt.clouddn.com/%E5%85%8D%E8%B4%B9%E4%BB%A3%E7%90%86IP.png">
+<meta property="og:image" content="http://opptp2jx7.bkt.clouddn.com/%E4%BB%A3%E7%90%86IPAPI.png">
+<meta property="og:image" content="http://opptp2jx7.bkt.clouddn.com/%E5%88%B7%E7%A5%A8%E6%8F%92%E4%BB%B6%E6%97%A5%E5%BF%97.png">
+<meta property="og:updated_time" content="2017-06-03T03:33:51.805Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单Python刷票脚本">
+<meta name="twitter:description" content="前言现在部分比赛为了推广赞助商或者比赛本身，需要参赛队伍进行网上拉票，甚至票数还会占一定比例的成绩。因此，刷票也就应运而生了。此次我们团队参加一个比赛，就需要网上投票决出前几名，作为一位技术人员，当然是得“解决”技术能解决的问题嘛，所以就写了个刷票插件来刷一刷。 原理刷票的原理很简单，就是相当于模拟人登录网站去投票，只是把这个过程程序化，让程序代替人到网站去投票。具体一点说把，首先是客户端（我们）">
+<meta name="twitter:image" content="http://opptp2jx7.bkt.clouddn.com/%E7%9B%AE%E6%A0%87%E7%BD%91%E7%AB%99.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/03/简单Python刷票脚本/"/>
+
+
+
+
+
+  <title>简单Python刷票脚本 | Yeah Kun</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yeah Kun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Yeah Kun blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/简单Python刷票脚本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yeah Kun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah Kun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">简单Python刷票脚本</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-03T11:32:17+08:00">
+                2017-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>现在部分比赛为了推广赞助商或者比赛本身，需要参赛队伍进行网上拉票，甚至票数还会占一定比例的成绩。因此，刷票也就应运而生了。此次我们团队参加一个比赛，就需要网上投票决出前几名，作为一位技术人员，当然是得“解决”技术能解决的问题嘛，所以就写了个刷票插件来刷一刷。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>刷票的原理很简单，就是相当于模拟人登录网站去投票，只是把这个过程程序化，让程序代替人到网站去投票。具体一点说把，首先是客户端（我们）发出请求（Request）给服务端（投票网站），跟他们说，我们需要看他们网站的信息，然后服务端就会回复（Respose）我们，我们再把填好的表单发（Request）给他们，他们收到后就会回复（Respose）我们。</p>
+<h3 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h3><ul>
+<li>分析网站</li>
+<li>表单提交</li>
+<li>构造代理IP池</li>
+</ul>
+<h3 id="1-分析网站"><a href="#1-分析网站" class="headerlink" title="1. 分析网站"></a>1. 分析网站</h3><p>由于每个网站需要提交的信息都不一样，那么首先我们需要对目标网站进行相对应的分析，找出他们的表单接口（也就是URL或者叫网址）以及我们需要提交的信息。</p>
+<h3 id="1-1-收集信息"><a href="#1-1-收集信息" class="headerlink" title="1.1 收集信息"></a>1.1 收集信息</h3><p>首先我们登录目标网站</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E7%9B%AE%E6%A0%87%E7%BD%91%E7%AB%99.png" alt="目标网站"></p>
+<p>使用F12，打开审核元素，点击Network，真实地进行一次表单提交</p>
+<p>框住的两个内容就是我们需要知道的一部分表单信息</p>
+<ul>
+<li>Request URL：请求网址，我们提交的信息就是传到这个url里面去</li>
+<li>Request method：请求方法，我们提交的方法</li>
+</ul>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E8%A1%A8%E5%8D%95%E4%BF%A1%E6%81%AF1.png" alt="表单信息1"></p>
+<p>下面有两个框分别框住两个不同的信息区域，具体有什么用呢？下面就来详细解释一下这个</p>
+<ul>
+<li>Request Headers：请求头，当我们访问网站的时候，我们都需要提交一个请求头过去，以证明我们不是爬虫，而是真实的访问，所以我们要把这个拿到，以便假装我们不是爬虫。</li>
+<li>From Data：这就是我们要提交的数据了，现在提交的数据都是以json格式提交，按照这些信息写好我们需要提交的json数据就好</li>
+</ul>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E8%A1%A8%E5%8D%95%E4%BF%A1%E6%81%AF2.png" alt="表单信息2"></p>
+<p>以上就是需要获得的基本信息，根据这些信息我们就可以编写刷票插件了，但作为一个对自身有高标准严要求的程序员来说，仅仅这样就足够吗？当然不会啦，我们得找一找这个提交过程有没有什么漏洞。</p>
+<p>怎么找？分析源代码，找了找，果真还让我找到了！<br><img src="http://opptp2jx7.bkt.clouddn.com/%E8%A1%A8%E5%8D%95%E6%BC%8F%E6%B4%9E.png" alt="表单漏洞"></p>
+<p>看出什么没有，它这里有两个致命的漏洞：</p>
+<ol>
+<li>它允许提交3支或3支以上的队伍，并且没有限制最大数量，只限制了最少数量。</li>
+<li>它没有进行相同数据的筛选。</li>
+</ol>
+<p>意思就是说，我们可以一次提交几百上千个，甚至上万个==相同的==数据。但我会这么做吗？考虑到后果的话肯定不会，因为没有人可以在很短时间内投很多票，要是他们追查起来，那发现还不简单？毕竟我们是在模拟真实投票嘛，所以就投3票给自己好了，隐藏功与名。</p>
+<h3 id="2-表单提交"><a href="#2-表单提交" class="headerlink" title="2. 表单提交"></a>2. 表单提交</h3><p>好了，既然把收集到的数据都整理好了，那么就开始写代码进行表单提交了。</p>
+<h4 id="2-1-运用到的库"><a href="#2-1-运用到的库" class="headerlink" title="2.1 运用到的库"></a>2.1 运用到的库</h4><ul>
+<li>requests：非常好用的第三方库，用于表单提交</li>
+</ul>
+<p><a href="hhttp://docs.python-requests.org/en/master/user/quickstart/#make-a-request" target="_blank" rel="external">Requests库官方技术文档</a></p>
+<p>把它看一遍，所有操作就没问题了，下面就来写代码吧！</p>
+<h4 id="2-2-构造表单信息"><a href="#2-2-构造表单信息" class="headerlink" title="2.2 构造表单信息"></a>2.2 构造表单信息</h4><p>拿着这个代码就能去投票啦，开不开心？<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请求头信息</span></div><div class="line">headers = &#123;</div><div class="line">    <span class="string">'Accept'</span>: <span class="string">'*/*'</span>,</div><div class="line">    <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip'</span>,</div><div class="line">    <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN'</span>,</div><div class="line">    <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</div><div class="line">    <span class="string">'Content-Length'</span>: <span class="string">'16'</span>,</div><div class="line">    <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</div><div class="line">    <span class="string">'Host'</span>: <span class="string">'www.dingnf.com'</span>,</div><div class="line">    <span class="string">'Origin'</span>: <span class="string">'http://www.dingnf.com'</span>,</div><div class="line">    <span class="string">'Referer'</span>: <span class="string">'http://www.dingnf.com/active/wxws_s'</span>,</div><div class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/4.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.3029.110 Safari/537.36'</span>,</div><div class="line">    <span class="string">'X-Requested-With'</span>: <span class="string">'XMLHttpRequest'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment"># post表单网址</span></div><div class="line">url = <span class="string">"http://www.dingnf.com/active/wxws_t"</span></div><div class="line">params = &#123;<span class="string">'ids'</span>: [<span class="string">'22'</span>, <span class="string">'22'</span>, <span class="string">'22'</span>]&#125;</div><div class="line">r = requests.post(url=url, data=params, headers=headers, proxies=proxies)</div></pre></td></tr></table></figure></p>
+<p>突然发现问题来了，只能提交一次！这是为什么？</p>
+<h3 id="3-构造代理IP池"><a href="#3-构造代理IP池" class="headerlink" title="3. 构造代理IP池"></a>3. 构造代理IP池</h3><p>大部分投票网站都会记录投票的IP地址，避免同一个IP多次投票，那怎么办？我们能模仿真实投票，还换不了IP地址？换IP地址是可以的，不过比较麻烦，我们有一种更加简便的方法：使用代理服务器去爬去某个网站的内容，那对方网站上显示的就不是我们真实的IP地址了，而是代理服务器的IP地址，在python中，使用代理服务器设置很简单。</p>
+<h4 id="3-1-找到代理IP"><a href="#3-1-找到代理IP" class="headerlink" title="3.1 找到代理IP"></a>3.1 找到代理IP</h4><p>这里推荐<a href="http://www.xicidaili.com/" target="_blank" rel="external">西刺免费代理IP</a>，西刺，值得你拥有</p>
+<p><img src="http://opptp2jx7.bkt.clouddn.com/%E5%85%8D%E8%B4%B9%E4%BB%A3%E7%90%86IP.png" alt="代理IP"></p>
+<p>使用API可以快速获得我们需要的IP地址，当然，我们也可以做个爬虫，去爬它网站上的URL，这里就不展开说了。<br><img src="http://opptp2jx7.bkt.clouddn.com/%E4%BB%A3%E7%90%86IPAPI.png" alt="网站API"></p>
+<h4 id="3-2-构造IP代理容器"><a href="#3-2-构造IP代理容器" class="headerlink" title="3.2 构造IP代理容器"></a>3.2 构造IP代理容器</h4><p>由于从API上获得的数据多出一些换行符和回车符，不利于直接提取IP地址，所以就先用正则表达式直接提取需要的信息，再写进列表里面，方便之后读取。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">WriteIPadress</span><span class="params">()</span>:</span></div><div class="line">    all_url = [] <span class="comment"># 存储IP地址的容器</span></div><div class="line">    <span class="comment"># 代理IP的网址</span></div><div class="line">    url = <span class="string">"http://api.xicidaili.com/free2016.txt"</span></div><div class="line">    r = requests.get(url=url)</div><div class="line">    all_url = re.findall(<span class="string">"\d+\.\d+\.\d+\.\d+\:\d+"</span>,r.text)</div><div class="line">    <span class="keyword">with</span> open(<span class="string">"D:\\code\\python\\new\\Brush ticket\\IP.txt"</span>,<span class="string">'w'</span>) <span class="keyword">as</span> f:</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> all_url:</div><div class="line">            f.write(i)</div><div class="line">            f.write(<span class="string">'\n'</span>)</div><div class="line">    <span class="keyword">return</span> all_url</div></pre></td></tr></table></figure>
+<h3 id="4-主函数"><a href="#4-主函数" class="headerlink" title="4. 主函数"></a>4. 主函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">count = <span class="number">0</span> <span class="comment"># 计数器</span></div><div class="line"><span class="keyword">while</span> count &lt; <span class="number">4000</span>:</div><div class="line">    all_url = WriteIPadress()</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> all_url:</div><div class="line">        proxies = &#123;<span class="string">"http"</span>: i&#125;</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            r = requests.post(url=url, data=params, headers=headers, proxies=proxies)</div><div class="line">            <span class="keyword">if</span>(r.json()[<span class="string">'flag'</span>] == <span class="keyword">True</span>):</div><div class="line">                count += <span class="number">1</span></div><div class="line">                print(<span class="string">"成功投票%d次！"</span> % (count))</div><div class="line">            print(r.json())</div><div class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> reason:</div><div class="line">            print(<span class="string">"错误原因是："</span>,reason)</div></pre></td></tr></table></figure>
+<p>由于某些IP地址是存在问题的，所以需要设置异常处理，以便让程序能够正常运行，而API的数据每15分钟更新一次，我们每跑完一遍列表的时间也差不多，因此也就不做其他处理了。</p>
+<p>运行日志<br><img src="http://opptp2jx7.bkt.clouddn.com/%E5%88%B7%E7%A5%A8%E6%8F%92%E4%BB%B6%E6%97%A5%E5%BF%97.png" alt="日志"></p>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a><a href="https://github.com/Yeah-Kun/python/blob/master/new/Brush%20ticket/Brush%20counting%20software.py" target="_blank" rel="external">源代码</a></h3>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/脚本/" rel="tag"># 脚本</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/11/Machine-Learning-the-first-week/" rel="prev" title="吴恩达机器学习课程笔记——第一周">
+                吴恩达机器学习课程笔记——第一周 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Yeah Kun" />
+          <p class="site-author-name" itemprop="name">Yeah Kun</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要内容"><span class="nav-number">3.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-分析网站"><span class="nav-number">4.</span> <span class="nav-text">1. 分析网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-收集信息"><span class="nav-number">5.</span> <span class="nav-text">1.1 收集信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-表单提交"><span class="nav-number">6.</span> <span class="nav-text">2. 表单提交</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-运用到的库"><span class="nav-number">6.1.</span> <span class="nav-text">2.1 运用到的库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-构造表单信息"><span class="nav-number">6.2.</span> <span class="nav-text">2.2 构造表单信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-构造代理IP池"><span class="nav-number">7.</span> <span class="nav-text">3. 构造代理IP池</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-找到代理IP"><span class="nav-number">7.1.</span> <span class="nav-text">3.1 找到代理IP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-构造IP代理容器"><span class="nav-number">7.2.</span> <span class="nav-text">3.2 构造IP代理容器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-主函数"><span class="nav-number">8.</span> <span class="nav-text">4. 主函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源代码"><span class="nav-number">9.</span> <span class="nav-text">源代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yeah Kun</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

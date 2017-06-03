@@ -1,251 +1,332 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    
 
-    <title>嵌入式Linux课 | Yeah Kun blog</title>
-    <meta name="author" content="Yeah Kun">
-    
-    <meta name="description" content="背景
-最近上了一门课：嵌入式Linux，由一家校外培训机构授课，他们追求的就是学完能立刻找到工作，因此，在课程的设置上非常紧凑，课程强度也比咱们平时上课要高不少，因此收获也很大。
 
-思考
-这门课的知识量很大，但不系统，知识碎片很多，需要用到很多不同领域的知识点，不过这门课课后不需要太多思考，不像微机">
-    
-    
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="嵌入式Linux课"/>
-    <meta property="og:site_name" content="Yeah Kun"/>
 
-    
-    <meta property="og:image" content="undefined"/>
-    
 
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="alternate" href="/atom.xml" title="Yeah Kun" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/lib/materialize.min.css">
-    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-        <link rel="stylesheet" href="/css/lib/tomorrow-night-eighties.css" type="text/css">
     
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="嵌入式,Linux," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="背景 最近上了一门课：嵌入式Linux，由一家校外培训机构授课，他们追求的就是学完能立刻找到工作，因此，在课程的设置上非常紧凑，课程强度也比咱们平时上课要高不少，因此收获也很大。  思考 这门课的知识量很大，但不系统，知识碎片很多，需要用到很多不同领域的知识点，不过这门课课后不需要太多思考，不像微机、数据结构，在课后还需要花大量时间进行学习，到底为什么会出现这种情况呢？是因为老师教的太好？还是课程">
+<meta name="keywords" content="嵌入式,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="嵌入式Linux课">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/嵌入式Linux课/index.html">
+<meta property="og:site_name" content="Yeah Kun">
+<meta property="og:description" content="背景 最近上了一门课：嵌入式Linux，由一家校外培训机构授课，他们追求的就是学完能立刻找到工作，因此，在课程的设置上非常紧凑，课程强度也比咱们平时上课要高不少，因此收获也很大。  思考 这门课的知识量很大，但不系统，知识碎片很多，需要用到很多不同领域的知识点，不过这门课课后不需要太多思考，不像微机、数据结构，在课后还需要花大量时间进行学习，到底为什么会出现这种情况呢？是因为老师教的太好？还是课程">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/AA3R*Vn32PQra4WhF2xwADzZZFUBQA3hAKF9sGf2YH0!/b/dGoBAAAAAAAA&bo=gALTAgAAAAARAGQ!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/fWr5Vj3QosXPcINqEAv*EvLtyijwJlXN.s53TB*axcI!/b/dGoBAAAAAAAA&bo=YAMcAgAAAAARAEo!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/eaum27KAXTOEkLgL.QFc94SMixngvc0cyelzFRV5GdA!/b/dGoBAAAAAAAA&bo=YAMcAgAAAAARAEo!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V12Ltkru1ADJ5N/xLRsbdE0buxO0DtQoCRS2ZKKMVeRPlgVIc6jXgfBCCE!/b/dGsBAAAAAAAA&bo=ggPKAQAAAAADB2g!&rf=viewer_4">
+<meta property="og:updated_time" content="2017-05-06T15:14:01.779Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="嵌入式Linux课">
+<meta name="twitter:description" content="背景 最近上了一门课：嵌入式Linux，由一家校外培训机构授课，他们追求的就是学完能立刻找到工作，因此，在课程的设置上非常紧凑，课程强度也比咱们平时上课要高不少，因此收获也很大。  思考 这门课的知识量很大，但不系统，知识碎片很多，需要用到很多不同领域的知识点，不过这门课课后不需要太多思考，不像微机、数据结构，在课后还需要花大量时间进行学习，到底为什么会出现这种情况呢？是因为老师教的太好？还是课程">
+<meta name="twitter:image" content="http://a3.qpic.cn/psb?/V12Ltkru1ADJ5N/AA3R*Vn32PQra4WhF2xwADzZZFUBQA3hAKF9sGf2YH0!/b/dGoBAAAAAAAA&bo=gALTAgAAAAARAGQ!&rf=viewer_4">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/嵌入式Linux课/"/>
+
+
+
+
+
+  <title>嵌入式Linux课 | Yeah Kun</title>
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-<body>
-    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+  
 
-    <nav class="light-blue accent-4">
-    <div class="nav-wrapper">
-        <a href="#" data-activates="main-menu" class="button-collapse">
-            <i class="fa fa-navicon"></i>
-        </a>
-        <div class="">
-            <a href="/" class="brand-logo hide-on-med-and-down">Yeah Kun</a>
-            <ul class="right hide-on-med-and-down">
-                
-                    <li>
-                        <a class="menu-home " href="/" >
-                            <i class="fa fa-home "></i>
-                            
-                            首页
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-archive " href="/archives" >
-                            <i class="fa fa-archive "></i>
-                            
-                            归档
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
-                            <i class="fa fa-bookmark "></i>
-                            
-                            分类
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-reading " href="/reading" >
-                            <i class="fa fa-book "></i>
-                            
-                            读书
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-about " href="/about" >
-                            <i class="fa fa-user "></i>
-                            
-                            关于
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a class="menu-search modal-trigger " href="#search" >
-                            <i class="fa fa-search "></i>
-                            
-                            搜索
-                        </a>
-                    </li>
-                
-            </ul>
-            <div>
-    <ul class="side-nav light-blue accent-4" id="main-menu">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yeah Kun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Yeah Kun blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-        <li class="side-user">
-            <div class="row">
-                <div class="col s4 no-padding">
-                    <img class="avatar-image circle responsive-img" src="http://a2.qpic.cn/psb?/V12Ltkru1ADJ5N/Jlssko4NIkOZ1gPw5*HPgUx0vSPz2P*3oTkE3K3XnXU!/b/dGkBAAAAAAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=TgJOAgAAAAARFyA!&amp;tm=1493298000&amp;sce=60-3-3&amp;rf=viewer_4" alt="User Avatar">
-                </div>
-                <div class="info col s8 valign-wrapper no-padding">
-                    <div class="valign">
-                        <p class="name">叶坤</p>
-                        <p class="desc">python/机器学习/心智成长</p>
-                    </div>
-                </div>
-            </div>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
         </li>
+      
         
-
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-home " href="/" >
-                    <i class="fa fa-home "></i>
-                    
-                    首页
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-archive " href="/archives" >
-                    <i class="fa fa-archive "></i>
-                    
-                    归档
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
-                    <i class="fa fa-bookmark "></i>
-                    
-                    分类
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-reading " href="/reading" >
-                    <i class="fa fa-book "></i>
-                    
-                    读书
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-about " href="/about" >
-                    <i class="fa fa-user "></i>
-                    
-                    关于
-                </a>
-            </li>
-        
-            <li class="no-padding">
-                <a class="waves-effect menu-search modal-trigger " href="#search" >
-                    <i class="fa fa-search "></i>
-                    
-                    搜索
-                </a>
-            </li>
-        
-    </ul>
-
-    <ul class="side-nav light-blue accent-4" id="category-menu">
-    
-
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
             
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
 
+      
     </ul>
-</div>
+  
 
-        </div>
-    </div>
+  
 </nav>
 
-<div id="search" class="modal search-modal">
-    <div class="row">
-        <div class="input-field col s12">
-              <input id="search-input" type="text">
-              <label for="search-input">搜索</label>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/嵌入式Linux课/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yeah Kun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah Kun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">嵌入式Linux课</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-06T23:12:54+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-
-    </div>
-    <div id="search-result" class="search-result col s12">
-
-    </div>
-</div>
-
-
-    <main>
-        <div class="container main-container">
-    <nav class="page-nav hide-on-small-only">
-    <div class="nav-wrapper light-blue accent-4">
-        <span class="breadcrumb">当前位置（分类目录）</span>
-        
-            
-
-        
-
-        
-    </div>
-</nav>
-
-<article>
-    <div class="card">
-        <div class="card-content">
-            
-
-            <div class="article-title">
-                
-    
-        <h1>嵌入式Linux课</h1>
+      </header>
     
 
+    <div class="post-body" itemprop="articleBody">
 
-            </div>
-            <time class="pink-link-context" datetime="2017-05-06T15:12:54.000Z"><a href="/2017/05/06/嵌入式Linux课/">2017-05-06</a></time>
+      
+      
 
-            <span id="busuanzi_container_page_pv" class="read-times-container">
-    <i class="fa fa-eye"></i>
-    <span id="busuanzi_value_page_pv"></span>
-</span>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/嵌入式/" class="chip pink lighten-1">嵌入式</a>
-        
-            <a href="/tags/Linux/" class="chip pink lighten-1">Linux</a>
-        
-    </div>
-
-
-            <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#背景"><span class="section table-of-contents-text">背景</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#思考"><span class="section table-of-contents-text">思考</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#内容"><span class="section table-of-contents-text">内容</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#效果图"><span class="section table-of-contents-text">效果图</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-Linux系统基本操作"><span class="section table-of-contents-text">1. Linux系统基本操作</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-1-常用指令"><span class="section table-of-contents-text">1.1 常用指令</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-2-编译运行程序"><span class="section table-of-contents-text">1.2 编译运行程序</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-2-1-编译"><span class="section table-of-contents-text">1.2.1 编译</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-2-2-运行"><span class="section table-of-contents-text">1.2.2 运行</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-3-文件下载到开发板"><span class="section table-of-contents-text">1.3 文件下载到开发板</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-3-1-安装secureCRT"><span class="section table-of-contents-text">1.3.1 安装secureCRT</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-3-2-配置secureCRT"><span class="section table-of-contents-text">1.3.2 配置secureCRT</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-3-3-使用wmware-tools共享方式"><span class="section table-of-contents-text">1.3.3 使用wmware tools共享方式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#1-3-4-使用串口下载命令下载"><span class="section table-of-contents-text">1.3.4 使用串口下载命令下载</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-显示bmp图片"><span class="section table-of-contents-text">2. 显示bmp图片</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-1-常见的图片格式"><span class="section table-of-contents-text">2.1 常见的图片格式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-2-了解文件操作相关的接口函数"><span class="section table-of-contents-text">2.2 了解文件操作相关的接口函数</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-2-1-文件打开函数open（）"><span class="section table-of-contents-text">2.2.1 文件打开函数open（）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-2-2文件读取read（）"><span class="section table-of-contents-text">2.2.2文件读取read（）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-2-3-文件的关闭close（）"><span class="section table-of-contents-text">2.2.3 文件的关闭close（）</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-3-图片显示处理"><span class="section table-of-contents-text">2.3 图片显示处理</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-3-1-设置文件的读写位置lseek"><span class="section table-of-contents-text">2.3.1 设置文件的读写位置lseek()</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-4-任意位置显示任意大小bmp图片"><span class="section table-of-contents-text">2.4 任意位置显示任意大小bmp图片</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-4-1-内存映射图示"><span class="section table-of-contents-text">2.4.1 内存映射图示</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-4-2-内存映射函数"><span class="section table-of-contents-text">2.4.2 内存映射函数</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-4-3-mmap函数的具体使用图示"><span class="section table-of-contents-text">2.4.3 mmap函数的具体使用图示</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-5-课外知识点"><span class="section table-of-contents-text">2.5 课外知识点</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#2-5-1-使用u盘挂载到开发板"><span class="section table-of-contents-text">2.5.1 使用u盘挂载到开发板</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-wifi编程"><span class="section table-of-contents-text">3. wifi编程</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-1-使用usbwifi"><span class="section table-of-contents-text">3.1 使用usbwifi</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#3-1-1-修改wifi的SSID"><span class="section table-of-contents-text">3.1.1 修改wifi的SSID</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-2-将复杂的源代码分块"><span class="section table-of-contents-text">3.2 将复杂的源代码分块</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-6"><a class="section table-of-contents-link" href="#注意："><span class="section table-of-contents-text">注意：</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-3-课外知识点"><span class="section table-of-contents-text">3.3 课外知识点</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#3-3-1-交叉工具链的安装"><span class="section table-of-contents-text">3.3.1 交叉工具链的安装</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#3-3-2-烧写操作系统"><span class="section table-of-contents-text">3.3.2 烧写操作系统</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-6"><a class="section table-of-contents-link" href="#解释"><span class="section table-of-contents-text">解释</span></a></li><li class="section table-of-contents-item section table-of-contents-level-6"><a class="section table-of-contents-link" href="#步骤"><span class="section table-of-contents-text">步骤</span></a></li></ol></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-触摸屏编程"><span class="section table-of-contents-text">4. 触摸屏编程</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-1-准备需要用到移植好的触摸屏库文件"><span class="section table-of-contents-text">4.1 准备需要用到移植好的触摸屏库文件</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-2-操作触摸屏"><span class="section table-of-contents-text">4.2 操作触摸屏</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-2-1-打开触摸屏"><span class="section table-of-contents-text">4.2.1 打开触摸屏</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-2-2-配置触摸屏"><span class="section table-of-contents-text">4.2.2 配置触摸屏</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-2-3-读取触摸屏反馈的x，y坐标"><span class="section table-of-contents-text">4.2.3 读取触摸屏反馈的x，y坐标</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-2-4-关闭触摸屏"><span class="section table-of-contents-text">4.2.4 关闭触摸屏</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-3-编译程序"><span class="section table-of-contents-text">4.3 编译程序</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-4-测试触摸屏"><span class="section table-of-contents-text">4.4 测试触摸屏</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#4-5-课外知识点"><span class="section table-of-contents-text">4.5 课外知识点</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#4-5-1-makefile（自动化编译）"><span class="section table-of-contents-text">4.5.1 makefile（自动化编译）</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-MP3音频播放"><span class="section table-of-contents-text">5. MP3音频播放</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#5-1-在终端使用命令来播放"><span class="section table-of-contents-text">5.1 在终端使用命令来播放</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-摄像头编程"><span class="section table-of-contents-text">6. 摄像头编程</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#6-1-步骤"><span class="section table-of-contents-text">6.1 步骤</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-1-初始化摄像头"><span class="section table-of-contents-text">6.1.1 初始化摄像头</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-2-启动摄像头捕捉"><span class="section table-of-contents-text">6.1.2 启动摄像头捕捉</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-3-获取画面数据"><span class="section table-of-contents-text">6.1.3 获取画面数据</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-4-将摄像头jpg画面在液晶屏上显示出来"><span class="section table-of-contents-text">6.1.4 将摄像头jpg画面在液晶屏上显示出来</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#6-1-5-编译摄像头程序"><span class="section table-of-contents-text">6.1.5 编译摄像头程序</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#6-2-新建、保存摄像头拍摄的画面"><span class="section table-of-contents-text">6.2 新建、保存摄像头拍摄的画面</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-视频播放"><span class="section table-of-contents-text">7. 视频播放</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#7-1-将开发板中的图片转换成视频"><span class="section table-of-contents-text">7.1 将开发板中的图片转换成视频</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#7-1-1-使用ffmpeg的步骤"><span class="section table-of-contents-text">7.1.1 使用ffmpeg的步骤</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#7-1-2-通过ffmpeg将图片转换为-avi文件"><span class="section table-of-contents-text">7.1.2 通过ffmpeg将图片转换为.avi文件</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#7-2-使用mplayer播放开发板中的视频"><span class="section table-of-contents-text">7.2 使用mplayer播放开发板中的视频</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#7-3-在代码中播放视频"><span class="section table-of-contents-text">7.3 在代码中播放视频</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#源代码"><span class="section table-of-contents-text">源代码</span></a></li></ol>
-</div>
-
-
-            <div class="entry pink-link-context">
-                <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
 <p>最近上了一门课：嵌入式Linux，由一家校外培训机构授课，他们追求的就是学完能立刻找到工作，因此，在课程的设置上非常紧凑，课程强度也比咱们平时上课要高不少，因此收获也很大。</p>
 </blockquote>
 <h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><blockquote>
@@ -522,346 +603,362 @@
 </blockquote>
 <p><a href="https://github.com/Yeah-Kun/learngit/tree/master/C/embedded%20linux" target="_blank" rel="external">项目完整源代码</a></p>
 
-                
-<p class="pink-link-context">
-    <a href="/2017/04/29/hello-world/" rel="next" title="Hello World">
-    上一篇：Hello World
-  </a>
-</p>
-
-
-
-<p class="pink-link-context">
-    <a href="/2017/05/11/Machine-Learning-the-first-week/" rel="next" title="吴恩达机器学习课程笔记——第一周">
-    下一篇：吴恩达机器学习课程笔记——第一周
-  </a>
-</p>
-
-
-            </div>
-			
-        </div>
+      
     </div>
-</article>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/嵌入式/" rel="tag"># 嵌入式</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/11/Machine-Learning-the-first-week/" rel="next" title="吴恩达机器学习课程笔记——第一周">
+                <i class="fa fa-chevron-left"></i> 吴恩达机器学习课程笔记——第一周
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/28/my-first-blog/" rel="prev" title="第五届泰迪杯C题——楼层结构识别算法">
+                第五届泰迪杯C题——楼层结构识别算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
 
 
 
-
-
-
-</div>
-
-        <div class="fixed-action-btn float-sitemap">
-    <a class="btn-floating btn-large pink">
-      <i class="fa fa-caret-square-o-up"></i>
-    </a>
-    <ul>
-      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
-      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
-    </ul>
+    <div class="post-spread">
+      
+    </div>
   </div>
 
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Yeah Kun" />
+          <p class="site-author-name" itemprop="name">Yeah Kun</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考"><span class="nav-number">2.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number"></span> <span class="nav-text">内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Linux系统基本操作"><span class="nav-number">2.</span> <span class="nav-text">1. Linux系统基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-常用指令"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 常用指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-编译运行程序"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 编译运行程序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-1-编译"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.2.1 编译</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-2-运行"><span class="nav-number">2.2.2.</span> <span class="nav-text">1.2.2 运行</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-文件下载到开发板"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 文件下载到开发板</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-1-安装secureCRT"><span class="nav-number">2.3.1.</span> <span class="nav-text">1.3.1 安装secureCRT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-2-配置secureCRT"><span class="nav-number">2.3.2.</span> <span class="nav-text">1.3.2 配置secureCRT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-3-使用wmware-tools共享方式"><span class="nav-number">2.3.3.</span> <span class="nav-text">1.3.3 使用wmware tools共享方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-4-使用串口下载命令下载"><span class="nav-number">2.3.4.</span> <span class="nav-text">1.3.4 使用串口下载命令下载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-显示bmp图片"><span class="nav-number">3.</span> <span class="nav-text">2. 显示bmp图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-常见的图片格式"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 常见的图片格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-了解文件操作相关的接口函数"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 了解文件操作相关的接口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-1-文件打开函数open（）"><span class="nav-number">3.2.1.</span> <span class="nav-text">2.2.1 文件打开函数open（）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-2文件读取read（）"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.2.2文件读取read（）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-3-文件的关闭close（）"><span class="nav-number">3.2.3.</span> <span class="nav-text">2.2.3 文件的关闭close（）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-图片显示处理"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 图片显示处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-设置文件的读写位置lseek"><span class="nav-number">3.3.1.</span> <span class="nav-text">2.3.1 设置文件的读写位置lseek()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-任意位置显示任意大小bmp图片"><span class="nav-number">3.4.</span> <span class="nav-text">2.4 任意位置显示任意大小bmp图片</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-1-内存映射图示"><span class="nav-number">3.4.1.</span> <span class="nav-text">2.4.1 内存映射图示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-2-内存映射函数"><span class="nav-number">3.4.2.</span> <span class="nav-text">2.4.2 内存映射函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-3-mmap函数的具体使用图示"><span class="nav-number">3.4.3.</span> <span class="nav-text">2.4.3 mmap函数的具体使用图示</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-课外知识点"><span class="nav-number">3.5.</span> <span class="nav-text">2.5 课外知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-5-1-使用u盘挂载到开发板"><span class="nav-number">3.5.1.</span> <span class="nav-text">2.5.1 使用u盘挂载到开发板</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-wifi编程"><span class="nav-number">4.</span> <span class="nav-text">3. wifi编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-使用usbwifi"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 使用usbwifi</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-1-修改wifi的SSID"><span class="nav-number">4.1.1.</span> <span class="nav-text">3.1.1 修改wifi的SSID</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-将复杂的源代码分块"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 将复杂的源代码分块</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#注意："><span class="nav-number">4.2.0.1.</span> <span class="nav-text">注意：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-课外知识点"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 课外知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-1-交叉工具链的安装"><span class="nav-number">4.3.1.</span> <span class="nav-text">3.3.1 交叉工具链的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-2-烧写操作系统"><span class="nav-number">4.3.2.</span> <span class="nav-text">3.3.2 烧写操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#解释"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#步骤"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">步骤</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-触摸屏编程"><span class="nav-number">5.</span> <span class="nav-text">4. 触摸屏编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-准备需要用到移植好的触摸屏库文件"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 准备需要用到移植好的触摸屏库文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-操作触摸屏"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 操作触摸屏</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-1-打开触摸屏"><span class="nav-number">5.2.1.</span> <span class="nav-text">4.2.1 打开触摸屏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-2-配置触摸屏"><span class="nav-number">5.2.2.</span> <span class="nav-text">4.2.2 配置触摸屏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-3-读取触摸屏反馈的x，y坐标"><span class="nav-number">5.2.3.</span> <span class="nav-text">4.2.3 读取触摸屏反馈的x，y坐标</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-4-关闭触摸屏"><span class="nav-number">5.2.4.</span> <span class="nav-text">4.2.4 关闭触摸屏</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-编译程序"><span class="nav-number">5.3.</span> <span class="nav-text">4.3 编译程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-测试触摸屏"><span class="nav-number">5.4.</span> <span class="nav-text">4.4 测试触摸屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-课外知识点"><span class="nav-number">5.5.</span> <span class="nav-text">4.5 课外知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-5-1-makefile（自动化编译）"><span class="nav-number">5.5.1.</span> <span class="nav-text">4.5.1 makefile（自动化编译）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-MP3音频播放"><span class="nav-number">6.</span> <span class="nav-text">5. MP3音频播放</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-在终端使用命令来播放"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 在终端使用命令来播放</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-摄像头编程"><span class="nav-number">7.</span> <span class="nav-text">6. 摄像头编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-步骤"><span class="nav-number">7.1.</span> <span class="nav-text">6.1 步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-1-初始化摄像头"><span class="nav-number">7.1.1.</span> <span class="nav-text">6.1.1 初始化摄像头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-2-启动摄像头捕捉"><span class="nav-number">7.1.2.</span> <span class="nav-text">6.1.2 启动摄像头捕捉</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-3-获取画面数据"><span class="nav-number">7.1.3.</span> <span class="nav-text">6.1.3 获取画面数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-4-将摄像头jpg画面在液晶屏上显示出来"><span class="nav-number">7.1.4.</span> <span class="nav-text">6.1.4 将摄像头jpg画面在液晶屏上显示出来</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-5-编译摄像头程序"><span class="nav-number">7.1.5.</span> <span class="nav-text">6.1.5 编译摄像头程序</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-新建、保存摄像头拍摄的画面"><span class="nav-number">7.2.</span> <span class="nav-text">6.2 新建、保存摄像头拍摄的画面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-视频播放"><span class="nav-number">8.</span> <span class="nav-text">7. 视频播放</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-将开发板中的图片转换成视频"><span class="nav-number">8.1.</span> <span class="nav-text">7.1 将开发板中的图片转换成视频</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#7-1-1-使用ffmpeg的步骤"><span class="nav-number">8.1.1.</span> <span class="nav-text">7.1.1 使用ffmpeg的步骤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-1-2-通过ffmpeg将图片转换为-avi文件"><span class="nav-number">8.1.2.</span> <span class="nav-text">7.1.2 通过ffmpeg将图片转换为.avi文件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-使用mplayer播放开发板中的视频"><span class="nav-number">8.2.</span> <span class="nav-text">7.2 使用mplayer播放开发板中的视频</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-3-在代码中播放视频"><span class="nav-number">8.3.</span> <span class="nav-text">7.3 在代码中播放视频</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源代码"><span class="nav-number">10.</span> <span class="nav-text">源代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
     </main>
-    <footer class="page-footer light-blue accent-4 darken-1">
-    
-    <div class="container">
-        <div class="row">
-            
-            <div class="social-group col m4 s12">
-                <h5 class="white-text">社交</h5>
-                
-                    <a class="social-link" href="http://weibo.com/2660835460/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
-                        <i class="fa fa-2x fa-weibo"></i>
-                    </a>
-                
-                    <a class="social-link" href="https://github.com/Yeah-Kun" target="_blank">
-                        <i class="fa fa-2x fa-github"></i>
-                    </a>
-                
-                    <a class="social-link" href="/atom.xml" target="_blank">
-                        <i class="fa fa-2x fa-rss"></i>
-                    </a>
-                
-                <div class="site-visitors-container white-text">
-                    <span>
-                        <i class="fa fa-user"></i>
-                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-                    </span>
-                    <span>&nbsp;|&nbsp;</span>
-                    <span>
-                        <i class="fa fa-eye"></i>
-                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-                    </span>
-                </div>
-            </div>
-            
 
-            
-            <div class="col m8 s12">
-                <h5 class="white-text">友情链接</h5>
-                
-                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorism主题作者的技术博客</a>
-                
-                    <a class="social-link" href="https://github.com/raytaylorlin" target="_blank">Github地址（测试友情链接）</a>
-                
-            </div>
-            
-        </div>
-    </div>
-    
-
-    <div class="footer-copyright pink-link-context">
-        <div class="container">
-            © 2017 yeah-kun.com, All rights reserved.
-            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
-        </div>
-    </div>
-</footer>
-
-
-    <noscript>
-    <div class="noscript">
-        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
-    </div>
-</noscript>
-<div class="noscript">
-    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yeah Kun</span>
 </div>
 
 
-<script src="/js/jquery.min.js"></script>
-<script src="/js/materialize.min.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
 
-<script>
-    (function($) {
-        $(document).ready(function() {
-            // 隐藏禁用javascript（针对微信内置浏览器）的提示
-            $('.noscript').hide();
-
-            // 图片缩放效果
-            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
-
-            // 给图片加上点击放大效果（materialbox插件）
-            $imgs.addClass('materialboxed').each(function(i, el) {
-                $(this).attr('data-caption', $(this).attr('alt') || ' ');
-            }).materialbox();
-
-            // 优化表格的显示
-            $('table').each(function() {
-                var $table = $(this);
-                // 除去多行代码的情况
-                if ($table.find('pre').length == 0) {
-                    $table.addClass('responsive-table striped bordered');
-                }
-            });
-
-            // 首页幻灯片
-            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
-
-            $(".button-collapse").sideNav();
-            $(".category-menu").sideNav();
-
-            // 针对gallery post
-            $('.carousel').carousel({full_width: true});
-            $('.carousel-control.prev').click(function() {
-                $('.carousel').carousel('prev');
-            });
-            $('.carousel-control.next').click(function() {
-                $('.carousel').carousel('next');
-            });
-
-            // 文章目录
-            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
-
-            // 目录随屏幕滚动（防止目录过长越过footer）
-            var $toc = $('.toc');
-            var scrollTargetTop = 0;
-            $(window).scroll(function() {
-                var $activeLink = $toc.find('a.active.section');
-                if ($(window).scrollTop() < 100) {
-                    scrollTargetTop = 0;
-                } else {
-                    if ($activeLink[0]) {
-                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
-                    }
-                }
-                $toc.css('top', '-' + scrollTargetTop + 'px');
-            });
-
-            // 修正文章目录的left-border颜色
-            var color = $('.table-of-contents-text').css('color');
-            $('.table-of-contents-link').css('border-left-color', color);
-
-            // 针对移动端做的优化：FAB按钮点击一下收回
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $('.fixed-action-btn').addClass('click-to-toggle');
-            }
-            // 回到顶部
-            $('.btn-return-top').click(function() {
-                $('body, html').animate({
-                    scrollTop: 0
-                }, 500);
-            });
-
-            // 重置读书页面的Tab标签页的颜色
-            $('li.tab a').hover(function() {
-                $(this).toggleClass('text-lighten-4');
-            });
-            $('.indicator').addClass('pink lighten-2');
-
-            
-            // 添加new标签
-            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
-            
-
-            // 搜索功能
-            $('.modal-trigger').leanModal({
-                // 打开搜索框时自动聚焦
-                ready: function() {
-                    if ($('#search').is(":visible")) {
-                        $('#search-input').focus();
-                    }
-                }
-            });
-            var searchXml = "";
-            if (searchXml.length == 0) {
-             	searchXml = "search.xml";
-            }
-            var searchPath = "/" + searchXml;
-            initSearch(searchPath, 'search-input', 'search-result');
-        });
-
-        // 初始化搜索与匹配函数
-        var initSearch = function(path, search_id, content_id) {
-            'use strict';
-            $.ajax({
-                url: path,
-                dataType: "xml",
-                success: function(xmlResponse) {
-                    // get the contents from search data
-                    var datas = $("entry", xmlResponse).map(function() {
-                        return {
-                            title: $("title", this).text(),
-                            content: $("content", this).text(),
-                            url: $("url", this).text()
-                        };
-                    }).get();
-                    var $input = document.getElementById(search_id);
-                    var $resultContent = document.getElementById(content_id);
-                    $input.addEventListener('input', function() {
-                        var str = '<ul class=\"search-result-list\">';
-                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                        $resultContent.innerHTML = "";
-                        if (this.value.trim().length <= 0) {
-                            return;
-                        }
-                        // perform local searching
-                        datas.forEach(function(data) {
-                            var isMatch = true;
-                            var content_index = [];
-                            var data_title = data.title.trim().toLowerCase();
-                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                            var data_url = data.url;
-                            var index_title = -1;
-                            var index_content = -1;
-                            var first_occur = -1;
-                            // only match artiles with not empty titles and contents
-                            if (data_title != '' && data_content != '') {
-                                keywords.forEach(function(keyword, i) {
-                                    index_title = data_title.indexOf(keyword);
-                                    index_content = data_content.indexOf(keyword);
-                                    if (index_title < 0 && index_content < 0) {
-                                        isMatch = false;
-                                    } else {
-                                        if (index_content < 0) {
-                                            index_content = 0;
-                                        }
-                                        if (i == 0) {
-                                            first_occur = index_content;
-                                        }
-                                    }
-                                });
-                            }
-                            // show search results
-                            if (isMatch) {
-                                keywords.forEach(function(keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
-                                });
-
-                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                                var content = data.content.trim().replace(/<[^>]+>/g, "");
-                                if (first_occur >= 0) {
-                                    // cut out 100 characters
-                                    var start = first_occur - 20;
-                                    var end = first_occur + 80;
-                                    if (start < 0) {
-                                        start = 0;
-                                    }
-                                    if (start == 0) {
-                                        end = 100;
-                                    }
-                                    if (end > content.length) {
-                                        end = content.length;
-                                    }
-                                    var match_content = content.substring(start, end);
-                                    // highlight all keywords
-                                    keywords.forEach(function(keyword) {
-                                        var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
-                                    });
-
-                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
-                                }
-                                str += "</li>";
-                            }
-                        });
-                        str += "</ul>";
-                        $resultContent.innerHTML = str;
-                    });
-                }
-            });
-        }
-    })(jQuery);
-</script>
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
 
 
-<script src="/js/prettify.js"></script>
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("pre").addClass("prettyprint");
-        prettyPrint();
-    });
-</script>
-
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-98292524-1', 'auto');
-    ga('send', 'pageview');
-
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
 
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" async
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
 
 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
